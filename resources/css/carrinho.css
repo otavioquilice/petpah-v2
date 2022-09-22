@@ -1,0 +1,222 @@
+:root{
+    --cinza-principal: #333333;
+    --amarelo-botoes: #F6E266;
+    --verde-botoes: #85DEB7;
+    --cor-de-fundo: #ffffff;
+    --fonte-logo: 'Elsie', cursive;
+}
+
+body{
+    margin: 0;
+}
+
+header{
+    background-color: #FFDB99;
+    padding: 20px 0; /*20px pra cima e baixo. 0px pra direita e esquerda.*/
+    height: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    align-items: center;    
+}
+
+.container div{
+    padding: 10px;
+}
+
+.titulo{
+    font-family: var(--fonte-logo);
+    font-style: italic;
+}
+
+.busca{
+    border-radius: .7rem;
+    width: 300px;
+    height: 30px;
+}
+
+
+.bntbusca{
+    position: relative;
+    left: 50px;
+    top: 5px;
+}
+
+/*----main nav bar----*/
+
+nav{
+    text-align: center;
+    margin:0;
+
+}
+nav ul li {
+    text-align: center;
+    display: inline-block;
+    align-items: center;
+    padding: 40px;
+
+}
+
+nav ul li a{
+    text-decoration: none; text-align: center;
+    text-align: center;
+    color: rgb(102, 102, 105);
+    font-size: 18px;
+
+
+}
+nav ul li a:hover{
+    color: black;
+    font-weight: bold;
+}
+
+.entremsg{
+    position: relative;
+    top: 20px;
+    right: 90px;
+}
+
+.lupabusca{
+    position: relative;
+    left: 40px;
+    top: 8px;
+}
+
+/*----main carrinho----*/
+
+.produtos{ /*posicionando os produtos, alinhando conforme a caixa*/
+    width: 940px;
+    margin: 0 auto;
+    padding: 0px 50px; /*50px pra cima e 0 pra direita e esquerda*/
+}
+
+.produtos li{
+    display: inline-block; /*deixar a lista de lado*/
+    width: 50%; /*alinhando os anuncios*/
+    height: 180px;
+    vertical-align: top; /*alinhar pela linha de cima (Geralmente é alinhado pela linha de baixo)*/
+    margin: 10px;
+    box-sizing: border-box;/*para o espaçamento lateral fique dentro do percentual. Os 20px do padding fica desntro do 30% width*/
+    border: 1px solid #ffffff;
+    border-radius: 40px; /*Se quiser fazer bordas com tamanhos diferentes é digitar seguindo a ordem*/
+}
+
+li h3{
+    position: relative;
+    bottom: 5px;
+    left: 30px;
+    font-size: 25px;
+}
+
+li img{
+    position: relative;
+    bottom: 10px;
+    left: 30px;
+}
+
+.lixo{
+    position: relative;
+    bottom: 160px;
+    left: 250px;
+}
+
+.produtos-preco{
+    position: relative;
+    bottom: 120px;
+    left: 200px;
+}
+ .quantidade{
+    position: relative;
+    bottom: 85px;
+    left: 220px;
+    border-radius: 5px;
+    width: 40px;
+ }
+
+ .combobox{
+    box-shadow: 3rem;
+    position: relative;
+    bottom: 130px;
+    left: 368px; 
+    border-radius: 5px;
+ }
+
+
+li h4{
+    position: relative;
+    bottom: 30px;
+    left: 30px; 
+}
+
+ .combobox2{
+    position: relative;
+    bottom: 50px;
+    left: 290px; 
+    border-radius: 5px;
+ }
+
+ .doacoes{
+    border: solid 1px #333333;
+    display: block;
+    margin: 0 0 0 220px;
+    padding: 50px;
+    width: 30%;
+    height: 30px;
+ }
+
+ .doacao{
+    position: relative;
+    bottom: 70px;
+    left: 60px; 
+}
+
+ .combobox3{
+    position: relative;
+    bottom: 110px;
+    left: 250px; 
+    border-radius: 5px;
+ }
+ .selecionar{
+    position: relative;
+    bottom: 80px;
+    left: 40px; 
+    border-radius: 5px;
+ }
+
+/*----------------------Footer------------*/
+.rodape {
+    text-align: center;
+    margin: 5em 3em;
+}
+
+.rodape__logo{
+    width: 8%; 
+}
+
+.proposito{
+    font-family: var(--fonte-principal);  
+    color: var(--cinza-secundario);
+}
+
+.prposito__descricao{
+    font-family: var(--fonte-secundaria);  
+    margin: 1em 0;
+    color: var(--cinza-secundario);
+    font-size: 16px; 
+}
+
+.contatos{
+    text-align: left;
+    margin: 1em 0 0 10em;
+    font-family: var(--fonte-secundaria);   
+}
+
+.redes__lista{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    text-align: center;
+}
