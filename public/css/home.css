@@ -1,0 +1,276 @@
+:root{
+    --cinza-principal: #333333;
+    --amarelo-botoes: #F6E266;
+    --verde-botoes: #85DEB7;
+    --cor-de-fundo: #ffffff;
+    --fonte-logo: 'Elsie', cursive;
+    --fonte-principal: 'Elsie';
+    --fonte-secundaria: 'Montserrat'
+}
+
+body{
+    margin: 0;
+}
+
+header{
+    background-color: #FFDB99;
+    padding: 20px 0; /*20px pra cima e baixo. 0px pra direita e esquerda.*/
+    height: 35px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.container{
+    display: flex;
+    align-items: center;    
+}
+
+.container div{
+    color: var(--cinza-principal);
+    padding: 10px;
+    font-family: var(--fonte-secundaria);
+}
+
+.titulo{
+    font-family: var(--fonte-logo);
+    font-style: italic;
+    color: var(--cinza-principal);
+}
+
+.busca{
+    border-radius: .7rem;
+    width: 300px;
+    height: 30px;
+    color: var(--cinza-principal);
+}
+
+
+.bntbusca{
+    position: relative;
+    left: 50px;
+    top: 5px;
+}
+
+.entremsg{
+    position: relative;
+    top: 20px;
+    right: 90px;
+}
+
+.lupabusca{
+    position: relative;
+    left: 40px;
+    top: 8px;
+}
+
+/*-------------CSS do main - navbar-------------------------------------------*/
+nav{
+    text-align: center;
+    margin:0;
+
+}
+nav ul li {
+    text-align: center;
+    display: inline-block;
+    align-items: center;
+    padding: 5px 90px;
+
+}
+
+nav ul li a{
+    text-decoration: none; text-align: center;
+    text-align: center;
+    color: rgb(102, 102, 105);
+    font-size: 18px;
+
+
+}
+nav ul li a:hover{
+    color: black;
+    font-weight: bold;
+}
+
+.entremsg{
+    position: relative;
+    top: 20px;
+    right: 90px;
+}
+
+.lupabusca{
+    position: relative;
+    left: 40px;
+    top: 8px;
+}
+
+/*------------main--------*/
+
+.container_chamada_principal{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hero{
+    width: 40%;
+    padding-left: 10%;
+}
+
+.principal{
+    color: #333333;
+    text-align: right;
+    font-family: var(--fonte-secundaria);
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    justify-content: flex-start;
+    padding-right: 20%;
+}
+
+.principal p{
+    font-size: 20px;
+    
+}
+
+.principal_botoes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+
+}
+
+.principal_botao{
+    border-radius: 5px;
+    border: none;
+    padding: 10px 30px;
+    background-color: #F6E266;
+    color: #333333;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 1s background;
+    cursor: pointer;
+    width: 45%;
+}
+
+.principal_botao:hover{
+    background: #f5d400;
+}
+
+/*----main "Passo a Passo"----*/
+
+.passos_container{
+    color: #333333; 
+    background-color: #85DEB7;
+    padding: 1% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+} 
+.titulo-hero{
+    width: 80%;
+}
+
+.titulo-passos{
+    font-size: 25px;
+    width: 100%;
+}
+
+.conteudo-doacao{
+    width: 35%;
+    font-size: 20px;
+
+}
+
+.conteudo-compra{
+    width: 35%;
+    font-size: 20px;
+}
+
+.itens1:before {
+    content: "➲ " 
+}
+
+.itens2:before {
+    content: "➲ " 
+}
+
+.itens1{
+    line-height: 1.5;
+    list-style-type: none;
+}
+
+.itens2{
+    line-height: 1.5;
+    list-style-type: none;
+}
+
+.passos_imagem{
+    width: 20%;
+}
+
+.imgPassos{
+    width: 100%;
+    position: relative;
+    bottom: 130px;
+}
+
+ /*------ main mapa ----*/
+
+.mapa{
+    padding: 3em 0;
+}
+
+.mapa h3{
+    text-align: center;
+}
+
+.mapa p{
+    margin: 0 0 2em;
+    text-align: center;
+}
+
+.mapa-fatec{
+    width: 900px;
+    margin: auto auto; /*centralizou o vídeo*/
+    justify-content: center;
+
+}
+
+/*----------------------Footer------------*/
+
+.rodape {
+    text-align: center;
+    margin: 5em 3em;
+}
+
+.rodape__logo{
+    width: 8%; 
+}
+
+.proposito{
+    font-family: var(--fonte-principal);  
+    color: var(--cinza-secundario);
+}
+
+.prposito__descricao{
+    font-family: var(--fonte-secundaria);  
+    margin: auto 0;
+    color: var(--cinza-secundario);
+    font-size: 16px; 
+}
+
+.contatos{
+    text-align: left;
+    margin: 1em 0 0 10em;
+    font-family: var(--fonte-secundaria);   
+}
+
+.redes__lista{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    text-align: center;
+}

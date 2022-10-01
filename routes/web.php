@@ -46,6 +46,7 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
 
 
 
-Route::get('/produtos',[SiteController::class, 'tela_produtos'])->name('produtos');
-Route::get('/carrinho',[SiteController::class, 'tela_carrinho'])->name('carrinho');
+Route::get('/produtos',[SiteController::class, 'view_produtos'])->name('produtos');
+Route::get('/carrinho',[SiteController::class, 'view_carrinho'])->name('carrinho');
+Route::get('/',[SiteController::class, 'view_home'])->name('home');
 // Route::get('/carrinho',[SiteController::class, 'tela_carrinho'])->middleware('auth')->name('carrinho');

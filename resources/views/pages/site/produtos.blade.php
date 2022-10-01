@@ -14,7 +14,7 @@
 <body>
     <header> 
         <div class="container">
-            <a href="/produtos">
+            <a href="/">
                 <h1 class="titulo">PET PAH</h1>
             </a>
       
@@ -59,10 +59,10 @@
 
         <nav>
             <ul>
-              <li><a href="home.html">Home</a></li><bold>|
-              <li><a href="produtos.html">Produtos</a></li>|
-              <li><a href="doacoes.html">Doações</a></li>|
-              <li><a href="servocos.html">Serviços</a></li>
+              <li><a href="/">Home</a></li><bold>|
+              <li><a href="/produtos">Produtos</a></li>|
+              <li><a href="/doacoes">Doações</a></li>|
+              <li><a href="/servicos">Serviços</a></li>
             </ul>
         </nav>
 

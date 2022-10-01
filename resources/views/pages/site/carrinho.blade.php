@@ -16,7 +16,7 @@
 
     <div class="container">
       <div>
-        <a href="/produtos">
+        <a href="/">
             <h1 class="titulo">PET PAH</h1>
         </a>
         </div>
@@ -33,7 +33,7 @@
       </div>
 
       <div>
-        <p>{{ !empty(Auth::user()) ? Auth::user()->nome  : 'Bem vindo' }}</p>
+        <p>{{ !empty(Auth::user()) ? Auth::user()->name  : 'Bem vindo' }}</p>
       </div>
 
       <div class="entremsg"> 
@@ -48,10 +48,10 @@
             <a href="/login">Entre ou cadastre-se</a> 
         @endif
 
-    </div>  
+      </div>  
 
     <div>
-        <a  href="/carrinho" ><img src="{{ asset('media/imagens/img/cart.png') }}" alt="cart"></a>
+      <a  href="/carrinho" ><img src="{{ asset('media/imagens/img/cart.png') }}" alt="cart"></a>
       0 item
     </div>
 

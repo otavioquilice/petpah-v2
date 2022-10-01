@@ -1,0 +1,60 @@
+:root{
+    --cinza-principal: #333333;
+    --amarelo-botoes: #F6E266;
+    --verde-botoes: #85DEB7;
+    --cor-de-fundo: #ffffff;
+    --fonte-logo: 'Elsie', cursive;
+}
+
+body{
+    margin: 0;
+}
+
+header{
+    background-color: #FFDB99;
+    padding: 20px 0; /*20px pra cima e baixo. 0px pra direita e esquerda.*/
+    height: 35px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.container{
+    display: flex;
+    align-items: center;    
+}
+
+.container div{
+
+    padding: 10px;
+}
+
+.titulo{
+    font-family: var(--fonte-logo);
+    font-style: italic;
+}
+
+.busca{
+    border-radius: .7rem;
+    width: 300px;
+    height: 30px;
+}
+
+
+.bntbusca{
+    position: relative;
+    left: 50px;
+    top: 5px;
+}
+
+.lupabusca{
+    position: relative;
+    left: 40px;
+    top: 8px;
+}
+
+.entremsg{
+    position: relative;
+    top: 20px;
+    right: 90px;
+}
