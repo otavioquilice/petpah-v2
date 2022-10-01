@@ -26,7 +26,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->route('produtos');
+        return redirect()->route('home');
 
         // return redirect()->intended(RouteServiceProvider::HOME);
     }
@@ -40,11 +40,11 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/produtos');
+        return redirect()->route('home');
     }
 
     public function logado(Request $request)
     {
-        return redirect()->route('produtos');
+        return redirect()->route('home');
     }
 }
