@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('uuid')->unique();
             $table->text('nome');
-            $table->timestamps();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
         });
     }

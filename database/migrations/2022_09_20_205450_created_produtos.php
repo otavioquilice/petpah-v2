@@ -21,10 +21,9 @@ return new class extends Migration
             $table->text('descricao');
             $table->text('codigo');
             $table->integer('quantidade');
-            $table->double('preco_id');
-            $table->timestamps();
-
-            $table->foreign('tipo_produto_id')->references('id')->on('tipo_produtos');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
         });
     }

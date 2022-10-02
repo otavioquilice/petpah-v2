@@ -19,9 +19,9 @@ return new class extends Migration
             $table->unsignedBigInteger('produto_id');
             $table->float('preco');
             $table->boolean('ativo');
-            $table->timestamps();
-
-            $table->foreign('produto_id')->references('id')->on('produtos');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
         });
     }

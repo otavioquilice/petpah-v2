@@ -8,30 +8,29 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Produto extends Model
 {
 	use SoftDeletes;
-    use Uuid;
-	protected $table = "produto";
+    // use Uuid;
+	protected $table = "produtos";
 	protected $fillable = [
 		"uuid",
-		"tipo_produto_id",
+		"id",
+		"tipo_produtos_id",
 		"nome",
 		"descricao",
 		"codigo",
 		"quantidade",
-		"preco_id",
 		"created_at",
         "updated_at",
         "deleted_at",
 
 	];
 
-
 	public function preco()
 	{
-		return $this->belongToMany(Produtos::class, "id", "produto_id");
+		return $this->hasMany(PrecoProduto::class, "produto_id", "id");
 	}
 
 	public function tipo_produto()
 	{
-		return $this->hasone(TipoProduto::class, "tipo_produto_id", "id");
+		return $this->hasOne(TipoProduto::class, "tipo_produtos_id", "id");
 	}
 }

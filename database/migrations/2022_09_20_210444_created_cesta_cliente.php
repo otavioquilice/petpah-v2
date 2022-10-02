@@ -20,11 +20,9 @@ return new class extends Migration
             $table->unsignedBigInteger('produto_id');
             $table->boolean('ativo');
             $table->integer('quantidade');
-            $table->timestamps();
-
-            $table->foreign('cliente_id')->references('id')->on('users');
-            $table->foreign('produto_id')->references('id')->on('produtos');
-
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

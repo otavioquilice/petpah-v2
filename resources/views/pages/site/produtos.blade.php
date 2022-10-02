@@ -67,68 +67,15 @@
         </nav>
 
         <ul class="produtos">
-            <li>
-                <span class="material-symbols-rounded favorito">favorite</span>
-                <img src="{{ asset('media/imagens/img2/prod1.png') }}" alt="item1">
-                <p class="produtos-preco">R$ 80,00</p>
-                <h2>Ração para<br>
-                    Cachorro colorido</h2>
-                <span class="material-symbols-rounded circulo">add_circle</span>
-            </li>
-
-            <li>
-                <span class="material-symbols-rounded favorito">favorite</span>
-                <img src="{{ asset('media/imagens/img2/prod2.png') }}" alt="item2">
-                <p class="produtos-preco">R$ 50,00</p>
-                <h2>Ração para<br>
-                    Gatos sabor peixe</h2>
-                <span class="material-symbols-rounded circulo">add_circle</span>
-            </li>
-
-            <li>
-                <span class="material-symbols-rounded favorito">favorite</span>
-                <img src="{{ asset('media/imagens/img2/prod3.png') }}" alt="item3">
-                <p class="produtos-preco">R$ 100,00</p>
-                <h2>Fralda para<br>
-                    cachorro</h2>
-                <span class="material-symbols-rounded circulo">add_circle</span>
-            </li>
-
-            <li>
-                <span class="material-symbols-rounded favorito">favorite</span>
-                <img src="{{ asset('media/imagens/img2/prod4.png') }}" alt="item4">
-                <p class="produtos-preco">R$ 30,00</p>
-                <h2>Brinquedo para<br>
-                    cachorro</h2>
-                <span class="material-symbols-rounded circulo">add_circle</span>
-            </li>
-
-            <li>
-                <span class="material-symbols-rounded favorito">favorite</span>
-                <img src="{{ asset('media/imagens/img2/prod5.png') }}" alt="item5">
-                <p class="produtos-preco">R$ 25,00</p>
-                <h2>Saquinho para<br>
-                    necessidades pet</h2>
-                <span class="material-symbols-rounded circulo">add_circle</span>
-            </li>
-
-            <li>
-                <span class="material-symbols-rounded favorito">favorite</span>
-                <img src="{{ asset('media/imagens/img2/prod6.png') }}" alt="item6">
-                <p class="produtos-preco">R$ 70,00</p>
-                <h2>Ração para<br>
-                    cachorro 10kg</h2>
-                <span class="material-symbols-rounded circulo">circle_notifications</span>
-            </li>
-
-            <li>
-                <span class="material-symbols-rounded favorito">favorite</span>
-                <img src="{{ asset('media/imagens/img2/prod7.png') }}" alt="item7">
-                <p class="produtos-preco">R$ 40,00</p>
-                <h2>Petisco para<br>
-                    cachorro frango</h2>
-                <span class="material-symbols-rounded circulo">circle_notifications</span>
-            </li>
+            @foreach($produtos as $produto)
+                <li>
+                    <span class="material-symbols-rounded favorito">favorite</span>
+                    <img src="{{ asset('media/imagens/img2/prod'.$produto->id .'.png') }}" alt="item1">
+                    <p class="produtos-preco">R$ {{ $produto->preco[0]->preco}}</p>
+                    <h2>{{$produto->nome}}</h2>
+                    <span class="material-symbols-rounded circulo">add_circle</span>
+                </li>
+            @endforeach
         </ul>
     </main>
 

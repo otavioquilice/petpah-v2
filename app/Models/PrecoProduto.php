@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class PrecoProduto extends Model
 {
 	use SoftDeletes;
-    use Uuid;
-	protected $table = "tipo_produtos";
+    // use Uuid;
+	protected $table = "preco_produtos";
 	protected $fillable = [
 		"uuid",
 		"produto_id",
@@ -21,8 +21,4 @@ class PrecoProduto extends Model
 
 	];
 
-    public function produto()
-	{
-		return $this->hasOne(Produto::class, "produto_id", "id");
-	}
 }
