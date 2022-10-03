@@ -5,14 +5,14 @@ use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class TipoProduto extends Model
+class CestaCliente extends Model
 {
 	use SoftDeletes;
     use Uuid;
-	protected $table = "cesta_clinte";
+	protected $table = "cesta_clientes";
 	protected $fillable = [
 		"uuid",
-		"nome",
+		'id',
 		"cliente_id",
 		"produto_id",
 		"ativo",
@@ -26,11 +26,11 @@ class TipoProduto extends Model
 
     public function produto()
 	{
-		return $this->hasOne(Produtos::class, "produto_id", "id");
+		return $this->hasMany(Produtos::class, "produto_id", "id");
 	}
 
     public function cliente()
 	{
-		return $this->hasOne(User::class, "cliente_id", "id");
+		return $this->hasMany(User::class, "cliente_id", "id");
 	}
 }

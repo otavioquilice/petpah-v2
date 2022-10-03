@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
+use App\Http\Controllers\CarrinhoController;
 use App\Http\Controllers\SiteController;
 
 /*
@@ -50,3 +51,7 @@ Route::get('/produtos',[SiteController::class, 'view_produtos'])->name('produtos
 Route::get('/carrinho',[SiteController::class, 'view_carrinho'])->name('carrinho');
 Route::get('/',[SiteController::class, 'view_home'])->name('home');
 // Route::get('/carrinho',[SiteController::class, 'tela_carrinho'])->middleware('auth')->name('carrinho');
+
+
+// Ajax
+Route::post('/ajax/add-produto-carrinho',[CarrinhoController::class, 'ajaxAddCarrinho'])->name('adicionar-produto-caarrinho');

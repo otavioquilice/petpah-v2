@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Produtos</title>
     <link rel="stylesheet" href="{{ asset('css/produtos.css') }}">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 </head>
 
 <body>
@@ -49,7 +51,7 @@
       
             <div>
                 <a  href="/carrinho" ><img src="{{ asset('media/imagens/img/cart.png') }}" alt="cart"></a>
-              0 item
+              <span id='qtd_carrinho'> 0 </span><span> Produtos</span>
             </div>
       
           </div>
@@ -73,7 +75,8 @@
                     <img src="{{ asset('media/imagens/img2/prod'.$produto->id .'.png') }}" alt="item1">
                     <p class="produtos-preco">R$ {{ $produto->preco[0]->preco}}</p>
                     <h2>{{$produto->nome}}</h2>
-                    <span class="material-symbols-rounded circulo">add_circle</span>
+                    <button type="button" class="material-symbols-rounded circulo add-produto-carrinho" data-produto-id="{{ $produto->id }}">add_circle</button>
+                    <button type="button" class="material-symbols-rounded circulo remove-produto-carrinho" data-produto-id="{{ $produto->id }}">remove_circle</button>
                 </li>
             @endforeach
         </ul>
@@ -104,3 +107,44 @@
     </footer>
 </body>
 </html>
+
+<script type="text/javascript">
+
+    $(document).ready(function()
+	{
+        $(document).on("click", ".add-produto-carrinho", function(){
+
+			var produto_id = $(this).attr('data-produto-id');
+
+            $.ajax({
+                url: "/ajax/add-produto-carrinho",
+                type: "post",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {
+                    produto_id: produto_id
+                },
+                dataType: "json",
+                success: function (result)
+                {
+                    $('#qtd_carrinho').text(result);
+                    
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    swal.fire(
+                        'Erro!',
+                        'Não foi adicionar o produto no carrinho',
+                        'error'
+                    );
+                }
+            });
+		});
+
+    });
+
+    // setTimeout(function(){
+    //     window.location.href = window.location.href.replace( /[\?#].*|$/, "?show_atendimentos=true" );
+    // }, 1000)
+
+</script>

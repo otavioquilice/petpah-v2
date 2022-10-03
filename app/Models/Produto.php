@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Produto extends Model
 {
 	use SoftDeletes;
-    // use Uuid;
+	use Uuid;
 	protected $table = "produtos";
 	protected $fillable = [
 		"uuid",
@@ -32,5 +32,10 @@ class Produto extends Model
 	public function tipo_produto()
 	{
 		return $this->hasOne(TipoProduto::class, "tipo_produtos_id", "id");
+	}
+
+	public function cesta_cliente()
+	{
+		return $this->hasMany(CestaCliente::class, "produto_id", "id");
 	}
 }
