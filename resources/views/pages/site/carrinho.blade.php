@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pet Pah | Carrinho</title>
-  <link rel="stylesheet" href="carrinho.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="{{asset('css/carrinho.css')}}">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -26,7 +26,7 @@
       </div>
 
       <div>
-        <img src="img/login.png" alt="login">
+        <img src="{{ asset('media/imagens/img/login.png') }}" alt="login">
       </div>
 
       <div>
@@ -38,7 +38,7 @@
       </div>
 
       <div>
-        <img src="img/cart.png" alt="cart">
+        <img src="{{ asset('media/imagens/img/cart.png') }}" alt="cart">
         0 item
       </div>
 
@@ -54,7 +54,7 @@
         <li class="dados_produtos">
           <div class="info1">
             <h3 class="titulo_produto">Ração para cachorro colorido</h3>
-            <img src="img3/prod1 1.png" alt="item1" class="imagem_produto">   
+            <img src="{{ asset('media/imagens/img2/prod1.png') }}" alt="item1" class="imagem_produto">   
             <p class="preco_produto">R$ 80,00</p>
                   
           </div>
@@ -76,7 +76,7 @@
         <li class="dados_produtos">
           <div class="info1">
             <h3 class="titulo_produto">Fralda para cachorro</h3>
-            <img src="img3/prod3.png" alt="item1" class="imagem_produto">
+            <img src="{{ asset('media/imagens/img2/prod3.png') }}" alt="item1" class="imagem_produto">
             <p class="preco_produto">R$ 100,00</p>
             
           </div>
@@ -129,7 +129,7 @@
 
     <div class="doacoes">
       <div class="titulo_doacao">
-        <img src="img3/cuidado.png" alt="cuidado doação">
+        <img src="{{ asset('media/imagens/img3/cuidado.png') }}" alt="cuidado doação">
         <h1 class="titulo_doacoes">Doações</h1>
       </div>
 
@@ -151,7 +151,7 @@
 </body>
 
 <footer class="rodape">
-  <img src="img/logoprtpah003 1.png" alt="Petpah" class="rodape__logo">
+  <img src="{{ asset('media/imagens/img/logoprtpah003 1.png') }}" alt="Petpah" class="rodape__logo">
   <h2 class="proposito">Pet Pah Propósito</h2>
   <p class="prposito__descricao">Lorem ipsum, dolor sit amet consectetur adipisicing elit. A ipsa aspernatur, qui
     dolorem consequatur quasi, ad esse excepturi accusantium odio dolor autem eveniet dignissimos delectus mollitia
@@ -167,13 +167,13 @@
   </section>
   <ul class="redes__lista">
     <li class="redes__icine">
-      <img src="img/facebook.png" alt="ícone facebook">
+      <img src="{{ asset('media/imagens/img/facebook.png') }}" alt="ícone facebook">
     </li>
     <li class="redes__icine">
-      <img src="img/instagram.png" alt="ícone instagram">
+      <img src="{{ asset('media/imagens/img/instagram.png') }}" alt="ícone instagram">
     </li>
     <li class="redes__icine">
-      <img src="img/youtube.png" alt="ícone youtube">
+      <img src="{{ asset('media/imagens/img/youtube.png') }}"alt="ícone youtube">
     </li>
   </ul>
 </footer>
