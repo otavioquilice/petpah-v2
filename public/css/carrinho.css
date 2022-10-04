@@ -12,7 +12,7 @@ body{
 
 header{
     background-color: #FFDB99;
-    padding: 20px 0; /*20px pra cima e baixo. 0px pra direita e esquerda.*/
+    padding: 35px 0; /*20px pra cima e baixo. 0px pra direita e esquerda.*/
     height: 35px;
     display: flex;
     justify-content: center;
@@ -65,9 +65,8 @@ nav ul li a{
     text-align: center;
     color: rgb(102, 102, 105);
     font-size: 18px;
-
-
 }
+
 nav ul li a:hover{
     color: black;
     font-weight: bold;
@@ -87,109 +86,226 @@ nav ul li a:hover{
 
 /*----main carrinho----*/
 
+.main_produtos{
+    padding: 2% 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.carrinho_container{
+    display:flex;
+    width: 100%;
+    align-items: flex-start; 
+    justify-content: space-around;
+    
+}
+
 .produtos{ /*posicionando os produtos, alinhando conforme a caixa*/
-    width: 940px;
-    margin: 0 auto;
-    padding: 0px 50px; /*50px pra cima e 0 pra direita e esquerda*/
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    margin: 0;
+    padding: 0;
 }
 
-.produtos li{
-    display: inline-block; /*deixar a lista de lado*/
-    width: 50%; /*alinhando os anuncios*/
-    height: 180px;
-    vertical-align: top; /*alinhar pela linha de cima (Geralmente é alinhado pela linha de baixo)*/
-    margin: 10px;
-    box-sizing: border-box;/*para o espaçamento lateral fique dentro do percentual. Os 20px do padding fica desntro do 30% width*/
-    border: 1px solid #ffffff;
-    border-radius: 40px; /*Se quiser fazer bordas com tamanhos diferentes é digitar seguindo a ordem*/
-}
-
-li h3{
-    position: relative;
-    bottom: 5px;
-    left: 30px;
-    font-size: 25px;
-}
-
-li img{
-    position: relative;
-    bottom: 10px;
-    left: 30px;
-}
-
-.lixo{
-    position: relative;
-    bottom: 160px;
-    left: 250px;
-}
-
-.produtos-preco{
-    position: relative;
-    bottom: 120px;
-    left: 200px;
-}
- .quantidade{
-    position: relative;
-    bottom: 85px;
-    left: 220px;
+.dados_produtos{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    border: 1px solid gray;
     border-radius: 5px;
-    width: 40px;
- }
-
- .combobox{
-    box-shadow: 3rem;
-    position: relative;
-    bottom: 130px;
-    left: 368px; 
-    border-radius: 5px;
- }
-
-
-li h4{
-    position: relative;
-    bottom: 30px;
-    left: 30px; 
+    padding: 2% 2%;
+    margin-bottom: 1rem;
 }
 
- .combobox2{
-    position: relative;
-    bottom: 50px;
-    left: 290px; 
-    border-radius: 5px;
- }
-
- .doacoes{
-    border: solid 1px #333333;
-    display: block;
-    margin: 0 0 0 220px;
-    padding: 50px;
-    width: 30%;
-    height: 30px;
- }
-
- .doacao{
-    position: relative;
-    bottom: 70px;
-    left: 60px; 
+.info1{
+   display: flex;
+   flex-wrap: wrap;
+   width: 50%;
+   justify-content: space-between;
+   align-items: flex-end;
 }
 
- .combobox3{
-    position: relative;
-    bottom: 110px;
-    left: 250px; 
+.titulo_produto{
+    width: 100%;
+}
+
+.imagem_produto{
+    width: 40%;
+}
+
+.info2{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.quantidade_produto{
+    width: 20%;    
+}
+
+.tipo_produto{
+    width: 60%;    
+}
+
+.opcao_entrega{
+    list-style-type: none;
+}
+
+.forma_entrega{
+    width: 100%;
+}
+
+.descricao_entrega{
+    width: 100%;  
+    display: flex;
+    justify-content: flex-end;  
+}
+
+.dropdown2{
+    padding: 2px 0;
+}
+
+.resumo{
+    display: flex;
+    width: 25%;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.resumo_produto{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.resumo_produto_titulo{
+    width: 70%;
+}
+
+.resumo_produto_valor{
+    width: 20%;
+
+}
+
+.resumo_divisao{
+    margin: 1rem auto;
+    width: 100%;
+    border-bottom: 1px solid black;
+    height: 1px;
+}
+
+.resumo_total{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.resumo_total_titulo{
+    width: 70%;
+}
+
+.resumo_total_valor{
+    width: 20%;
+}
+
+/* .valor_resumo1{
+    display: flex;
+    justify-content: flex-end;
+    margin: 50px auto;
+}
+
+.valor_resumo2{
+    display: flex;
+    justify-content: flex-end;
+    margin: 50px auto;
+} */
+
+.bt_pagamento{
     border-radius: 5px;
+    border: none;
+    padding: 7px 10px;
+    background-color: #857AF5;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 1s background;
+    cursor: pointer;
+    margin: 0 5rem;
  }
+
+.bt_contimuar{
+    border-radius: 5px;
+    border: #857AF5;
+    padding: 7px 10px;
+    background-color: #ffffff;
+    color: #857AF5;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 1s background;
+    cursor: pointer;
+    margin: 1rem 5rem;
+ }
+
+.doacoes{
+    width: 50%;
+}
+
+.titulo_doacao{
+    display: flex;
+    align-items: center;
+    margin: 0 50px 0x;
+    padding: 0 2rem;
+} 
+
+.selecione_ong{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 2% 2%;
+    margin: 0 0 0 3rem;
+}
+
+.selecione{
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 2rem;
+}
+
+.dropdown3{
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
+    margin: 0 2rem;
+}
+
  .selecionar{
-    position: relative;
-    bottom: 80px;
-    left: 40px; 
     border-radius: 5px;
+    border: none;
+    padding: 7px 40px;
+    background-color: #857AF5;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 1s background;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 1rem 10rem 0;
  }
+
+ .selecionar:hover{
+    background: #a49ff0;
+}
 
 /*----------------------Footer------------*/
+
 .rodape {
     text-align: center;
-    margin: 5em 3em;
+    margin: 2em 3em;
 }
 
 .rodape__logo{
@@ -203,7 +319,7 @@ li h4{
 
 .prposito__descricao{
     font-family: var(--fonte-secundaria);  
-    margin: 1em 0;
+    margin: auto 0;
     color: var(--cinza-secundario);
     font-size: 16px; 
 }
@@ -216,7 +332,15 @@ li h4{
 
 .redes__lista{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     list-style-type: none;
-    text-align: center;
+    align-items: center;
+    width: 20%;
+    margin: auto;
+    padding: 0;
+}
+
+.redes__icine{
+    width: 25%;
+    
 }
