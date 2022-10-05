@@ -49,6 +49,20 @@ class CarrinhoController extends Controller
                 $qtd_itens_cesta += $item->quantidade;
             }
         }
+
+        if(!empty(Auth::user()) && !empty(CestaCliente::where('produto_id', $produto->id)->where('cliente_id', Auth::user()->id)->first()->quantidade)){
+
+            $prod = CestaCliente::where('produto_id', $produto->id)->where('cliente_id', Auth::user()->id)->first();
+            $count_produto = [
+                'produto_id' => $prod->produto_id,
+                'quantidade' => $prod->quantidade
+            ];
+            return response()->json([
+                'qtd_itens_cesta' => $qtd_itens_cesta,
+                'count_produto' => $count_produto,
+            ]);
+        }  
+
         return $qtd_itens_cesta;
     }
 
@@ -62,13 +76,15 @@ class CarrinhoController extends Controller
         $produto_carrinho = CestaCliente::where('produto_id',$produto_id)->where('cliente_id', $id_user)->first();
         if(!empty($produto_carrinho) && $produto_carrinho->count()){
 
-            //Caso o produto já tenha sido adicionado no carrinho, então atualizar a quantidade somando mais um produto.
+            //atualizar a quantidade removendo mais um produto.
             $produto_carrinho->quantidade -= 1;
             $produto_carrinho->save();
 
             //Caso o produto seja zerado do carrinho então deletar
             if($produto_carrinho->quantidade == 0){
+                $qtd_carrinho = 0;
                 $produto_carrinho->delete();
+                
             } 
 
             $produto->quantidade += 1;
@@ -81,6 +97,31 @@ class CarrinhoController extends Controller
                     $qtd_itens_cesta += $item->quantidade;
                 }
             }
+
+            if(!empty(Auth::user()) && !empty(CestaCliente::where('produto_id', $produto->id)->where('cliente_id', Auth::user()->id)->first())){
+
+                $prod = CestaCliente::where('produto_id', $produto->id)->where('cliente_id', Auth::user()->id)->first();
+                $count_produto = [
+                    'produto_id' => $prod->produto_id,
+                    'quantidade' => $prod->quantidade
+                ];
+                return response()->json([
+                    'qtd_itens_cesta' => $qtd_itens_cesta,
+                    'count_produto' => $count_produto,
+                ]);
+            }else{
+
+                $count_produto = [
+                    'produto_id' => $produto_id,
+                    'quantidade' => $qtd_carrinho
+                ];
+
+                return response()->json([
+                    'qtd_itens_cesta' => $qtd_itens_cesta,
+                    'count_produto' => $count_produto,
+                ]);
+                
+            }  
             return $qtd_itens_cesta;
             
         }else{

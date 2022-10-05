@@ -82,12 +82,15 @@
         <ul class="produtos">
             @foreach($produtos as $produto)
                 <li>
-                    <span class="material-symbols-rounded favorito">favorite</span>
-                    <img src="{{ asset('media/imagens/img2/prod'.$produto->id .'.png') }}" alt="item1">
-                    <p class="produtos-preco">R$ {{ $produto->preco[0]->preco}}</p>
-                    <h2>{{$produto->nome}}</h2>
-                    <button type="button" class="material-symbols-rounded circulo add-produto-carrinho" data-produto-id="{{ $produto->id }}">add_circle</button>
-                    <button type="button" class="material-symbols-rounded circulo remove-produto-carrinho" data-produto-id="{{ $produto->id }}">remove_circle</button>
+                    <div>
+                        <span class="material-symbols-rounded favorito">favorite</span>
+                        <img src="{{ asset('media/imagens/img2/prod'.$produto->id .'.png') }}" alt="item1">
+                        <p class="produtos-preco">R$ {{ $produto->preco[0]->preco}}</p>
+                        <h2>{{$produto->nome}}</h2>
+                        <button type="button" class="material-symbols-rounded circulo add-produto-carrinho" data-produto-id="{{ $produto->id }}">add_circle</button>
+                        <button type="button" class="material-symbols-rounded circulo remove-produto-carrinho" data-produto-id="{{ $produto->id }}">remove_circle</button>
+                    </div>
+                    <div id="count_produto_id_{{$produto->id}}"> {{ (!empty(Auth::user()) && !empty(\app\Models\CestaCliente::where('produto_id', $produto->id)->where('cliente_id', Auth::user()->id)->first()->quantidade) ? \app\Models\CestaCliente::where('produto_id', $produto->id)->where('cliente_id', Auth::user()->id)->first()->quantidade .' Iten(s) adicionado(s)' : '0 Iten(s) adicionado(s)') }} </div>
                 </li>
             @endforeach
         </ul>
@@ -152,7 +155,8 @@
                     dataType: "json",
                     success: function (result)
                     {
-                        $('#qtd_produto_carrinho').text(result+' Produto(s)');
+                        $('#qtd_produto_carrinho').text(result.qtd_itens_cesta+' Produto(s)');
+                        $('#count_produto_id_'+produto_id).text(result.count_produto.quantidade+' Iten(s) adicionado(s)')
                         
                     },
                     error: function (xhr, ajaxOptions, thrownError) {
@@ -194,13 +198,14 @@
                     dataType: "json",
                     success: function (result)
                     {
-                        $('#qtd_produto_carrinho').text(result+' Produto(s)');
+                        $('#qtd_produto_carrinho').text(result.qtd_itens_cesta+' Produto(s)');
+                        $('#count_produto_id_'+produto_id).text(result.count_produto.quantidade+' Iten(s) adicionado(s)')
                         
                     },
                     error: function (xhr, ajaxOptions, thrownError) {
                         swal.fire(
                             'Erro!',
-                            'Não foi possivel rmeover o produto no carrinho',
+                            'Não foi possivel remover o produto no carrinho',
                             'error'
                         );
                     }
