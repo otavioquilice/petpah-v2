@@ -14,9 +14,9 @@
   <header>
 
     <div class="container">
-      <div>
-        <h1 class="titulo">PET PAH</h1>
-      </div>
+      <a href="/">
+          <h1 class="titulo">PET PAH</h1>
+      </a>
 
       <div>
         <form>
@@ -30,17 +30,37 @@
       </div>
 
       <div>
-        <p>Bem vindo</p>
+        <p>{{ !empty(Auth::user()) ? Auth::user()->name  : 'Bem vindo' }}</p>
       </div>
+      <div class="entremsg"> 
+        @if(!empty(Auth::user()))
+        <form class="form w-100" method="POST" action="/logout">
+            @csrf
+            <div class="d-grid mb-10">
+                <button type="submit" class="btn btn-primary">Sair</button>
+            </div>
+        </form>
+        @else
+            <a href="/login">Entre ou cadastre-se</a> 
+        @endif
 
-      <div class="entremsg">
-        <p>Entre ou cadastre-se</p>
-      </div>
+    </div>
 
       <div>
-        <img src="{{ asset('media/imagens/img/cart.png') }}" alt="cart">
-        0 item
+        <a  href="/carrinho" ><img src="{{ asset('media/imagens/img/cart.png') }}" alt="cart"></a>
+        @php
+          if(Auth::user()){
+            $itens_cesta = Auth::user()->cesta_produtos()->get();
+            $qtd_itens_cesta = 0;
+            if(!empty($itens_cesta)){
+                foreach($itens_cesta as $item){
+                    $qtd_itens_cesta += $item->quantidade;
+                }
+            }
+          }
+        @endphp
       </div>
+      <div id='qtd_produto_carrinho'>{{ !empty($qtd_itens_cesta) ? $qtd_itens_cesta.' Produto(s)' : '0' }}</div>
 
     </div>
   </header>
@@ -63,7 +83,7 @@
 
           <div name="select" class="info2">
             <span class="material-symbols-rounded lixo">delete</span>
-            <input type="number" value="0" class="quantidade_produto"/> 
+            <input type="number" value="{{$item_prod->quantidade}}" class="quantidade_produto"/> 
             <select class="tipo_produto">
               <option value="valor3" selected>Selecione o proposito dessa compra</option>
               <option value="valor2">Consumo proprio</option>

@@ -43,8 +43,19 @@
         
                 <div>
                     <a  href="/carrinho" ><img src="{{ asset('media/imagens/img/cart.png') }}" alt="cart"></a>
-                    0 item
+                    @php
+                        if(Auth::user()){
+                            $itens_cesta = Auth::user()->cesta_produtos()->get();
+                            $qtd_itens_cesta = 0;
+                            if(!empty($itens_cesta)){
+                                foreach($itens_cesta as $item){
+                                    $qtd_itens_cesta += $item->quantidade;
+                                }
+                            }
+                        }
+                    @endphp
                 </div>
+                <div id='qtd_produto_carrinho'>{{ !empty($qtd_itens_cesta) ? $qtd_itens_cesta.' Produto(s)' : '0' }}</div>
         
             </div>
         </header>

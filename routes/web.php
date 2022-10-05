@@ -55,3 +55,4 @@ Route::get('/',[SiteController::class, 'view_home'])->name('home');
 
 // Ajax
 Route::post('/ajax/add-produto-carrinho',[CarrinhoController::class, 'ajaxAddCarrinho'])->name('adicionar-produto-caarrinho');
+Route::post('/ajax/remove-produto-carrinho',[CarrinhoController::class, 'ajaxRemoveCarrinho'])->name('remover-produto-caarrinho');

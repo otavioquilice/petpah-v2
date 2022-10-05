@@ -51,8 +51,19 @@
       
             <div>
                 <a  href="/carrinho" ><img src="{{ asset('media/imagens/img/cart.png') }}" alt="cart"></a>
-              <span id='qtd_carrinho'> 0 </span><span> Produtos</span>
+                @php
+                    if(Auth::user()){
+                        $itens_cesta = Auth::user()->cesta_produtos()->get();
+                        $qtd_itens_cesta = 0;
+                        if(!empty($itens_cesta)){
+                            foreach($itens_cesta as $item){
+                                $qtd_itens_cesta += $item->quantidade;
+                            }
+                        }
+                    }
+                @endphp
             </div>
+            <div id='qtd_produto_carrinho'>{{ !empty($qtd_itens_cesta) ? $qtd_itens_cesta.' Produto(s)' : '0' }}</div>
       
           </div>
     </header>
@@ -108,43 +119,96 @@
 </body>
 </html>
 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
 
     $(document).ready(function()
 	{
         $(document).on("click", ".add-produto-carrinho", function(){
 
+            var logado  = {{ !empty(Auth::user()) ? 1 : 0 }};
+
 			var produto_id = $(this).attr('data-produto-id');
 
-            $.ajax({
-                url: "/ajax/add-produto-carrinho",
-                type: "post",
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                data: {
-                    produto_id: produto_id
-                },
-                dataType: "json",
-                success: function (result)
-                {
-                    $('#qtd_carrinho').text(result);
-                    
-                },
-                error: function (xhr, ajaxOptions, thrownError) {
-                    swal.fire(
-                        'Erro!',
-                        'Não foi adicionar o produto no carrinho',
-                        'error'
-                    );
-                }
-            });
+            if(logado == 0){
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Antes de adicionar o produto no carrinho é necessário fazer o login!',
+                    footer: '<a href="/login">Clique aqui para fazer o login.</a>'
+                })
+
+            }else{
+                $.ajax({
+                    url: "/ajax/add-produto-carrinho",
+                    type: "post",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: {
+                        produto_id: produto_id
+                    },
+                    dataType: "json",
+                    success: function (result)
+                    {
+                        $('#qtd_produto_carrinho').text(result+' Produto(s)');
+                        
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        swal.fire(
+                            'Erro!',
+                            'Não foi adicionar o produto no carrinho',
+                            'error'
+                        );
+                    }
+                });
+            }
 		});
+
+        $(document).on("click", ".remove-produto-carrinho", function(){
+
+            var logado  = {{ !empty(Auth::user()) ? 1 : 0 }};
+
+            var produto_id = $(this).attr('data-produto-id');
+
+            if(logado == 0){
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Antes de adicionar ou remover o produto no carrinho é necessário fazer o login!',
+                    footer: '<a href="/login">Clique aqui para fazer o login.</a>'
+                })
+
+            }else{
+                $.ajax({
+                    url: "/ajax/remove-produto-carrinho",
+                    type: "post",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: {
+                        produto_id: produto_id
+                    },
+                    dataType: "json",
+                    success: function (result)
+                    {
+                        $('#qtd_produto_carrinho').text(result+' Produto(s)');
+                        
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        swal.fire(
+                            'Erro!',
+                            'Não foi possivel rmeover o produto no carrinho',
+                            'error'
+                        );
+                    }
+                });
+            }
+        });
 
     });
 
-    // setTimeout(function(){
-    //     window.location.href = window.location.href.replace( /[\?#].*|$/, "?show_atendimentos=true" );
-    // }, 1000)
 
 </script>
