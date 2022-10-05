@@ -51,11 +51,13 @@
 
         <h1>Carrinho</h1>
 
+        @foreach($produtos as $item_prod)
+        
         <li class="dados_produtos">
           <div class="info1">
             <h3 class="titulo_produto">Ração para cachorro colorido</h3>
-            <img src="{{ asset('media/imagens/img2/prod1.png') }}" alt="item1" class="imagem_produto">   
-            <p class="preco_produto">R$ 80,00</p>
+            <img src="{{ asset('media/imagens/img2/prod'.$item_prod->produto_id .'.png') }}" alt="item1">  
+            <p class="produtos-preco">R$ {{ $item_prod->produto->preco[0]->preco}}</p>
                   
           </div>
 
@@ -72,25 +74,9 @@
           </div>
 
         </li>
+        @endforeach
 
-        <li class="dados_produtos">
-          <div class="info1">
-            <h3 class="titulo_produto">Fralda para cachorro</h3>
-            <img src="{{ asset('media/imagens/img2/prod3.png') }}" alt="item1" class="imagem_produto">
-            <p class="preco_produto">R$ 100,00</p>
-            
-          </div>
 
-          <div name="select" class="info2">
-          <span class="material-symbols-rounded lixo">delete</span>
-          <input type="number" value="0" class="quantidade_produto" />
-            <select class="tipo_produto">
-              <option value="valor3" selected>Selecione o proposito dessa compra</option>
-              <option value="valor2">Consumo proprio</option>
-              <option value="valor1">Doação para ONGs</option>
-            </select>
-          </div>
-        </li>
 
         <li class="opcao_entrega">
           <div class="forma_entrega">
@@ -105,25 +91,22 @@
 
       </ul> 
     
+      
+        <div class="resumo">
+          <h1>Resumo</h1>
 
-      <div class="resumo">
-        <h1>Resumo</h1>
-        <div class="resumo_produto"> <!-- resumo_compra -->
-          <p class="resumo_produto_titulo">Ração para cachorro colorido</p> <!-- resumo_titulo -->
-          <p class="resumo_produto_valor">R$00,00</p>
+          @foreach($produtos as $item_prod)
+            <div class="resumo_produto"> <!-- resumo_compra -->
+              <p class="resumo_produto_titulo">{{ $item_prod->produto->nome}}</p> <!-- resumo_titulo -->
+              <p class="resumo_produto_valor">R$ {{ $item_prod->produto->preco[0]->preco}}</p>
+              
+            </div>
+          @endforeach
+
+          <input type="submit" value="Ir para pagamento" class="bt_pagamento">
+          <input type="submit" value="Continuar comprando" class="bt_contimuar">
         </div>
-        <div class="resumo_produto">
-        <p class="resumo_produto_titulo">Fralda para cachorro</p>
-        <p class="resumo_produto_valor">R$00,00</p>
-        </div>
-        <div class="resumo_divisao"></div>
-        <div class="resumo_total">
-          <p class="resumo_total_titulo">Total<p>
-          <p class="resumo_total_valor">R$00,00</p>
-        </div>
-        <input type="submit" value="Ir para pagamento" class="bt_pagamento">
-        <input type="submit" value="Continuar comprando" class="bt_contimuar">
-      </div>
+      
 
     </div>
 

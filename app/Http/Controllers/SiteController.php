@@ -21,7 +21,7 @@ class SiteController extends Controller
     {
         $id_user  = Auth::user()->id;
 
-        $produtos = CestaCliente::where('cliente_id', $id_user);
+        $produtos = CestaCliente::where('cliente_id', $id_user)->get();
 
         return view('pages.site.carrinho', ['produtos' => $produtos ]);
     }

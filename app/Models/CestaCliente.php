@@ -26,11 +26,13 @@ class CestaCliente extends Model
 
     public function produto()
 	{
-		return $this->hasMany(Produtos::class, "produto_id", "id");
+		return $this->belongsTo(Produto::class, "produto_id", "id");
 	}
 
     public function cliente()
 	{
 		return $this->hasMany(User::class, "cliente_id", "id");
 	}
+
+
 }
