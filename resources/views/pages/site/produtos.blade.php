@@ -1,125 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>Produtos</title>
-    <link rel="stylesheet" href="{{ asset('css/produtos.css') }}">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-</head>
+    @include('pages.layout.head')
 
 <body>
-    <header> 
-        <div class="container">
-            <a href="/">
-                <h1 class="titulo">PET PAH</h1>
-            </a>
-      
-            <div>
-              <form >
-                <span class="material-symbols-rounded lupabusca">search</span>
-                <input class="busca" type="search"  aria-label="Busca"> 
-              </form>
-            </div>
-      
-            <div>
-              <img src="{{ asset('media/imagens/img/login.png') }}" alt="login">
-            </div>
-            
-            <div>
-              <p>{{ !empty(Auth::user()) ? Auth::user()->name  : 'Bem vindo' }}</p>
-            </div>
-      
-            <div class="entremsg"> 
-                @if(!empty(Auth::user()))
-                <form class="form w-100" method="POST" action="/logout">
-                    @csrf
-                    <div class="d-grid mb-10">
-                        <button type="submit" class="btn btn-primary">Sair</button>
-                    </div>
-                </form>
-                @else
-                    <a href="/login">Entre ou cadastre-se</a> 
-                @endif
-
-            </div>  
-      
-            <div>
-                <a  href="/carrinho" ><img src="{{ asset('media/imagens/img/cart.png') }}" alt="cart"></a>
-                @php
-                    if(Auth::user()){
-                        $itens_cesta = Auth::user()->cesta_produtos()->get();
-                        $qtd_itens_cesta = 0;
-                        if(!empty($itens_cesta)){
-                            foreach($itens_cesta as $item){
-                                $qtd_itens_cesta += $item->quantidade;
-                            }
-                        }
-                    }
-                @endphp
-            </div>
-            <div id='qtd_produto_carrinho'>{{ !empty($qtd_itens_cesta) ? $qtd_itens_cesta.' Produto(s)' : '0' }}</div>
-      
-          </div>
-    </header>
+    @include('pages.layout.header')
 
     <main>
 
-        <nav>
-            <ul>
-              <li><a href="/">Home</a></li><bold>|
-              <li><a href="/produtos">Produtos</a></li>|
-              <li><a href="/doacoes">Doações</a></li>|
-              <li><a href="/servicos">Serviços</a></li>
-            </ul>
-        </nav>
+        @include('pages.layout.nav-bar')
+        <br><br>
+        <div class="container">
+            <div class="row col-md-12">
+                @foreach($produtos as $produto)
+                    <div class="col-md-4 border">
+                        <div>
+                            <img src="{{ asset('media/imagens/img2/prod'.$produto->id .'.png') }}" alt="item1">
+                            <h2>{{$produto->nome}}</h2>
+                            <h3 class="produtos-preco">R$ {{ $produto->preco[0]->preco}}</h3>
+                            <a type="button" class="plus-circle- add-produto-carrinho" data-produto-id="{{ $produto->id }}">                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                            </svg></a>
+                            <a type="button" class="x-circle-fill remove-produto-carrinho" data-produto-id="{{ $produto->id }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-minus" viewBox="0 0 16 16">
+                                <path d="M5.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z"/>
+                                <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+                            </svg></a>
+                        </div>
+                        <h5 id="count_produto_id_{{$produto->id}}"> {{ (!empty(Auth::user()) && !empty(\app\Models\CestaCliente::where('produto_id', $produto->id)->where('cliente_id', Auth::user()->id)->first()->quantidade) ? \app\Models\CestaCliente::where('produto_id', $produto->id)->where('cliente_id', Auth::user()->id)->first()->quantidade .' Iten(s) adicionado(s)' : '0 Iten(s) adicionado(s)') }} </h5>
 
-        <ul class="produtos">
-            @foreach($produtos as $produto)
-                <li>
-                    <div>
-                        <span class="material-symbols-rounded favorito">favorite</span>
-                        <img src="{{ asset('media/imagens/img2/prod'.$produto->id .'.png') }}" alt="item1">
-                        <p class="produtos-preco">R$ {{ $produto->preco[0]->preco}}</p>
-                        <h2>{{$produto->nome}}</h2>
-                        <button type="button" class="material-symbols-rounded circulo add-produto-carrinho" data-produto-id="{{ $produto->id }}">add_circle</button>
-                        <button type="button" class="material-symbols-rounded circulo remove-produto-carrinho" data-produto-id="{{ $produto->id }}">remove_circle</button>
+                        <br><br>
                     </div>
-                    <div id="count_produto_id_{{$produto->id}}"> {{ (!empty(Auth::user()) && !empty(\app\Models\CestaCliente::where('produto_id', $produto->id)->where('cliente_id', Auth::user()->id)->first()->quantidade) ? \app\Models\CestaCliente::where('produto_id', $produto->id)->where('cliente_id', Auth::user()->id)->first()->quantidade .' Iten(s) adicionado(s)' : '0 Iten(s) adicionado(s)') }} </div>
-                </li>
-            @endforeach
-        </ul>
+                @endforeach
+            </div>  
+        </div>  
     </main>
-
-    <footer class="rodape">
-        <img src="{{ asset('media/imagens/img/logoprtpah003 1.png') }}" alt="Petpah" class="rodape__logo">
-        <h2 class="proposito">Pet Pah Propósito</h2>
-        <p class="prposito__descricao">Lorem ipsum, dolor sit amet consectetur adipisicing elit. A ipsa aspernatur, qui dolorem consequatur quasi, ad esse excepturi accusantium odio dolor autem eveniet dignissimos delectus mollitia voluptatum quis ab quam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, perspiciatis dicta? Dolor accusamus recusandae officiis ratione debitis aut, obcaecati eum eaque at sint blanditiis est. Asperiores praesentium consequatur aut consequuntur.
-        </p>
-        <section class="contatos">
-            <h3>Contatos</h3>
-            <p>xxxxx@fatec.sp.gov.br</p>
-            <p>Tel.:(11)91234-5678</p>
-            <p>Nossas redes</p>
-        </section>
-        <ul class="redes__lista">
-            <li class="redes__icine">
-                <img src="{{ asset('media/imagens/img/facebook.png') }}" alt="ícone facebook">  
-            </li>
-            <li class="redes__icine">
-                <img src="{{ asset('media/imagens/img/instagram.png') }}" alt="ícone instagram">  
-            </li>
-            <li class="redes__icine">
-                <img src="{{ asset('media/imagens/img/youtube.png') }}" alt="ícone youtube">  
-            </li>
-        </ul>
-    </footer>
 </body>
+@include('pages.layout.footer')
 </html>
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

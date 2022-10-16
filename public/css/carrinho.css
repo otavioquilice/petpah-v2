@@ -1,89 +1,3 @@
-:root{
-    --cinza-principal: #333333;
-    --amarelo-botoes: #F6E266;
-    --verde-botoes: #85DEB7;
-    --cor-de-fundo: #ffffff;
-    --fonte-logo: 'Elsie', cursive;
-}
-
-body{
-    margin: 0;
-}
-
-header{
-    background-color: #FFDB99;
-    padding: 35px 0; /*20px pra cima e baixo. 0px pra direita e esquerda.*/
-    height: 35px;
-    display: flex;
-    justify-content: center;
-}
-
-.container{
-    display: flex;
-    align-items: center;    
-}
-
-.container div{
-    padding: 10px;
-}
-
-.titulo{
-    font-family: var(--fonte-logo);
-    font-style: italic;
-}
-
-.busca{
-    border-radius: .7rem;
-    width: 300px;
-    height: 30px;
-}
-
-
-.bntbusca{
-    position: relative;
-    left: 50px;
-    top: 5px;
-}
-
-/*----main nav bar----*/
-
-nav{
-    text-align: center;
-    margin:0;
-
-}
-nav ul li {
-    text-align: center;
-    display: inline-block;
-    align-items: center;
-    padding: 40px;
-
-}
-
-nav ul li a{
-    text-decoration: none; text-align: center;
-    text-align: center;
-    color: rgb(102, 102, 105);
-    font-size: 18px;
-}
-
-nav ul li a:hover{
-    color: black;
-    font-weight: bold;
-}
-
-.entremsg{
-    position: relative;
-    top: 20px;
-    right: 90px;
-}
-
-.lupabusca{
-    position: relative;
-    left: 40px;
-    top: 8px;
-}
-
 /*----main carrinho----*/
 
 .main_produtos{
@@ -96,11 +10,12 @@ nav ul li a:hover{
     display:flex;
     width: 100%;
     align-items: flex-start; 
-    justify-content: space-around;
+    justify-content: center;
+    padding: 0 60px;
     
 }
 
-.produtos{ /*posicionando os produtos, alinhando conforme a caixa*/
+.produtos_carrinho{ /*posicionando os produtos, alinhando conforme a caixa*/
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -111,8 +26,8 @@ nav ul li a:hover{
 
 .dados_produtos{
     display: flex;
-    width: 100%;
-    justify-content: space-around;
+    width: 80%;
+    justify-content: center;
     border: 1px solid gray;
     border-radius: 5px;
     padding: 2% 2%;
@@ -123,7 +38,6 @@ nav ul li a:hover{
    display: flex;
    flex-wrap: wrap;
    width: 50%;
-   justify-content: space-between;
    align-items: flex-end;
 }
 
@@ -144,142 +58,61 @@ nav ul li a:hover{
 }
 
 .quantidade_produto{
-    width: 20%;    
+    width: 14%; 
+    border-radius: 10px;
+    padding: 8px;
 }
 
 .tipo_produto{
-    width: 60%;    
+    width: 98%; 
+    padding: 5px;  
+    border-radius: 5px; 
 }
 
 .opcao_entrega{
     list-style-type: none;
 }
 
-.forma_entrega{
-    width: 100%;
+.opcao_doacao{
+    list-style-type: none;
 }
-
-.descricao_entrega{
-    width: 100%;  
-    display: flex;
-    justify-content: flex-end;  
-}
-
-.dropdown2{
-    padding: 2px 0;
-}
-
-.resumo{
-    display: flex;
-    width: 25%;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
-.resumo_produto{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.resumo_produto_titulo{
-    width: 70%;
-}
-
-.resumo_produto_valor{
-    width: 20%;
-
-}
-
-.resumo_divisao{
-    margin: 1rem auto;
-    width: 100%;
-    border-bottom: 1px solid black;
-    height: 1px;
-}
-
-.resumo_total{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.resumo_total_titulo{
-    width: 70%;
-}
-
-.resumo_total_valor{
-    width: 20%;
-}
-
-/* .valor_resumo1{
-    display: flex;
-    justify-content: flex-end;
-    margin: 50px auto;
-}
-
-.valor_resumo2{
-    display: flex;
-    justify-content: flex-end;
-    margin: 50px auto;
-} */
-
-.bt_pagamento{
-    border-radius: 5px;
-    border: none;
-    padding: 7px 10px;
-    background-color: #857AF5;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 15px;
-    transition: 1s background;
-    cursor: pointer;
-    margin: 0 5rem;
- }
-
-.bt_contimuar{
-    border-radius: 5px;
-    border: #857AF5;
-    padding: 7px 10px;
-    background-color: #ffffff;
-    color: #857AF5;
-    font-weight: bold;
-    font-size: 15px;
-    transition: 1s background;
-    cursor: pointer;
-    margin: 1rem 5rem;
- }
-
-.doacoes{
-    width: 50%;
-}
+/*---- doaçoes----*/
 
 .titulo_doacao{
     display: flex;
     align-items: center;
-    margin: 0 50px 0x;
-    padding: 0 2rem;
 } 
+
+.doacoes{
+    margin: 0;
+    width: 100%;
+}
 
 .selecione_ong{
     border: 1px solid gray;
     border-radius: 5px;
     padding: 2% 2%;
-    margin: 0 0 0 3rem;
 }
 
 .selecione{
     display: flex;
     justify-content: flex-start;
-    padding: 0 2rem;
+}
+
+.selecione_titulo{
+    margin: 20px 0 18px 0;
+}
+
+.titulo_recebimento{
+    margin: 2px 0;
 }
 
 .dropdown3{
-    width: 85%;
+    width: 90%;
     display: flex;
     justify-content: center;
-    padding: 0 2rem;
-    margin: 0 2rem;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
  .selecionar{
@@ -301,46 +134,124 @@ nav ul li a:hover{
     background: #a49ff0;
 }
 
-/*----------------------Footer------------*/
+/*---forma de entrega---*/
 
-.rodape {
-    text-align: center;
-    margin: 2em 3em;
-}
-
-.rodape__logo{
-    width: 8%; 
-}
-
-.proposito{
-    font-family: var(--fonte-principal);  
-    color: var(--cinza-secundario);
-}
-
-.prposito__descricao{
-    font-family: var(--fonte-secundaria);  
-    margin: auto 0;
-    color: var(--cinza-secundario);
-    font-size: 16px; 
-}
-
-.contatos{
-    text-align: left;
-    margin: 1em 0 0 10em;
-    font-family: var(--fonte-secundaria);   
-}
-
-.redes__lista{
+.titulo_entrega{
     display: flex;
-    justify-content: space-around;
-    list-style-type: none;
     align-items: center;
-    width: 20%;
-    margin: auto;
-    padding: 0;
 }
 
-.redes__icine{
+.titulo_recebimento{
+    margin: 20px 0;
+}
+
+.forma_entrega{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 2% 2%;
+}
+
+.descricao_entrega{
+    width: 100%;  
+    font-size:large;
+}
+
+.dropdown2{
+    width: 90%;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.selecionar_entrega{
+    border-radius: 5px;
+    border: none;
+    padding: 7px 40px;
+    background-color: #857AF5;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 1s background;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 1rem 10rem 0;
+ }
+
+ .selecionar_entrega:hover{
+    background: #a49ff0;
+}
+
+/*----resumo----*/
+
+.resumo{
+    display: flex;
     width: 25%;
-    
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.resumo_produto{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.resumo_produto_titulo{
+    width: 70%;
+}
+
+.resumo_produto_valor{
+    width: 20%;
+}
+
+.resumo_divisao{
+    margin: 1rem 0;
+    width: 100%;
+    border-bottom: 1px solid black;
+    height: 1px;
+}
+
+.resumo_total{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.resumo_total_titulo{
+    width: 70%;
+}
+
+.resumo_total_valor{
+    width: 20%;
+}
+
+.bt_pagamento{
+    border-radius: 5px;
+    border: none;
+    padding: 7px 10px;
+    background-color: #857AF5;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 1s background;
+    cursor: pointer;
+    margin: 0 5rem;
+}
+
+ .bts_resumo{
+    display: grid;
+    justify-content: center;
+ }
+
+.bt_contimuar{
+    border-radius: 5px;
+    border: #857AF5;
+    padding: 7px 10px;
+    background-color: #ffffff;
+    color: #857AF5;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 1s background;
+    cursor: pointer;
+    margin: 1rem 5rem;
 }

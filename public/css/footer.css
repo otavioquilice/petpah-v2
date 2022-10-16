@@ -1,0 +1,40 @@
+/*----------------------Footer------------*/
+
+.rodape {
+    margin: 1em 3em;
+}
+
+.baixo_rodape{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.titulo_contato{
+    margin: 0;
+}
+
+.logo_rodape{
+    display: flex;
+    justify-content: center;
+}
+
+.rodape__logo{
+    width: 70%;
+}
+
+
+.contato_lista{
+    list-style-type: none;
+    margin: 0;
+}
+
+.redes__lista{
+    display: flex;  
+    justify-content: space-around;
+    list-style-type: none;
+    align-items: center;
+    width: 180px;
+    padding: 0;
+    margin: 10px; 
+}

@@ -30,6 +30,11 @@ class SiteController extends Controller
 
     public function view_home()
     {
-        return view('pages.site.home', ['produtos' => '' ]);
+        return view('pages.site.home', ['titulo' => '' ]);
+    }
+
+    public function view_ongs()
+    {
+        return view('pages.site.ong.index', ['ongs' => '' ]);
     }
 }
