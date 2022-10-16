@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\CarrinhoController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\ProdutoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,3 +58,4 @@ Route::get('/',[SiteController::class, 'view_home'])->name('home');
 // Ajax
 Route::post('/ajax/add-produto-carrinho',[CarrinhoController::class, 'ajaxAddCarrinho'])->name('adicionar-produto-caarrinho');
 Route::post('/ajax/remove-produto-carrinho',[CarrinhoController::class, 'ajaxRemoveCarrinho'])->name('remover-produto-caarrinho');
+Route::get('/ajax/busca-produto',[ProdutoController::class, 'buscaProduto']);

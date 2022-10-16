@@ -12,7 +12,7 @@
 
             <br><br>
             <div class="container">
-                <div class="row col-md-12"> 
+                <div class="row container-fluid text-center"> 
 
                     <img class="col-md-6" src="{{ asset('media/imagens/imghome/hero.png') }}" alt="Imagem Hero">   
 
@@ -23,9 +23,9 @@
                         que estão arrecadando para cuidar de um bichinho que <br> esteja passandopor necessidades.</p>
                             
                         <div class="">
-                            <button class="btn btn-warning">Sobre as ONGs parceiras</button>
+                            <button class="btn btn-warning border">Sobre as ONGs parceiras</button>
 
-                            <button class="btn btn-warning">Divulgue sua ONG aqui</button>
+                            <button class="btn btn-warning border">Divulgue sua ONG aqui</button>
                         </div>
                     </section>
                 </div>
@@ -33,17 +33,17 @@
             <br>    
 
             <div class='container'> 
-                <div class="row col-md-12"> 
+                <div class="row container-fluid text-center"> 
 
-                    <div class="col-md-4 centered">
+                    <div class="col-md-12">
                         <h1 class="">Como fazer</h1>
                     </div>
 
-                    <section class="row col-md-12 centered">
+                    <section class="row container-fluid text-center">
 
-                        <div class="col-md-5 centered">
-                            <p>Doação</p>
-                            <ul class="doacao">
+                        <div class="col-md-6">
+                            <h5><p>Doação</p></h5>
+                            <ul class="text-center">
                                 <li class="itens1">Escolha o produto</li>
                                 <li class="itens1">Adicione ao carrinho</li>
                                 <li class="itens1">Selecione a opção doar</li>
@@ -52,9 +52,9 @@
                             </ul>
                         </div>
                         
-                        <div class="col-md-5 centered">
-                            <p>Compra</p>
-                            <ul class="compra">
+                        <div class="col-md-6">
+                            <h5><p>Compra</p></h5>
+                            <ul class="text-center">
                                 <li class="itens2">Escolha o produto</li>
                                 <li class="itens2">Adcione ao carrinho</li>
                                 <li class="itens2">Selecione a opção comprar</li>
@@ -63,7 +63,7 @@
                         </div>
                         
 
-                        <div class="col-md-4 centered">
+                        <div class="col-md-12">
                             <img src="{{ asset('media/imagens/imghome/imgP.png') }}" alt="imgPassaro" class="imgPassos">
                         </div>
                     

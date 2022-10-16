@@ -1,4 +1,4 @@
-<footer class="rodape">
+<footer class="rodape container-fluid text-center">
     
     <h2 class="proposito">Pet Pah Propósito</h2>
     <p class="prposito__descricao">Lorem ipsum, dolor sit amet consectetur adipisicing elit. A ipsa aspernatur, qui
@@ -39,3 +39,131 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+  $(document).ready(function()
+{
+      $(document).on("click", ".add-produto-carrinho", function(){
+
+          var logado  = {{ !empty(Auth::user()) ? 1 : 0 }};
+
+    var produto_id = $(this).attr('data-produto-id');
+
+          if(logado == 0){
+
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Antes de adicionar o produto no carrinho é necessário fazer o login!',
+                  footer: '<a href="/login">Clique aqui para fazer o login.</a>'
+              })
+
+          }else{
+              $.ajax({
+                  url: "/ajax/add-produto-carrinho",
+                  type: "post",
+                  headers: {
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                  },
+                  data: {
+                      produto_id: produto_id
+                  },
+                  dataType: "json",
+                  success: function (result)
+                  {
+                      $('#qtd_produto_carrinho').text(result.qtd_itens_cesta+' Produto(s)');
+                      $('#count_produto_id_'+produto_id).text(result.count_produto.quantidade+' Iten(s) adicionado(s)')
+                      
+                  },
+                  error: function (xhr, ajaxOptions, thrownError) {
+                      swal.fire(
+                          'Erro!',
+                          'Não foi adicionar o produto no carrinho',
+                          'error'
+                      );
+                  }
+              });
+          }
+  });
+
+      $(document).on("click", ".remove-produto-carrinho", function(){
+
+          var logado  = {{ !empty(Auth::user()) ? 1 : 0 }};
+
+          var produto_id = $(this).attr('data-produto-id');
+
+          if(logado == 0){
+
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Antes de adicionar ou remover o produto no carrinho é necessário fazer o login!',
+                  footer: '<a href="/login">Clique aqui para fazer o login.</a>'
+              })
+
+          }else{
+              $.ajax({
+                  url: "/ajax/remove-produto-carrinho",
+                  type: "post",
+                  headers: {
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                  },
+                  data: {
+                      produto_id: produto_id
+                  },
+                  dataType: "json",
+                  success: function (result)
+                  {
+                      $('#qtd_produto_carrinho').text(result.qtd_itens_cesta+' Produto(s)');
+                      $('#count_produto_id_'+produto_id).text(result.count_produto.quantidade+' Iten(s) adicionado(s)')
+                      
+                  },
+                  error: function (xhr, ajaxOptions, thrownError) {
+                      swal.fire(
+                          'Erro!',
+                          'Não foi possivel remover o produto no carrinho',
+                          'error'
+                      );
+                  }
+              });
+          }
+      });
+
+      $(document).on("click", ".buscar-produto", function(){
+
+
+          var buscar_produto = $("input[name=buscar_produto]").val()
+
+
+          $.ajax({
+              url: "/ajax/busca-produto",
+              type: "GET",
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+              data: {
+                  buscar_produto: buscar_produto
+              },
+              dataType: "json",
+              success: function (result)
+              {
+                alert("Em implementação, tente novamente mais tarde.");
+                  // var el_todos_produtos = document.getElementsByClassName('todos-produtos'); 
+                  
+                  // var html = '<div class="row container-fluid text-center todos-produtos">';
+
+
+                  // document.body.innerHTML += html;
+                  
+              },
+              error: function (xhr, ajaxOptions, thrownError) {
+                  
+              }
+          });
+          
+      });
+
+  });
+
+
+</script>

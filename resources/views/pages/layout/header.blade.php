@@ -4,7 +4,7 @@
 
     <div class="header_main">
         <div class="container">
-            <div class="row col-md-12">
+            <div class="row container-fluid text-center">
 
                 <div class="col-md-3">
                     <div class="logo_container">
@@ -14,15 +14,15 @@
 
                 <!-- Search -->
                 <div class="col-md-4">
-                    <input class="form-control mb-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control mb-2" type="search" name="buscar_produto" placeholder="Pesquise produto(s) ..." aria-label="Search">
                 </div>
 
                 <div class="col-md-1">
-                    <button class="btn btn-outline-success mb-2" type="submit">Search</button>
+                    <button class="btn btn-outline-success mb-2 buscar-produto" type="submit">Search</button>
                 </div>
                 
                 <!-- Wishlist -->
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <div class="">
                         @php
                             if(Auth::user()){
@@ -42,7 +42,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div>
                         <p>{{ !empty(Auth::user()) ? Auth::user()->name  : 'Bem vindo' }}</p>
                     </div>
