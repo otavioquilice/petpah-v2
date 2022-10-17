@@ -1,3 +1,4 @@
+<br><br><br><br>
 <footer class="rodape container-fluid text-center">
     
     <h2 class="proposito">Pet Pah Propósito</h2>
@@ -47,7 +48,7 @@
 
           var logado  = {{ !empty(Auth::user()) ? 1 : 0 }};
 
-    var produto_id = $(this).attr('data-produto-id');
+          var produto_id = $(this).attr('data-produto-id');
 
           if(logado == 0){
 
@@ -84,7 +85,7 @@
                   }
               });
           }
-  });
+      });
 
       $(document).on("click", ".remove-produto-carrinho", function(){
 
@@ -127,40 +128,6 @@
                   }
               });
           }
-      });
-
-      $(document).on("click", ".buscar-produto", function(){
-
-
-          var buscar_produto = $("input[name=buscar_produto]").val()
-
-
-          $.ajax({
-              url: "/ajax/busca-produto",
-              type: "GET",
-              headers: {
-                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-              },
-              data: {
-                  buscar_produto: buscar_produto
-              },
-              dataType: "json",
-              success: function (result)
-              {
-                alert("Em implementação, tente novamente mais tarde.");
-                  // var el_todos_produtos = document.getElementsByClassName('todos-produtos'); 
-                  
-                  // var html = '<div class="row container-fluid text-center todos-produtos">';
-
-
-                  // document.body.innerHTML += html;
-                  
-              },
-              error: function (xhr, ajaxOptions, thrownError) {
-                  
-              }
-          });
-          
       });
 
   });

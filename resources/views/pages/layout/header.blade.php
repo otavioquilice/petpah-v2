@@ -14,11 +14,15 @@
 
                 <!-- Search -->
                 <div class="col-md-4">
-                    <input class="form-control mb-2" type="search" name="buscar_produto" placeholder="Pesquise produto(s) ..." aria-label="Search">
+                    <form class="form w-100" method="POST" action="/buscar-produto">
+                        @csrf
+                        <input class="form-control mb-2" type="search" name="buscar_produto" placeholder="Pesquise produto(s) ..." aria-label="Search">
+                    
                 </div>
 
                 <div class="col-md-1">
-                    <button class="btn btn-outline-success mb-2 buscar-produto" type="submit">Search</button>
+                        <button class="btn btn-outline-success mb-2 buscar-produto" type="submit">Search</button>
+                    </form>
                 </div>
                 
                 <!-- Wishlist -->
@@ -47,8 +51,11 @@
                         <p>{{ !empty(Auth::user()) ? Auth::user()->name  : 'Bem vindo' }}</p>
                     </div>
                     @if(!empty(Auth::user()))
-                        <div class="d-grid mb-10">
-                            <button type="submit" class="btn btn-primary">Sair</button>
+                        <div class="">
+                            <form class="form w-100" method="POST" action="/logout">
+                                @csrf
+                                <button type="submit" class="btn btn-primary">Sair</button>
+                            </form>
                         </div>
                     @else
                         <a href="/login">Entre ou cadastre-se</a>

@@ -49,13 +49,13 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
 
 
 Route::get('/ongs',[SiteController::class, 'view_ongs'])->name('ongs');
-Route::get('/produtos',[SiteController::class, 'view_produtos'])->name('produtos');
+Route::get('/produtos',[SiteController::class, 'view_produtos'])->name('produtos.show');
 Route::get('/carrinho',[SiteController::class, 'view_carrinho'])->name('carrinho');
 Route::get('/',[SiteController::class, 'view_home'])->name('home');
+Route::post('/buscar-produto',[ProdutoController::class, 'buscarProduto'])->name('buscarProduto');
 // Route::get('/carrinho',[SiteController::class, 'tela_carrinho'])->middleware('auth')->name('carrinho');
 
 
 // Ajax
 Route::post('/ajax/add-produto-carrinho',[CarrinhoController::class, 'ajaxAddCarrinho'])->name('adicionar-produto-caarrinho');
 Route::post('/ajax/remove-produto-carrinho',[CarrinhoController::class, 'ajaxRemoveCarrinho'])->name('remover-produto-caarrinho');
-Route::get('/ajax/busca-produto',[ProdutoController::class, 'buscaProduto']);
