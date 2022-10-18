@@ -1,12 +1,12 @@
 <header class="header">
-
+<br>
     <!-- Header Main -->
 
     <div class="header_main">
         <div class="container">
             <div class="row container-fluid text-center">
 
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="logo_container">
                         <img src="{{ asset('/media/imagens/imghome/logo1.png') }}" alt="img da logo" class="imglogo">
                     </div>
@@ -25,8 +25,25 @@
                     </form>
                 </div>
                 
-                <!-- Wishlist -->
+
                 <div class="col-md-2">
+                    <div>
+                        <p>{{ !empty(Auth::user()) ? Auth::user()->name  : 'Bem vindo' }}</p>
+                    </div>
+                    @if(!empty(Auth::user()))
+                        <div class="">
+                            <form class="form w-100" method="POST" action="/logout">
+                                @csrf
+                                <button type="submit" class="btn btn-primary">Sair</button>
+                            </form>
+                        </div>
+                    @else
+                        <a href="/login">Entre ou cadastre-se</a>
+                    @endif
+                </div>
+
+                <!-- Wishlist -->
+                <div class="col-md-1    ">
                     <div class="">
                         @php
                             if(Auth::user()){
@@ -44,22 +61,6 @@
                             {{ !empty($qtd_itens_cesta) ? $qtd_itens_cesta.' Produto(s)' : '0' }}
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div>
-                        <p>{{ !empty(Auth::user()) ? Auth::user()->name  : 'Bem vindo' }}</p>
-                    </div>
-                    @if(!empty(Auth::user()))
-                        <div class="">
-                            <form class="form w-100" method="POST" action="/logout">
-                                @csrf
-                                <button type="submit" class="btn btn-primary">Sair</button>
-                            </form>
-                        </div>
-                    @else
-                        <a href="/login">Entre ou cadastre-se</a>
-                @endif
                 </div>
             </div>
         </div>
