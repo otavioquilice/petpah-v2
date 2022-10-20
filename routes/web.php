@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\CarrinhoController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\OngController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,12 +49,25 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
 
 
 
-Route::get('/ongs',[SiteController::class, 'view_ongs'])->name('ongs');
-Route::get('/produtos',[SiteController::class, 'view_produtos'])->name('produtos.show');
-Route::get('/carrinho',[SiteController::class, 'view_carrinho'])->name('carrinho');
+// HOME
 Route::get('/',[SiteController::class, 'view_home'])->name('home');
+
+
+// ONG
+Route::get('/ongs',[SiteController::class, 'view_ongs'])->name('ongs');
+Route::get('/ongs/cadastro',[OngController::class, 'create'])->name('create.ongs');
+Route::post('/ongs/store',[OngController::class, 'store'])->name('store.ongs');
+
+// PRODUTOS
+Route::get('/produtos',[SiteController::class, 'view_produtos'])->name('produtos.show');
 Route::post('/buscar-produto',[ProdutoController::class, 'buscarProduto'])->name('buscarProduto');
+
+
+// CARRINHO
+Route::get('/carrinho',[SiteController::class, 'view_carrinho'])->name('carrinho');
 // Route::get('/carrinho',[SiteController::class, 'tela_carrinho'])->middleware('auth')->name('carrinho');
+
+
 
 
 // Ajax

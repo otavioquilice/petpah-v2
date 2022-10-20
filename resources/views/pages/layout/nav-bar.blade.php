@@ -14,4 +14,7 @@
     <li class="nav-item">
         <a class="nav-link" href="/servicos">Serviços</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/ongs/cadastro">Quero ser uma Ong Parceira</a>
+  </li>
 </ul>
