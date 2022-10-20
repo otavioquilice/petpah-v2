@@ -17,7 +17,7 @@ return new class extends Migration
             
             $table->id();
             $table->string('uuid')->unique();
-            $table->boolean('ativo');
+            $table->boolean('ativo')->nullable();
             $table->string('razao_social');
             $table->string('nome_fantasia');
             $table->string('cnpj');

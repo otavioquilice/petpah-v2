@@ -21,7 +21,7 @@
                                     <p>Por favor, verifique os erros abaixo:</p>
                                     <ul>
                                         @foreach($errors->all() as $error)
-                                            <li>{{ $error }}</li>
+                                            <li><span class="label label-danger">{{ $error }}</span></li>
                                         @endforeach
                                     </ul>
                                 </div>

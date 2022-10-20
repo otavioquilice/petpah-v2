@@ -56,9 +56,11 @@
                                 }
                             }
                         @endphp
-                        <div id='qtd_produto_carrinho' class="carrinho_item cart_count">
+                        <div>
                             <a  href="/carrinho" ><img src="{{ asset('media/imagens/img/cart.png')}}" alt="cart"></a>
-                            {{ !empty($qtd_itens_cesta) ? $qtd_itens_cesta.' Produto(s)' : '0' }}
+                            <span id='qtd_produto_carrinho' class="carrinho_item cart_count">
+                                {{ !empty($qtd_itens_cesta) ? $qtd_itens_cesta.' Produto(s)' : '0' }}
+                            </span>
                         </div>
                     </div>
                 </div>
