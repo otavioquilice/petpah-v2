@@ -64,7 +64,7 @@
             <div class="resumo_produto"> <!-- resumo_compra -->
               <p class="resumo_produto_titulo">{{ $item_prod->produto->nome}}</p> <!-- resumo_titulo -->
               <p class="resumo_produto_valor">R$ {{ $item_prod->produto->preco[0]->preco}}</p>
-              
+               $produto=
             </div>
           @endforeach
 
