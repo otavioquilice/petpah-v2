@@ -13,7 +13,7 @@
     
     <div class="container row col-md-12">
 
-      <div class="col-md-8">
+      <div class="col-md-7">
 
         <h2>Carrinho</h2>
 
@@ -56,17 +56,19 @@
       </div> 
     
       
-      <div class="col-md-4">
+      <div class="col-md-5">
         @php $total = 0 @endphp
         <h2>Resumo</h2>
-        @foreach($produtos as $item_prod)
-          <div class="resumo_produto"> <!-- resumo_compra -->
-            <h6 class="resumo_produto_titulo">{{ $item_prod->produto->nome}}</h6> <!-- resumo_titulo -->
-            <h6 class="resumo_produto_valor">{{ $item_prod->quantidade }} X R$ {{ $item_prod->produto->preco->where('ativo', 1)->first()->preco}}</h6>
-          </div>
+        <div class="">
+          @foreach($produtos as $item_prod)
+            <div class="resumo_produto"> <!-- resumo_compra -->
+              <h6 class="resumo_produto_titulo">{{ $item_prod->produto->nome}}</h6> <!-- resumo_titulo -->
+              <h6 class="resumo_produto_valor">{{ $item_prod->quantidade }} X R$ {{ $item_prod->produto->preco->where('ativo', 1)->first()->preco}}</h6>
+            </div>
           <br>
-          @php $total = $total + ( $item_prod->quantidade * $item_prod->produto->preco->where('ativo', 1)->first()->preco) @endphp
-        @endforeach
+            @php $total = $total + ( $item_prod->quantidade * $item_prod->produto->preco->where('ativo', 1)->first()->preco) @endphp
+          @endforeach
+        </div>
         <h3 class="resumo_valor_total">Total de R$: {{ $total}}</h3>
         
         <br>
