@@ -20,7 +20,7 @@
         @foreach($produtos as $item_prod)
           <div class="dados_produtos col-md-10">
             <div class="info1">
-              <h3 class="titulo_produto">Ração para cachorro colorido</h3>
+              <h3 class="titulo_produto">{{ $item_prod->produto->nome}}</h3>
               <img src="{{ asset('media/imagens/img2/prod'.$item_prod->produto_id .'.png') }}" alt="item1">  
               <h5><p class="produtos-preco">R$ {{ $item_prod->produto->preco->where('ativo', 1)->first()->preco}}</p></h5>
                     
