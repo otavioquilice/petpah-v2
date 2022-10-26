@@ -68,6 +68,10 @@ Route::get('/carrinho',[SiteController::class, 'view_carrinho'])->name('carrinho
 // Route::get('/carrinho',[SiteController::class, 'tela_carrinho'])->middleware('auth')->name('carrinho');
 
 
+// PAGAMENTO
+Route::post('/pagamento/show',[SiteController::class, 'view_pagamento'])->name('pagamento.show');
+
+
 
 
 // Ajax

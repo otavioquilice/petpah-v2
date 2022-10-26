@@ -37,4 +37,9 @@ class SiteController extends Controller
     {
         return view('pages.site.ong.index', ['ongs' => '' ]);
     }
+
+    public function view_pagamento()
+    {
+        return view('pages.site.pagamento');
+    }
 }

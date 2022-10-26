@@ -57,67 +57,70 @@
     
       
       <div class="col-md-5">
-        @php $total = 0 @endphp
-        <h2>Resumo</h2>
-        <div class="">
-          @foreach($produtos as $item_prod)
-            <div class="resumo_produto"> <!-- resumo_compra -->
-              <h6 class="resumo_produto_titulo">{{ $item_prod->produto->nome}}</h6> <!-- resumo_titulo -->
-              <h6 class="resumo_produto_valor">{{ $item_prod->quantidade }} X R$ {{ $item_prod->produto->preco->where('ativo', 1)->first()->preco}}</h6>
-            </div>
-          <br>
-            @php $total = $total + ( $item_prod->quantidade * $item_prod->produto->preco->where('ativo', 1)->first()->preco) @endphp
-          @endforeach
-        </div>
-        <h3 class="resumo_valor_total">Total de R$: {{ $total}}</h3>
-        
-        <br>
-
-        <li class="opcao_entrega">
-          <h2 class="titulo_doacoes">Forma de recebimento</h2>
-          <div class="forma_entrega">
-            <p class="descricao_entrega">Em caso de consumo própio, selecione como irá receber o produto.<p>
-            <select name="select" class="dropdown2">
-              <option value="" selected disabled hidden>Escolha uma opção de Retirada/Entrega.</option>
-              <option value="valor1">Reirar na loja</option>
-              <option value="valor2">Solicitar um entregador</option>
-            </select>
-          </div>
-
-
-        </li>
-        <br>
-
-        <div class="doacoes">
-
-          <div class="titulo_doacao">
-            <img src="{{ asset('media/imagens/img3/cuidado.png') }}" alt="cuidado doação">
-            <h2 class="titulo_doacoes">Doações</h2>
-          </div>
-    
-          <div class="selecione_ong">
-            <div class="selecione">
-              <p class="selecione_titulo">Selecione a ONG</p>
-            </div>
-            <select name="select" class="dropdown3">
-              <option value="" selected disabled hidden>Escolha uma ONG</option>
-              <option value="valor1">ONG LOVE ANIMAL</option>
-              <option value="valor2">LITTLE DOG</option>
-              <option value="valor3">PATAS EM AÇÃO</option>
-              <option value="valor4">ONG LAMBEIJO</option>
-              <option value="valor5">ONG XX</option>
-            </select>
+        <form action="/pagamento/show" method="POST">
+          @csrf
+          @php $total = 0 @endphp
+          <h2>Resumo</h2>
+          <div class="">
+            @foreach($produtos as $item_prod)
+              <div class="resumo_produto"> <!-- resumo_compra -->
+                <h6 class="resumo_produto_titulo">{{ $item_prod->produto->nome}}</h6> <!-- resumo_titulo -->
+                <h6 class="resumo_produto_valor">{{ $item_prod->quantidade }} X R$ {{ $item_prod->produto->preco->where('ativo', 1)->first()->preco}}</h6>
+              </div>
             <br>
-            {{-- <input type="submit" value="Selecionar ONG" class="bt_pagamento col-md-8"> --}}
+              @php $total = $total + ( $item_prod->quantidade * $item_prod->produto->preco->where('ativo', 1)->first()->preco) @endphp
+            @endforeach
           </div>
-    
-        </div>
+          <h3 class="resumo_valor_total">Total de R$: {{ $total}}</h3>
+          
+          <br>
 
-        <br>
+          <li class="opcao_entrega">
+            <h2 class="titulo_doacoes">Forma de recebimento</h2>
+            <div class="forma_entrega">
+              <p class="descricao_entrega">Em caso de consumo própio, selecione como irá receber o produto.<p>
+              <select name="select" class="dropdown2">
+                <option value="" selected disabled hidden>Escolha uma opção de Retirada/Entrega.</option>
+                <option value="valor1">Reirar na loja</option>
+                <option value="valor2">Solicitar um entregador</option>
+              </select>
+            </div>
 
-        <input type="submit" value="Ir para pagamento" class="bt_pagamento col-md-8">
-        <input type="submit" value="Continuar comprando" class="bt_contimuar col-md-8">
 
+          </li>
+          <br>
+
+          <div class="doacoes">
+
+            <div class="titulo_doacao">
+              <img src="{{ asset('media/imagens/img3/cuidado.png') }}" alt="cuidado doação">
+              <h2 class="titulo_doacoes">Doações</h2>
+            </div>
+      
+            <div class="selecione_ong">
+              <div class="selecione">
+                <p class="selecione_titulo">Selecione a ONG</p>
+              </div>
+              <select name="select" class="dropdown3">
+                <option value="" selected disabled hidden>Escolha uma ONG</option>
+                <option value="valor1">ONG LOVE ANIMAL</option>
+                <option value="valor2">LITTLE DOG</option>
+                <option value="valor3">PATAS EM AÇÃO</option>
+                <option value="valor4">ONG LAMBEIJO</option>
+                <option value="valor5">ONG XX</option>
+              </select>
+              <br>
+              {{-- <input type="submit" value="Selecionar ONG" class="bt_pagamento col-md-8"> --}}
+            </div>
+      
+          </div>
+
+          <br>
+
+          <input type="submit" value="Ir para pagamento" class="bt_pagamento col-md-8">
+          <input type="submit" value="Continuar comprando" class="bt_contimuar col-md-8">
+
+        </form>
 
       </div>
       
