@@ -42,8 +42,22 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script type="text/javascript">
 
+  function mudarSelect(option, id){
+    
+    if(option.value === 'consumo_doacao'){
+         
+      $('.produto_doacao_'+id).removeAttr('hidden');
+      $('.qtd_doacao_'+id).attr('required','true');
+
+    }else{
+      $('.produto_doacao_'+id).attr('hidden','true');
+      $('.qtd_doacao_'+id).removeAttr('required');
+      
+    }
+  }
+
   $(document).ready(function()
-{
+  {
       $(document).on("click", ".add-produto-carrinho", function(){
 
           var logado  = {{ !empty(Auth::user()) ? 1 : 0 }};
@@ -131,6 +145,7 @@
       });
 
   });
+
 
 
 </script>

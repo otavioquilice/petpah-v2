@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class PrecoProduto extends Model
 {
 	use SoftDeletes;
-    // use Uuid;
+    use Uuid;
 	protected $table = "preco_produtos";
 	protected $fillable = [
 		"uuid",
