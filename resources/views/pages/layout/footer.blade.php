@@ -1,5 +1,5 @@
 <br><br><br><br>
-<footer class="rodape container-fluid text-center">
+<footer class="rodape container-fluid">
     
     <h2 class="proposito">Pet Pah Propósito</h2>
     <p class="prposito__descricao">Lorem ipsum, dolor sit amet consectetur adipisicing elit. A ipsa aspernatur, qui

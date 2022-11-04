@@ -4,16 +4,16 @@
 
     <div class="header_main">
         <div class="container">
-            <div class="row container-fluid text-center">
+            <div class="row container-fluid header_geral">
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="logo_container">
                         <img src="{{ asset('/media/imagens/imghome/logo1.png') }}" alt="img da logo" class="imglogo">
                     </div>
                 </div>		
 
                 <!-- Search -->
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <form class="form w-100" method="POST" action="/buscar-produto">
                         @csrf
                         <input class="form-control mb-2" type="search" name="buscar_produto" placeholder="Pesquise produto(s) ..." aria-label="Search">
@@ -21,25 +21,29 @@
                 </div>
 
                 <div class="col-md-1">
-                        <button class="btn btn-outline-success mb-2 buscar-produto" type="submit">Search</button>
+                        <button class="btn mb-2 buscar-produto" type="submit">Search</button>
                     </form>
                 </div>
                 
 
                 <div class="col-md-2">
-                    <div>
-                        <p>{{ !empty(Auth::user()) ? Auth::user()->name  : 'Bem vindo' }}</p>
+                    <div class="header_login_bem-vindo">
+                        <a  href="/login" ><img src="{{ asset('media/imagens/img/login.png')}}" alt="boneco login" class="header_img_login"></a>
+                        <span class="material-icons">
+                        <p class="header_bem-vindo">{{ !empty(Auth::user()) ? Auth::user()->name  : '' }}</p>
+                        @if(!empty(Auth::user()))
+                            <div class="">
+                                <form class="form w-100" method="POST" action="/logout">
+                                    @csrf
+                                    <button type="submit" class="btn btn-primary">Sair</button>
+                                </form>
+                            </div>
+                        @else
+                            <div class="header_entre_cadastre">
+                                <a href="/login">Entre ou cadastre-se</a>
+                            </div>
+                        @endif
                     </div>
-                    @if(!empty(Auth::user()))
-                        <div class="">
-                            <form class="form w-100" method="POST" action="/logout">
-                                @csrf
-                                <button type="submit" class="btn btn-primary">Sair</button>
-                            </form>
-                        </div>
-                    @else
-                        <a href="/login">Entre ou cadastre-se</a>
-                    @endif
                 </div>
 
                 <!-- Wishlist -->

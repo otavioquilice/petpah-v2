@@ -2,19 +2,16 @@
     <li class="nav-item">
       <a class="nav-link active" href="/">Home</a>
     </li>
+    <div class="divisor_nav"></div>
     <li class="nav-item">
       <a class="nav-link" href="/produtos">Produtos</a>
     </li>
+    <div divisor_nav></div>
     <li class="nav-item">
-      <a class="nav-link" href="/doacoes">Doações</a>
+        <a class="nav-link" href="/ongs">ONG's</a>
     </li>
+    <div divisor_nav></div>
     <li class="nav-item">
-        <a class="nav-link" href="/ongs">Ongs</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="/servicos">Serviços</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/ongs/cadastro">Quero ser uma Ong Parceira</a>
+      <a class="nav-link" href="/ongs/cadastro">Quero ser uma ONG Parceira</a>
   </li>
 </ul>

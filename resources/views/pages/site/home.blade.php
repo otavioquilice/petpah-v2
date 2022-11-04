@@ -14,19 +14,18 @@
             <div class="container">
                 <div class="row align-items-center"> 
 
-                    <img class="col-md-6" src="{{ asset('media/imagens/imghome/hero.png') }}" alt="Imagem Hero">   
+                    <img class="col-md-5" src="{{ asset('media/imagens/imghome/hero.png') }}" alt="Imagem Hero">   
 
-                    <section class="col-md-6">            
+                    <section class="col-md-5 hero_incentivo_ONG">            
 
                         <h1 class="titulo-hero">Todo dia é dia de <br> cuidar de um bichinho</h1>
                         <p>Encontre aqui produtos e serviços para seu pet e ONGs <br>
                         que estão arrecadando para cuidar de um bichinho que <br> esteja passandopor necessidades.</p>
-                            
-                        <div class="">
-                            <button class="btn btn-warning border col-md-5">Sobre as ONGs parceiras</button>
-
-                            <button class="btn btn-warning border col-md-5">Divulgue sua ONG aqui</button>
-                        </div>
+                        
+                     <div class="btn_hero_incentivo_ONG">  
+                        <button class="col-md-5 btn_home_hero">Sobre as ONGs parceiras</button>
+                        <button class="col-md-5 btn_home_hero">Divulgue sua ONG aqui</button>
+                     </div> 
                     </section>
                 </div>
             </div>
