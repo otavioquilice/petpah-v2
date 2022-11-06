@@ -8,7 +8,7 @@
 
                 <div class="col-md-3">
                     <div class="logo_container">
-                        <img src="{{ asset('/media/imagens/imghome/logo1.png') }}" alt="img da logo" class="imglogo">
+                    <a href="\"><img src="{{ asset('/media/imagens/imghome/logo1.png') }}" alt="img da logo" class="imglogo"></a>
                     </div>
                 </div>		
 
@@ -16,12 +16,12 @@
                 <div class="col-md-3">
                     <form class="form w-100" method="POST" action="/buscar-produto">
                         @csrf
-                        <input class="form-control mb-2" type="search" name="buscar_produto" placeholder="Pesquise produto(s) ..." aria-label="Search">
+                        <input class="form-control mb-2" type="search" name="buscar_produto" placeholder="Pesquise produto(s)" aria-label="Search">
                     
                 </div>
 
                 <div class="col-md-1">
-                        <button class="btn mb-2 buscar-produto" type="submit">Search</button>
+                        <button class="btn mb-2 buscar-produto" type="submit">Pesquisar</button>
                     </form>
                 </div>
                 
@@ -35,12 +35,12 @@
                             <div class="">
                                 <form class="form w-100" method="POST" action="/logout">
                                     @csrf
-                                    <button type="submit" class="btn btn-primary">Sair</button>
+                                    <button type="submit" class="btn btn_sair">Sair</button>
                                 </form>
                             </div>
                         @else
                             <div class="header_entre_cadastre">
-                                <a href="/login">Entre ou cadastre-se</a>
+                                <a href="/login" class="link_header_entre_cadastre">Entre ou cadastre-se</a>
                             </div>
                         @endif
                     </div>

@@ -71,7 +71,7 @@
                     </div>  
 
                     <div class="col-md-6 offset-md-3 mt-4">
-                        <input type="submit" value="Solicitar cadastro" class="btn btn-primary col-md-12">
+                        <input type="submit" value="Solicitar cadastro" class="btn col-md-12 btn_cadastro_ONG">
                     </div>
                 </form>
             </div>
@@ -85,3 +85,11 @@
     
 </body>
 </html>
+
+<style>
+    .btn_cadastro_ONG{
+    background-color: rgb(133,122,245)  !important;
+    color: #ffffff;
+    border-radius: 40px;
+}
+</style>

@@ -8,11 +8,6 @@
 
 /* HOME -------*/
 
-/* .btn-warning {
-    background-color: #F6E266;
-    --bs-btn-bg: #F6E266;
-} */
-
 .hero_incentivo_ONG{
     display: flex;
     flex-direction: column;
@@ -27,17 +22,25 @@
 
 .btn_hero_incentivo_ONG{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;  
+      
 }
 
-.btn_home_hero{
-    border-radius: 5px;
-    border: none;
-    padding: 10px 30px;
+.link_ONGs{
+    text-decoration: none;
+    color: #333333;
     background-color: #F6E266;
-    font-weight: bold;
-    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin: 0 5px;
 }
+
+.link_ONGs:hover{
+    color: #333333;
+    font-weight: bold;
+}
+
 
 .imgPassos{
     width: 100%;

@@ -11,6 +11,7 @@
 
 header{
     background-color: #FFDB99;
+    width: auto;
     padding: 0 1% 1% 1%; /*20px pra cima e baixo. 0px pra direita e esquerda.*/
 }
 
@@ -56,6 +57,10 @@ header{
     justify-content: flex-start;
 }
 
+.link_header_entre_cadastre:hover{
+    color: #333333;
+}
+
 .header_entre_cadastre a{
     color: #333333;
 }
@@ -69,4 +74,8 @@ header{
     align-items: center;
 }
 
+.btn_sair{
+    text-decoration: underline !important;
+    padding: 0 !important;
+}
 

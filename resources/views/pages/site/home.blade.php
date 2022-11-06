@@ -23,8 +23,8 @@
                         que estão arrecadando para cuidar de um bichinho que <br> esteja passandopor necessidades.</p>
                         
                      <div class="btn_hero_incentivo_ONG">  
-                        <button class="col-md-5 btn_home_hero">Sobre as ONGs parceiras</button>
-                        <button class="col-md-5 btn_home_hero">Divulgue sua ONG aqui</button>
+                        <a href="/ongs" class="col-md-5 link_ONGs">Sobre as ONGs parceiras</a>
+                        <a href="/ongs/cadastro" class="col-md-5 link_ONGs">Divulgue sua ONG aqui</a>
                      </div> 
                     </section>
                 </div>

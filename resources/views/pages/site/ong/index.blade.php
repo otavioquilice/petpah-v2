@@ -101,3 +101,21 @@
     
 </body>
 </html>
+
+<style>
+    .ongs{
+        width: 90%;
+        display: flex;
+        justify-content: space-around; 
+        margin: 0 5%;
+    }
+
+    li {
+    list-style-type: none;
+    }
+
+    .border{
+        padding:30px;
+    }
+
+</style>

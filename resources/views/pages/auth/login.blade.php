@@ -36,15 +36,12 @@
 				<!--begin::Aside-->
 				<div class="d-flex flex-center w-lg-50 pt-15 pt-lg-0 px-10">
 					<!--begin::Aside-->
-					<div class="d-flex flex-column">
+					<div class="d-flex flex-column text-center">
 						<!--begin::Logo-->
-						<a href="../../demo1/dist/index.html" class="mb-7">
+						<a href="/" class="mb-7">
 							<img alt="Logo" src="{{ asset('media/logos/logo-medio-petpah.png') }}" />
 						</a>
 						<!--end::Logo-->
-						<!--begin::Title-->
-						<h2 class="text-white fw-normal m-0">Soluções de doações para PET</h2>
-						<!--end::Title-->
 					</div>
 					<!--begin::Aside-->
 				</div>
@@ -64,7 +61,7 @@
 									<h1 class="text-dark fw-bolder mb-3">Entrar</h1>
 									<!--end::Title-->
 									<!--begin::Subtitle-->
-									<div class="text-gray-500 fw-semibold fs-6">Seu ambiente de doações</div>
+									<div class="text-gray-500 fw-semibold fs-6">Seu ambiente de doações e consumos</div>
 									<!--end::Subtitle=-->
 								</div>
 								<!--begin::Heading-->
@@ -117,7 +114,7 @@
 								<!--end::Wrapper-->
 								<!--begin::Submit button-->
 								<div class="d-grid mb-10">
-									<button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
+									<button type="submit" id="kt_sign_in_submit" class="btn_login">
 										<!--begin::Indicator label-->
 										<span class="indicator-label">Entrar</span>
 										<!--end::Indicator label-->
@@ -171,3 +168,20 @@
 	</body>
 	<!--end::Body-->
 </html>
+
+<style>
+	.btn_login{
+		background-color: rgb(133,122,245)  !important;
+		color: #ffffff;
+    	border-radius: 40px;
+		padding: 7px;
+		border: none;
+		font-weight: bold;
+	}
+
+	.login_slogan{
+		font-family: 'Elsie', cursive;;
+		font-size: 25px;
+	}
+
+</style>
