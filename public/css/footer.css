@@ -27,14 +27,25 @@
 .contato_lista{
     list-style-type: none;
     margin: 0;
+    padding: 0;
+}
+
+.contato_petpah{
+    margin: 0;
 }
 
 .redes__lista{
     display: flex;  
-    justify-content: space-around;
+    justify-content: space-between;
     list-style-type: none;
     align-items: center;
     width: 180px;
     padding: 0;
-    margin: 10px; 
+    margin: 0; 
+}
+
+@media screen and (max-width: 510px) {
+    .logo_rodape{
+        display: none;
+    }
 }

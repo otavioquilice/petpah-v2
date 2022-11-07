@@ -2,19 +2,20 @@
 <footer class="rodape container-fluid">
     
     <h2 class="proposito">Pet Pah Propósito</h2>
-    <p class="prposito__descricao">Lorem ipsum, dolor sit amet consectetur adipisicing elit. A ipsa aspernatur, qui
-      dolorem consequatur quasi, ad esse excepturi accusantium odio dolor autem eveniet dignissimos delectus mollitia
-      voluptatum quis ab quam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, perspiciatis dicta? Dolor
-      accusamus recusandae officiis ratione debitis aut, obcaecati eum eaque at sint blanditiis est. Asperiores
-      praesentium consequatur aut consequuntur.
+    <p class="prposito__descricao">Nosso único objetivo é fazer com que cada bichinho se sinta amado e seguro. 
+      Para isto garantimos que seu bichinho consuma o produto de melhor qualidade. 
+      Possuímos entregadores particulares que entregarão seu produto em um estante. 
+      Apresentamos também parcerias com ONGs para ajudar os bichinhos que estão passando por necessidades. 
+      Facilitamos o processo de doação dos nossos produtos, com apenas alguns clicks é possível realizar uma doação segura, 
+      realizamos um processo minucioso para selecionarmos as nossas ONGs parceiras, que temos muito orgulho em tê-las como parceiras Pet pah!  
     </p>
 
     <div class="baixo_rodape">
       <section class="contatos">
         <h3 class="titulo_contato">Contatos</h3>
         <ul class="contato_lista">
-          <li><p>xxxxx@fatec.sp.gov.br</p></li>
-          <li><p>Tel.:(11)91234-5678</p></li>
+          <li><p class="contato_petpah">xxxxx@fatec.sp.gov.br</p></li>
+          <li><p class="contato_petpah">Tel.:(11)91234-5678</p></li>
         </ul>
       </section>
 
@@ -26,13 +27,13 @@
         <h3>Nossas redes</h3>
           <ul class="redes__lista">
             <li class="redes__icine">
-              <img src="{{ asset('media/imagens/img/facebook.png') }}" alt="ícone facebook">
+              <a href="https://www.facebook.com/"><img src="{{ asset('media/imagens/img/facebook.png') }}" alt="ícone facebook"></a>
             </li>
             <li class="redes__icone">
-              <img src="{{ asset('media/imagens/img/instagram.png') }}" alt="ícone instagram">
+              <a href="https://www.instagram.com/"><img src="{{ asset('media/imagens/img/instagram.png') }}" alt="ícone instagram"></a>
             </li>
             <li class="redes__icone">
-              <img src="{{ asset('media/imagens/img/youtube.png') }}" alt="ícone youtube">
+              <a href="https://www.youtube.com/"></a><img src="{{ asset('media/imagens/img/youtube.png') }}" alt="ícone youtube"></a>
             </li>
           </ul>
       </section>

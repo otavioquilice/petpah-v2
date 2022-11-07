@@ -15,6 +15,12 @@ header{
     padding: 0 1% 1% 1%; /*20px pra cima e baixo. 0px pra direita e esquerda.*/
 }
 
+.header_geral{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .text-center{
     display: flex;
     align-items: center;
@@ -22,15 +28,25 @@ header{
     margin: 0;
 }
 
-.header_geral{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .logo_container{
     display: flex;
     justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .logo_container{
+        display: none;
+    }
+}
+
+.logo_container_mobile{
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .cabecalho__menu{
+        display: none;
+    }
 }
 
 .header_bt_pesquisa{
@@ -38,12 +54,23 @@ header{
 }
 
 .buscar-produto{
-    background-color: rgba(255, 255, 255, 0.3) !important;
-     
-    /*color: #ff0707;
-    opacity: 0.5;
-     */
+    background-color: rgba(255, 255, 255, 0.3) !important;     
     padding: 0;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.header_pesquisa_geral{
+    display: flex;
+    align-items: center;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .header_caixa_pesquisa{
+        display: none;
+    }
 }
 
 .header_bem-vindo{
@@ -77,5 +104,40 @@ header{
 .btn_sair{
     text-decoration: underline !important;
     padding: 0 !important;
+}
+
+@media screen and (max-width: 768px) {   
+    .header_geral{
+        align-items: center;
+    }
+
+    .cabecalho__menu{
+        background-color: #FFDB99; 
+        border: none;
+        padding: 0 20px;
+    }
+
+    .header_login_menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .logo_container_mobile{
+        height: 20%;
+        display: flex;
+        align-items: center;
+    }
+
+    .header_login_bem-vindo{
+        justify-self: flex-end;
+    }
+
+    .header_carrinho{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
 }
 

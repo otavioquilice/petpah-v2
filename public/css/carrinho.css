@@ -58,6 +58,12 @@
     flex-direction: column;
 }
 
+@media screen and (max-width: 768px) {
+    .info2{
+        justify-content: space-between;
+    }
+}
+
 .adicionar_diminuir_item{
     display: flex;
     padding: 50px 0;
@@ -236,6 +242,7 @@ h5{
 }
 
 .bt_pagamento{
+    width: 50%;
     border-radius: 5px;
     border: none;
     padding: 7px 10px;
