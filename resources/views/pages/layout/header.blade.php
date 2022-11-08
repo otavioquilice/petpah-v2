@@ -7,9 +7,8 @@
             <div class="container-fluid header_geral">
 
                 <div class="col-md-3">
-                    
                     <div class="logo_container">
-                        <a href="\"><img src="{{ asset('/media/imagens/imghome/logo1.png') }}" alt="img da logo" class="imglogo"></a>
+                        <a href="\"><img src="{{ asset('/media/imagens/imghome/logo1.png') }}" alt="imagem da logo" class="imglogo"></a>
                     </div>
                 </div>		
 
@@ -50,30 +49,32 @@
                             </div>
                         @endif
                     </div>
+                    
                 </div>
 
                 <!-- Wishlist -->
                 <div class="col-md-1 header_carrinho">
-                    <div class="">
-                        @php
-                            if(Auth::user()){
-                                $itens_cesta = Auth::user()->cesta_produtos()->get();
-                                $qtd_itens_cesta = 0;
-                                if(!empty($itens_cesta)){
-                                    foreach($itens_cesta as $item){
-                                        $qtd_itens_cesta += $item->quantidade;
+                        <div>
+                            @php
+                                if(Auth::user()){
+                                    $itens_cesta = Auth::user()->cesta_produtos()->get();
+                                    $qtd_itens_cesta = 0;
+                                    if(!empty($itens_cesta)){
+                                        foreach($itens_cesta as $item){
+                                            $qtd_itens_cesta += $item->quantidade;
+                                        }
                                     }
                                 }
-                            }
-                        @endphp
-                        <div>
-                            <a  href="/carrinho" ><img src="{{ asset('media/imagens/img/cart.png')}}" alt="cart"></a>
-                            <span id='qtd_produto_carrinho' class="carrinho_item cart_count">
-                                {{ !empty($qtd_itens_cesta) ? $qtd_itens_cesta.' Produto(s)' : '0' }}
-                            </span>
+                            @endphp
+                            <div class="header_carrinho_grupo">
+                                <a  href="/carrinho" ><img src="{{ asset('media/imagens/img/cart.png')}}" alt="cart"></a>
+                                <span id='qtd_produto_carrinho' class="carrinho_item cart_count">
+                                    {{ !empty($qtd_itens_cesta) ? $qtd_itens_cesta.' Produto(s)' : '0' }}
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                
             </div>
         </div>
     </div>

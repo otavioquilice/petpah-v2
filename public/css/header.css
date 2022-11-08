@@ -1,14 +1,3 @@
-:root{
-    --cinza-principal: #333333;
-    --amarelo-botoes: #F6E266;
-    --verde-botoes: #85DEB7;
-    --cor-de-fundo: #ffffff;
-    --fonte-logo: 'Elsie', cursive;
-    --fonte-principal: 'Elsie';
-    --fonte-secundaria: 'Montserrat';
-    --bs-btn-color: #202020;
-}
-
 header{
     background-color: #FFDB99;
     width: auto;
@@ -31,7 +20,9 @@ header{
 .logo_container{
     display: flex;
     justify-content: center;
+    width: 80%;
 }
+
 
 @media screen and (max-width: 768px) {
     .logo_container{
@@ -106,6 +97,10 @@ header{
     padding: 0 !important;
 }
 
+.header_carrinho_grupo{
+    padding: 0 0 0 10px;
+}
+
 @media screen and (max-width: 768px) {   
     .header_geral{
         align-items: center;
@@ -122,6 +117,7 @@ header{
         align-items: center;
         justify-content: space-between;
         padding: 0;
+        width: 100%;
     }
 
     .logo_container_mobile{
