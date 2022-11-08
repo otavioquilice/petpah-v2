@@ -1,0 +1,183 @@
+
+/*---------Navegador Secundário--------*/
+/* Style the list */
+.breadcrumb{
+	display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+    padding: 0 0 10px 220px;   
+
+}
+
+/* Display list items side by side */
+.link_breadcrumb{
+    text-decoration: none;
+    color: rgb(102, 102, 105);
+    padding: 20px;
+}
+
+
+/* link visitado */
+.link_breadcrumb a:visited {
+	color: rgb(39, 0, 146);
+}
+
+/*-------------CSS do main - produto-------------------------------------------*/
+
+.produto{
+    display: flex;
+}
+
+.titulo_racao{
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.detalhe_produto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detalhe_produto_bt{
+    width: 50%;   
+}
+
+.img_racao{
+    width: 15%;
+}
+
+/*alterando os botões de adicionar aos favoritos e o de comprar*/
+
+.btn-addFavoritos{
+    border-radius: 5px;
+    border: none;
+    padding: 7px 10px;
+    background-color: #FFFFFF;
+    color: #857AF5;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.1s background;
+    cursor: pointer;
+}
+
+.btn-addFavoritos:hover{
+	background-color: #857AF5;
+	color: rgb(255, 255, 255);
+}
+.btn-comprar{
+	border-radius: 5px;
+    border: none;
+    padding: 7px 10px;
+    background-color: #857AF5;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.1s background;
+    cursor: pointer;
+    margin: 0 5rem;
+}
+
+.btn-comprar:hover{
+	background-color: rgb(255, 255, 255);
+	color:  rgb(123,104,238);
+}
+
+/*--------------------box de descrição do produto--------------------*/
+.produto-descricao{
+    width: 100%;
+}
+
+.produto-descricao-detalhes{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 2% 10%;
+    box-shadow: inset 0 0 10px #b8b8b8;
+	border-radius: 10px;
+	border: rgb(141, 141, 141); /*tirar*/
+} 
+
+.produto-descricao-detalhes_2{
+    display: flex;
+    flex-direction: column;
+}
+
+.produto-descricao-detalhes_3{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.img_racao_colorida{
+    height: 15rem;
+}
+
+.imagem_tralha{
+    height: 3rem;
+    padding: 0 10px;
+}
+
+.detalhes-racao-colorida{
+    margin: 0;
+    padding: 0 20px 20px 0;
+}
+
+/*-------------produtos similares-------------*/
+.similares{ 
+    width: 940px;
+    margin: 0 auto;
+}
+
+.produtos-similares{
+    display: grid;
+    justify-content: center;
+    margin: 0;
+}
+
+.produtos-similares_2{
+    display: grid;
+    justify-content: center;
+    margin: 0;
+    font-size: 28px;
+}
+
+.similares li{
+    display: inline-block; /*deixar a lista de lado*/
+    width: 40%; /*alinhando os anuncios*/
+    margin: 1.5% 2%; 
+    box-sizing: border-box;
+    border: 1px solid #535353;
+    border-radius: 40px;
+    padding: 20px 210px;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+}
+
+.card_link a{
+    text-decoration: none;
+    color: rgb(123,104,238);
+}
+
+.seta{
+    width: 8rem;
+    padding: 10px;
+}
+
+.card_link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.similares li:hover{
+    border-color: #dadada;
+}
+
+.similares li:active{ /*alterar o comportamento quando clicar*/
+    border-color:#dadada;
+}

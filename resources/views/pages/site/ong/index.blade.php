@@ -7,8 +7,16 @@
     @include('pages.layout.nav-bar')
 
     <main>
-        <br>
-        <br>
+        <div class="breadcrumb">
+			<a href="/" class="link_breadcrumb">
+			Home
+			</a>
+			> 
+			<a href="/ongs" class="link_breadcrumb">
+			<b>ONG's</b>
+			</a>
+		</div>
+
     <ul class="ongs row container-fluid text-center">
         <li class="border col-md-6">
             <h2>ONG LOVE ANIMAL</h2>
@@ -103,6 +111,31 @@
 </html>
 
 <style>
+    /*---------Navegador Secundário--------*/
+    /* Style the list */
+    .breadcrumb{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 18px;
+        padding: 0 0 0 100px;   
+        margin:0;   
+
+    }
+
+    /* Display list items side by side */
+    .link_breadcrumb{
+        text-decoration: none;
+        color: rgb(102, 102, 105);
+        padding: 20px;
+    }
+
+    /*---------Sobre ONG's--------*/
+    /* link visitado */
+    .link_breadcrumb a:visited {
+        color: rgb(39, 0, 146);
+    }
+
     .ongs{
         width: 90%;
         display: flex;

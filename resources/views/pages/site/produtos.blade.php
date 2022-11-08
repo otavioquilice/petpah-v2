@@ -9,16 +9,26 @@
     <main>
 
         @include('pages.layout.nav-bar')
-        <br><br>
+
+        <div class="breadcrumb">
+			<a href="/" class="link_breadcrumb">
+			Home
+			</a>
+			> 
+			<a href="/produto" class="link_breadcrumb">
+			<b>Produtos</b>
+			</a>
+		</div>
+
         <div class="container">
             <div class="row container-fluid text-center todos-produtos">
                 @if(!empty($produtos) && $produtos->count())
                     @foreach($produtos as $produto)
                         <div class="col-md-4 justfy-content border produto-row produto-geral">
-                        <img src="{{ asset('media/imagens/img2/prod'.$produto->id .'.png') }}" alt="item1" class="produto-imagem">
+                        <a href="/produtosX"><img src="{{ asset('media/imagens/img2/prod'.$produto->id .'.png') }}" alt="item1" class="produto-imagem"><a>
                             <div class="produto-quantidade">
                                 
-                                <h2 class="produto-nome">{{$produto->nome}}</h2>
+                                <a href="/produtosX" class="link_descricao_produtos"><h2 class="produto-nome" href="/produtosX">{{$produto->nome}}</h2><a>
                                 <h3 class="produtos-preco">R$ {{ $produto->preco->where('ativo', 1)->first()->preco}}</h3>
                                 
                                 <h5 id="count_produto_id_{{$produto->id}}"> {{ (!empty(Auth::user()) && !empty(\app\Models\CestaCliente::where('produto_id', $produto->id)->where('cliente_id', Auth::user()->id)->first()->quantidade) ? \app\Models\CestaCliente::where('produto_id', $produto->id)->where('cliente_id', Auth::user()->id)->first()->quantidade .' Iten(s) adicionado(s)' : '0 Iten(s) adicionado(s)') }} </h5>
@@ -56,6 +66,41 @@
 
 
 <style>
+    /*---------Navegador Secundário--------*/
+    /* Style the list */
+    .breadcrumb{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 18px;
+        padding: 0 0 0 100px;   
+        margin: 0;
+    }
+
+    /* Display list items side by side */
+    .link_breadcrumb{
+        text-decoration: none;
+        color: rgb(102, 102, 105);
+        padding: 10px;
+    }
+
+
+    /* link visitado */
+    .link_breadcrumb a:visited {
+        color: rgb(39, 0, 146);
+    }
+
+    /*---------Produtos--------*/
+    .link_descricao_produtos{
+        text-decoration: none;
+        color: #333333;
+    }
+
+    .link_descricao_produtos:hover{
+        text-decoration: none;
+        color: #333333;
+    }
+    
     .produto-geral{
         padding: 0 30px;
     }
