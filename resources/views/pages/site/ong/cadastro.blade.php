@@ -12,7 +12,7 @@
 			</a>
 			> 
 			<a href="/produto" class="link_breadcrumb">
-			<b>Cadastro de ONG's parceiras</b>
+			<b>Cadastro de ONGs parceiras</b>
 			</a>
 		</div>
     <main>
@@ -42,7 +42,7 @@
                         <h4 class="row col-md-6 offset-md-3 mt-4">{{session('success')}}</h4>
                     @endif
 
-                    <h3 class="titulo_form col-md-6 offset-md-3 mt-4">Cadastro de ONG's parceiras</h3>
+                    <h3 class="titulo_form col-md-6 offset-md-3 mt-4">Cadastro de ONGs parceiras</h3>
 
                     <div class="col-md-6 offset-md-3 mt-4">
                         <label for="razão_social">Razão social</label>
@@ -56,22 +56,22 @@
 
                     <div class="col-md-6 offset-md-3 mt-4">
                         <label for="cnpj">CNPJ</label>
-                        <input type="text" name="cnpj" id="cnpj" class="form-control" placeholder="Digite o CNPJ">
+                        <input type="text" name="cnpj" id="cnpj" class="form-control" placeholder="Digite o CNPJ da ONG">
                     </div>
 
                     <div class="col-md-6 offset-md-3 mt-4">
-                        <label for="representante">Nome do representante legal</label>
-                        <input type="text" name="nome_representante_legal" id="nome_representante_legal" class="form-control" placeholder="Digite o nome do representante legal">
+                        <label for="representante">Nome do responsável</label>
+                        <input type="text" name="nome_representante_legal" id="nome_representante_legal" class="form-control" placeholder="Digite o nome do responsável">
                     </div> 
 
                     <div class="col-md-6 offset-md-3 mt-4">
-                        <label for="email-representante">Email do representante legal</label>
-                        <input type="email" name="email_representante_legal" id="email_representante_legal" class="form-control" placeholder="Digite o nome do representante legal">
+                        <label for="email-representante">Endereço de email</label>
+                        <input type="email" name="email_representante_legal" id="email_representante_legal" class="form-control" placeholder="Digite o email do responsável">
                     </div> 
                     
                     <div class="col-md-6 offset-md-3 mt-4">
-                        <label for="tel-representante">Telefone do representante legal</label>
-                        <input type="phone" name="telefone_representante_legal" id="telefone_representante_legal" class="form-control" placeholder="Digite o nome do representante legal">
+                        <label for="tel-representante">Telefone de contato</label>
+                        <input type="phone" name="telefone_representante_legal" id="telefone_representante_legal" class="form-control" placeholder="Digite o telefone de contato">
                     </div>  
 
                     <div class="col-md-6 offset-md-3 mt-4">
