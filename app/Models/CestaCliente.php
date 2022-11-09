@@ -31,7 +31,7 @@ class CestaCliente extends Model
 
     public function cliente()
 	{
-		return $this->hasMany(User::class, "cliente_id", "id");
+		return $this->hasOne(User::class, "cliente_id", "id");
 	}
 
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\CarrinhoController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\OngController;
+use App\Http\Controllers\PedidoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,9 @@ Route::get('/carrinho',[SiteController::class, 'view_carrinho'])->name('carrinho
 
 // PAGAMENTO
 Route::post('/pagamento/show',[SiteController::class, 'view_pagamento'])->name('pagamento.show');
+
+// PEDIDO
+Route::post('/store/pedido',[PedidoController::class, 'store'])->name('store.pedido');
 
 
 
