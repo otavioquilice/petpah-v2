@@ -45,8 +45,8 @@
                 </a>
               </div>
               <select class="tipo_produto">
-                <option value="valor3" selected>Selecione o proposito dessa compra</option>
-                <option value="valor2">Consumo proprio</option>
+                <option value="valor3" selected>Será uma doação?</option>
+                <option value="valor2">Consumo próprio</option>
                 <option value="valor1">Doação para ONGs</option>
               
               </select>
@@ -88,7 +88,7 @@
               <p class="descricao_entrega">Em caso de consumo própio, selecione como irá receber o produto.<p>
               <select name="select" class="dropdown2">
                 <option value="" selected disabled hidden>Escolha uma opção de Retirada/Entrega.</option>
-                <option value="valor1">Reirar na loja</option>
+                <option value="valor1">Retirar na loja</option>
                 <option value="valor2">Solicitar um entregador</option>
               </select>
             </div>

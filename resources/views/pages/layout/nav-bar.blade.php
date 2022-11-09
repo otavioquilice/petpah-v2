@@ -8,7 +8,7 @@
     </li>
     <div class="divisor_nav"></div>
     <li class="nav-item">
-        <a class="nav-link" href="/ongs">ONG's</a>
+        <a class="nav-link" href="/ongs">ONGs</a>
     </li>
     <div class="divisor_nav"></div>
     <li class="nav-item">
@@ -19,7 +19,7 @@
 <nav class="menu-lateral">
   <a href="/" class="menu-lateral_link menu-lateral_link--ativo">Home</a>
   <a href="/produtos" class="menu-lateral_link menu-lateral_link--ativo_2">Produtos</a>
-  <a href="/ongs" class="menu-lateral_link menu-lateral_link--ativo">ONG's</a>
+  <a href="/ongs" class="menu-lateral_link menu-lateral_link--ativo">ONGs</a>
   <a href="/ongs/cadastro" class="menu-lateral_link menu-lateral_link--ativo_2">Quero ser uma ONG parceira</a>
 </nav>
 

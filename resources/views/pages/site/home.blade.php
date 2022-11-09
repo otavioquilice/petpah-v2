@@ -19,12 +19,13 @@
                     <section class="col-md-5 hero_incentivo_ONG">            
 
                         <h1 class="titulo-hero">Todo dia é dia de <br> cuidar de um bichinho</h1>
-                        <p>Encontre aqui produtos e serviços para seu pet e ONGs <br>
-                        que estão arrecadando para cuidar de um bichinho que <br> esteja passandopor necessidades.</p>
+                        <p>Encontre aqui produtos para seu PET e informações de ONGs <br>
+                        que estão arrecadando recursos para cuidar de bichinhos que <br> 
+                        precisa de cuidados.</p>
                         
                      <div class="btn_hero_incentivo_ONG">  
                         <a href="/ongs" class="col-md-5 link_ONGs">Sobre as ONGs parceiras</a>
-                        <a href="/ongs/cadastro" class="col-md-5 link_ONGs">Divulgue sua ONG aqui</a>
+                        <a href="/ongs/cadastro" class="col-md-5 link_ONGs">Cadastre sua ONG aqui</a>
                      </div> 
                     </section>
                 </div>

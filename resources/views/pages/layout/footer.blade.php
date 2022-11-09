@@ -2,12 +2,14 @@
 <footer class="rodape container-fluid">
     
     <h2 class="proposito">Pet Pah Propósito</h2>
-    <p class="prposito__descricao">Nosso único objetivo é fazer com que cada bichinho se sinta amado e seguro. 
-      Para isto garantimos que seu bichinho consuma o produto da melhor qualidade. 
-      Possuímos entregadores particulares que entregarão os produtos em um estante. 
-      Apresentamos também parcerias com ONGs para ajudar os bichinhos que estão passando por necessidades. 
-      Facilitamos o processo de doação dos nossos produtos, com apenas alguns cliques é possível realizar uma doação segura, 
-      realizamos um processo minucioso para selecionarmos as nossas ONGs parceiras, que temos muito orgulho em tê-las como parceiras Pet pah!  
+    <p class="prposito__descricao">Nosso único objetivo é fazer com que cada bichinho se sinta 
+      amado e seguro, consumindo o produto da melhor qualidade. 
+      Possuímos entregadores particulares garantindo sua entrega em um estante. 
+      Apresentamos também parcerias com ONGs para ajudar os bichinhos que necessitam de cuidados.
+      Facilitamos o processo de doação dos nossos produtos. 
+      Com apenas alguns cliques é possível realizar uma doação segura, 
+      que através de um processo minucioso selecionamos as nossas ONGs parceiras, 
+      que temos muito orgulho em nomeá-las como parceiras Pet pah!  
     </p>
 
     <div class="baixo_rodape">
