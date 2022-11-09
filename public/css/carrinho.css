@@ -32,6 +32,7 @@
     border-radius: 5px;
     padding: 2% 2%;
     margin-bottom: 1rem;
+    margin: 1% 10%;
 }
 
 .info1{
@@ -52,9 +53,24 @@
 .info2{
     display: flex;
     width: 50%;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    .info2{
+        justify-content: space-between;
+    }
+}
+
+.adicionar_diminuir_item{
+    display: flex;
+    padding: 50px 0;
+}
+
+h5{
+    padding: 0 10px;
 }
 
 .quantidade_produto{
@@ -78,7 +94,7 @@
 }
 /*---- doaçoes----*/
 
-.titulo_doacao{
+.titulo_entrega_doacao{
     display: flex;
     align-items: center;
 } 
@@ -226,6 +242,7 @@
 }
 
 .bt_pagamento{
+    width: 50%;
     border-radius: 5px;
     border: none;
     padding: 7px 10px;

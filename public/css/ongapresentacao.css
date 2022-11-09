@@ -57,7 +57,7 @@ body{
 }
 
 /*-------------CSS do main - navbar-------------------------------------------*/
-nav{
+/* nav{
     text-align: center;
     margin:0;
 
@@ -83,6 +83,8 @@ nav ul li a:hover{
     font-weight: bold;
 }
 
+.divisor_nav{}
+
 .entremsg{
     position: relative;
     top: 20px;
@@ -93,7 +95,7 @@ nav ul li a:hover{
     position: relative;
     left: 40px;
     top: 8px;
-}
+} */
 
 /* ------main ONGs------ */
 

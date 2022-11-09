@@ -1,18 +1,139 @@
-:root{
-    --cinza-principal: #333333;
-    --amarelo-botoes: #F6E266;
-    --verde-botoes: #85DEB7;
-    --cor-de-fundo: #ffffff;
-    --fonte-logo: 'Elsie', cursive;
-    --fonte-principal: 'Elsie';
-    --fonte-secundaria: 'Montserrat'
-}
-
 header{
     background-color: #FFDB99;
-    padding: 1%; /*20px pra cima e baixo. 0px pra direita e esquerda.*/
-    height: flex;
-    justify-content: center;
-    text-align: center;
-
+    width: auto;
+    padding: 0 1% 1% 1%; /*20px pra cima e baixo. 0px pra direita e esquerda.*/
 }
+
+.header_geral{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-center{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.logo_container{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+
+@media screen and (max-width: 768px) {
+    .logo_container{
+        display: none;
+    }
+}
+
+.logo_container_mobile{
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .cabecalho__menu{
+        display: none;
+    }
+}
+
+.header_bt_pesquisa{
+    padding: 0;
+}
+
+.buscar-produto{
+    background-color: rgba(255, 255, 255, 0.3) !important;     
+    padding: 0;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.header_pesquisa_geral{
+    display: flex;
+    align-items: center;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .header_caixa_pesquisa{
+        display: none;
+    }
+}
+
+.header_bem-vindo{
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header_entre_cadastre{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.link_header_entre_cadastre:hover{
+    color: #333333;
+}
+
+.header_entre_cadastre a{
+    color: #333333;
+}
+
+.header_img_login{
+    padding: 0 8px;
+}
+
+.header_login_bem-vindo{
+    display: flex;
+    align-items: center;
+}
+
+.btn_sair{
+    text-decoration: underline !important;
+    padding: 0 !important;
+}
+
+.header_carrinho_grupo{
+    padding: 0 0 0 10px;
+}
+
+@media screen and (max-width: 768px) {   
+    .header_geral{
+        align-items: center;
+    }
+
+    .cabecalho__menu{
+        background-color: #FFDB99; 
+        border: none;
+        padding: 0 20px;
+    }
+
+    .header_login_menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+        width: 100%;
+    }
+
+    .logo_container_mobile{
+        height: 20%;
+        display: flex;
+        align-items: center;
+    }
+
+    .header_login_bem-vindo{
+        justify-self: flex-end;
+    }
+
+    .header_carrinho{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}
+

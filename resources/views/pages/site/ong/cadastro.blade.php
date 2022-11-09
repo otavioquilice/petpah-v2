@@ -6,6 +6,15 @@
 
     @include('pages.layout.nav-bar')
 
+        <div class="breadcrumb">
+			<a href="/" class="link_breadcrumb">
+			Home
+			</a>
+			> 
+			<a href="/produto" class="link_breadcrumb">
+			<b>Cadastro de ONGs parceiras</b>
+			</a>
+		</div>
     <main>
         <div class="container">
 
@@ -47,31 +56,41 @@
 
                     <div class="col-md-6 offset-md-3 mt-4">
                         <label for="cnpj">CNPJ</label>
-                        <input type="text" name="cnpj" id="cnpj" class="form-control" placeholder="Digite o CNPJ">
+                        <input type="text" name="cnpj" id="cnpj" class="form-control" placeholder="Digite o CNPJ da ONG">
                     </div>
 
                     <div class="col-md-6 offset-md-3 mt-4">
-                        <label for="estatuto_social">Estatuto social</label>
-                        <input type="text" name="estatuto_social" id="estatuto_social" class="form-control" placeholder="Digite seu estatuto social">
-                    </div>
-
-                    <div class="col-md-6 offset-md-3 mt-4">
-                        <label for="representante">Nome do representante legal</label>
-                        <input type="text" name="nome_representante_legal" id="nome_representante_legal" class="form-control" placeholder="Digite o nome do representante legal">
+                        <label for="representante">Nome do responsável</label>
+                        <input type="text" name="nome_representante_legal" id="nome_representante_legal" class="form-control" placeholder="Digite o nome do responsável">
                     </div> 
 
                     <div class="col-md-6 offset-md-3 mt-4">
-                        <label for="representante">Email do representante legal</label>
-                        <input type="email" name="email_representante_legal" id="email_representante_legal" class="form-control" placeholder="Digite o nome do representante legal">
+                        <label for="email-representante">Endereço de email</label>
+                        <input type="email" name="email_representante_legal" id="email_representante_legal" class="form-control" placeholder="Digite o email do responsável">
                     </div> 
                     
                     <div class="col-md-6 offset-md-3 mt-4">
-                        <label for="representante">Telefone do representante legal</label>
-                        <input type="phone" name="telefone_representante_legal" id="telefone_representante_legal" class="form-control" placeholder="Digite o nome do representante legal">
+                        <label for="tel-representante">Telefone de contato</label>
+                        <input type="phone" name="telefone_representante_legal" id="telefone_representante_legal" class="form-control" placeholder="Digite o telefone de contato">
                     </div>  
 
                     <div class="col-md-6 offset-md-3 mt-4">
-                        <input type="submit" value="Solicitar cadastro" class="btn btn-primary col-md-12">
+                        <label for="insta-ong">Instagram da ONG</label>
+                        <input type="text" name="instagram_ONG" id="instagram_ONG" class="form-control" placeholder="Digite o instagram da ONG">
+                    </div>
+
+                    <div class="col-md-6 offset-md-3 mt-4">
+                        <label for="face-ong">Facebook da ONG</label>
+                        <input type="text" name="facebook_ONG" id="facebook_ONG" class="form-control" placeholder="Digite o facebook da ONG">
+                    </div>
+
+                    <div class="col-md-6 offset-md-3 mt-4">
+                        <label for="site-ong">Site da ONG</label>
+                        <input type="text" name="site_ONG" id="site_ONG" class="form-control" placeholder="Digite o link do site da ONG">
+                    </div>
+
+                    <div class="col-md-6 offset-md-3 mt-4">
+                        <input type="submit" value="Solicitar cadastro" class="btn col-md-12 btn_cadastro_ONG">
                     </div>
                 </form>
             </div>
@@ -85,3 +104,36 @@
     
 </body>
 </html>
+
+<style>
+    /*---------Navegador Secundário--------*/
+    /* Style the list */
+    .breadcrumb{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 18px;
+        padding: 0 0 0 100px;   
+        margin: 0;
+    }
+
+    /* Display list items side by side */
+    .link_breadcrumb{
+        text-decoration: none;
+        color: rgb(102, 102, 105);
+        padding: 10px;
+    }
+
+
+    /* link visitado */
+    .link_breadcrumb a:visited {
+        color: rgb(39, 0, 146);
+    }
+
+    /*---------ONG cadastro--------*/
+    .btn_cadastro_ONG{
+    background-color: rgb(133,122,245)  !important;
+    color: #ffffff;
+    border-radius: 40px;
+}
+</style>
