@@ -58,6 +58,8 @@ Route::get('/',[SiteController::class, 'view_home'])->name('home');
 Route::get('/ongs',[SiteController::class, 'view_ongs'])->name('ongs');
 Route::get('/ongs/cadastro',[OngController::class, 'create'])->name('create.ongs');
 Route::post('/ongs/store',[OngController::class, 'store'])->name('store.ongs');
+Route::get('/ongs/aprovacao',[OngController::class, 'aprovarOngs'])->middleware('auth')->name('aprovar.ongs');
+Route::post('/ongs/aprovar',[OngController::class, 'aprovarOng'])->middleware('auth')->name('aprovar.ong');
 
 // PRODUTOS
 Route::get('/produtos',[SiteController::class, 'view_produtos'])->name('produtos.show');

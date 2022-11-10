@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\CestaCliente;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Produto;
+use App\Models\Ong;
 
 use Illuminate\Http\Request;
 
@@ -35,7 +36,9 @@ class SiteController extends Controller
 
     public function view_ongs()
     {
-        return view('pages.site.ong.index', ['ongs' => '' ]);
+        $ongs = Ong::where('ativo', 1)->get();
+
+        return view('pages.site.ong.index', ['ongs' => $ongs ]);
     }
 
     public function view_pagamento()

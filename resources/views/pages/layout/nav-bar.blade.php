@@ -13,7 +13,15 @@
     <div class="divisor_nav"></div>
     <li class="nav-item">
       <a class="nav-link" href="/ongs/cadastro">Quero ser uma ONG parceira</a>
-  </li>
+    </li>
+    @if(!empty(Auth::user()))
+      @if(Auth::user()->perfil == 'admin')
+        <div class="divisor_nav"></div>
+        <li class="nav-item">
+          <a class="nav-link" href="/ongs/aprovacao">Aprovar Ong</a>
+        </li>
+      @endif()
+    @endif()
 </ul>
 
 <nav class="menu-lateral">
@@ -21,6 +29,11 @@
   <a href="/produtos" class="menu-lateral_link menu-lateral_link--ativo_2">Produtos</a>
   <a href="/ongs" class="menu-lateral_link menu-lateral_link--ativo">ONGs</a>
   <a href="/ongs/cadastro" class="menu-lateral_link menu-lateral_link--ativo_2">Quero ser uma ONG parceira</a>
+  @if(!empty(Auth::user()))
+    @if(Auth::user()->perfil == 'admin')
+    <a href="/ongs/cadastro" class="menu-lateral_link menu-lateral_link--ativo_2">Aprovar Ong</a>
+    @endif()
+  @endif()
 </nav>
 
 

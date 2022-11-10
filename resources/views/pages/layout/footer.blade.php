@@ -43,6 +43,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
 
   function mudarSelect(option, id){
@@ -147,8 +148,53 @@
           }
       });
 
+      $(document).on("click", ".aprovar-ong", function(e) {
+          var ong_id = $(this).attr("data-ong-id");
+
+          swal.fire({
+              title: 'Aprovar Ong',
+              text: "Você está prestes a aprovar esta Ong, deseja continuar?",
+              icon: 'warning',
+              showCancelButton: true,
+              cancelButtonText: "Cancelar",
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Sim',
+              reverseButtons: true
+          }).then((result) => {
+              if (result.value) {
+                  $.ajax({
+                      url: "/ongs/aprovar",
+                      type: "post",
+                      data: {
+                          id: ong_id
+                      },
+                      headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                      },
+                      dataType: "html",
+                      success: function () {
+                          swal.fire(
+                            'Aprovado!',
+                            'A Ong foi aprovada com sucesso!',
+                            'success'
+                          );
+                          setTimeout(function(){
+                              location.reload();
+                          }, 1000)
+                      },
+                      error: function (xhr, ajaxOptions, thrownError) {
+                          swal.fire(
+                            'Erro!',
+                            'Não foi Aprovar a Ong.',
+                            'error'
+                          );
+                      }
+                  });
+              }
+          });     
+      });
+
   });
-
-
 
 </script>
