@@ -16,89 +16,91 @@
 			</a>
 		</div>
     <main>
-        <div class="container">
+        <div>
 
-            <div class="row"> 
+            <div class="form_cadastro_geral"> 
 
                 <span></span>
-                <form action="/ongs/store" method="POST">
+                <form action="/ongs/store" method="POST" class="form_cadastro_todos">
+                    
                     @csrf
-                    @if($errors->any())
-                        <div class="row col-md-6 offset-md-3 mt-4">
-                            <div class="small-12 medium-12 columns">
-                                <div class="error-message">
-                                    <p>Por favor, verifique os erros abaixo:</p>
-                                    <ul>
-                                        @foreach($errors->all() as $error)
-                                            <li><span class="label label-danger">{{ $error }}</span></li>
-                                        @endforeach
-                                    </ul>
+                        @if($errors->any())
+                            <div class="row col-md-6 offset-md-3 mt-4">
+                                <div class="small-12 medium-12 columns">
+                                    <div class="error-message">
+                                        <p class="notificar_correcao">Por favor, verifique os erros abaixo:</p>
+                                        <ul>
+                                            @foreach($errors->all() as $error)
+                                                <li><span class="label label-danger">{{ $error }}</span></li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endif
+                        @endif
 
-                    @if(session('success'))
-                        <h4 class="row col-md-6 offset-md-3 mt-4">{{session('success')}}</h4>
-                    @endif
+                        @if(session('success'))
+                            <h4>{{session('success')}}</h4>
+                        @endif
 
-                    <h3 class="titulo_form col-md-6 offset-md-3 mt-4">Cadastro de ONGs parceiras</h3>
+                    <h3>Cadastro de ONGs parceiras</h3>
 
-                    <div class="col-md-6 offset-md-3 mt-4">
+                    <div class="input_cadastro_ong">
                         <label for="razão_social">Razão social</label>
                         <input type="text" name="razao_social" id="razao_social" class="form-control" placeholder="Digite a razão social da ONG">
                     </div>
 
-                    <div class="col-md-6 offset-md-3 mt-4">
+                    <div class="input_cadastro_ong">
                         <label for="nome_fantasia">Nome fantasia</label>
                         <input type="text" name="nome_fantasia" id="nome_fantasia" class="form-control" placeholder="Digite o nome fantasia da ONG">
                     </div>
 
-                    <div class="col-md-6 offset-md-3 mt-4">
+                    <div class="input_cadastro_ong">
                         <label for="cnpj">CNPJ</label>
                         <input type="text" name="cnpj" id="cnpj" class="form-control" placeholder="Digite o CNPJ da ONG">
                     </div>
 
-                    <div class="col-md-6 offset-md-3 mt-4">
+                    <div class="input_cadastro_ong">
                         <label for="representante">Nome do responsável</label>
                         <input type="text" name="nome_representante_legal" id="nome_representante_legal" class="form-control" placeholder="Digite o nome do responsável">
                     </div> 
 
-                    <div class="col-md-6 offset-md-3 mt-4">
+                    <div class="input_cadastro_ong">
                         <label for="email-representante">Endereço de email</label>
                         <input type="email" name="email_representante_legal" id="email_representante_legal" class="form-control" placeholder="Digite o email do responsável">
                     </div> 
                     
-                    <div class="col-md-6 offset-md-3 mt-4">
+                    <div class="input_cadastro_ong">
                         <label for="tel-representante">Telefone de contato</label>
                         <input type="phone" name="telefone_representante_legal" id="telefone_representante_legal" class="form-control" placeholder="Digite o telefone de contato">
                     </div>  
 
-                    <div class="col-md-6 offset-md-3 mt-4">
+                    <div class="input_cadastro_ong">
                         <label for="insta-ong">Instagram da ONG</label>
                         <input type="text" name="instagram_ONG" id="instagram_ONG" class="form-control" placeholder="Digite o instagram da ONG">
                     </div>
 
-                    <div class="col-md-6 offset-md-3 mt-4">
+                    <div class="input_cadastro_ong">
                         <label for="face-ong">Facebook da ONG</label>
                         <input type="text" name="facebook_ONG" id="facebook_ONG" class="form-control" placeholder="Digite o facebook da ONG">
                     </div>
 
-                    <div class="col-md-6 offset-md-3 mt-4">
+                    <div class="input_cadastro_ong">
                         <label for="site-ong">Site da ONG</label>
                         <input type="text" name="site_ONG" id="site_ONG" class="form-control" placeholder="Digite o link do site da ONG">
                     </div>
 
-                    <div class="col-md-6 offset-md-3 mt-4">
+                    <div class="input_cadastro_ong">
                         <input type="submit" value="Solicitar cadastro" class="btn col-md-12 btn_cadastro_ONG">
                     </div>
+
+                    
+
                 </form>
+                    
             </div>
         </div>
     </main>
-
-    <br>
-    <br>
 
     @include('pages.layout.footer')
     
@@ -124,6 +126,10 @@
         padding: 10px;
     }
 
+    .link_breadcrumb:hover{
+         color: #333333;
+    }
+
 
     /* link visitado */
     .link_breadcrumb a:visited {
@@ -131,9 +137,45 @@
     }
 
     /*---------ONG cadastro--------*/
+    
+    .form-control{
+        width: 100%;
+        padding: 5px 0 5px 2px;
+        font-family:'Segoe UI'!important;
+    }
+
+    .form_cadastro_todos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }  
+
+    .input_cadastro_ong{
+        width: 40%;
+        padding: 10px 0;
+    }
+
+    @media screen and (max-width: 768px) { 
+        .input_cadastro_ong{
+            width: 80%;
+        }
+    }
+
     .btn_cadastro_ONG{
-    background-color: rgb(133,122,245)  !important;
-    color: #ffffff;
-    border-radius: 40px;
-}
+        width: 100%;
+        background-color: rgb(133,122,245)  !important;
+        color: #ffffff;
+        border-radius: 40px;
+
+    }
+
+    .btn_cadastro_ONG:hover{
+        color: #ffffff !important;
+    }
+    
+    .notificar_correcao{
+        color: red;
+        font-weight: bold;
+    }
+
 </style>

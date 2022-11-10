@@ -12,7 +12,6 @@
     align-items: flex-start; 
     justify-content: center;
     padding: 0 60px;
-    
 }
 
 .produtos_carrinho{ /*posicionando os produtos, alinhando conforme a caixa*/
@@ -32,7 +31,6 @@
     border-radius: 5px;
     padding: 2% 2%;
     margin-bottom: 1rem;
-    margin: 1% 10%;
 }
 
 .info1{
@@ -52,10 +50,10 @@
 
 .info2{
     display: flex;
-    width: 50%;
-    justify-content: flex-end;
-    align-items: flex-end;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    
 }
 
 @media screen and (max-width: 768px) {
@@ -67,6 +65,7 @@
 .adicionar_diminuir_item{
     display: flex;
     padding: 50px 0;
+    align-items: center;
 }
 
 h5{
@@ -92,6 +91,26 @@ h5{
 .opcao_doacao{
     list-style-type: none;
 }
+
+.produto_doacao_alt{
+    width: 100%;
+}
+
+.qtd_doacao_largura{
+    width: 100%;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #797979;
+    padding: 3px;
+    /* margin: 5px 0 0 130px; */
+}
+
+.quantidade_doação{
+    padding: 10px 0 0;
+    text-align: right;
+    margin: 0;
+}
+
 /*---- doaçoes----*/
 
 .titulo_entrega_doacao{
@@ -159,6 +178,19 @@ h5{
 
 .titulo_recebimento{
     margin: 20px 0;
+}
+
+.titulo_geral_opcao{
+    display: flex;
+}
+
+.img_titulo_geral_opcao{
+    height: 30px;
+    margin: 0 10px;
+}
+
+.titulo_doacoes{
+    font-size: 24px;
 }
 
 .forma_entrega{
@@ -239,6 +271,12 @@ h5{
 
 .resumo_total_valor{
     width: 20%;
+}
+
+.resumo_valor_total{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 20px 0;
 }
 
 .bt_pagamento{

@@ -20,81 +20,49 @@
     <ul class="ongs row container-fluid text-center">
         <li class="border col-md-6">
             <h2>ONG LOVE ANIMAL</h2>
-            <p>Proposito: Lorem Ipsum is simply 
-                dummy text of the printing and 
-                typesetting industry. Lorem Ipsum is simply 
-                dummy text of the printing and 
-                typesetting industry.</p>
+            <p>Somos uma ONG que temos o propósito de dar carinho e amor aos bichinhos que necessitam de cuidados. Resgatamos animais abandonados e cuidamos para que futuramente consiga um lar.</p>
             <a href="#" class="link_ong">Conheça melhor a ONE LOVE ANIMAL</a>
         </li>
 
         <li class="border col-md-6">
             <h2>LITTLE DOG</h2>
-            <p>Proposito: Lorem Ipsum is simply 
-                dummy text of the printing and 
-                typesetting industry. Lorem Ipsum is simply 
-                dummy text of the printing and 
-                typesetting industry.</p>
+            <p>Somos uma ONG que temos o propósito de dar carinho e amor aos bichinhos que necessitam de cuidados. Resgatamos animais abandonados e cuidamos para que futuramente consiga um lar.</p>
             <a href="#" class="link_ong">Conheça melhor a LITTLE DOG</a>
         </li>
 
         <li class="border col-md-6">
             <h2>Fralda para cachorro</h2>
-            <p>Proposito: Lorem Ipsum is simply 
-                dummy text of the printing and 
-                typesetting industry. Lorem Ipsum is simply 
-                dummy text of the printing and 
-                typesetting industry.</p>
+            <p>Somos uma ONG que temos o propósito de dar carinho e amor aos bichinhos que necessitam de cuidados. Resgatamos animais abandonados e cuidamos para que futuramente consiga um lar.</p>
             <a href="#" class="link_ong">Conheça melhor a LITTLE DOG</a>
         </li>
 
         <li class="border col-md-6">
             <h2>PATAS EM AÇÃO</h2>
-            <p>Proposito: Lorem Ipsum is simply 
-                dummy text of the printing and 
-                typesetting industry. Lorem Ipsum is simply 
-                dummy text of the printing and 
-                typesetting industry.</p>
+            <p>Somos uma ONG que temos o propósito de dar carinho e amor aos bichinhos que necessitam de cuidados. Resgatamos animais abandonados e cuidamos para que futuramente consiga um lar.</p>
             <a href="#" class="link_ong">Conheça melhor a PATAS EM AÇÃO</a>
         </li>
 
         <li class="border col-md-6">
             <h2>ONG LAMBEIJO</h2>
-            <p>Proposito: Lorem Ipsum is simply 
-                dummy text of the printing and 
-                typesetting industry. Lorem Ipsum is simply 
-                dummy text of the printing and 
-                typesetting industry.</p>
+            <p>Somos uma ONG que temos o propósito de dar carinho e amor aos bichinhos que necessitam de cuidados. Resgatamos animais abandonados e cuidamos para que futuramente consiga um lar.</p>
             <a href="#" class="link_ong">Conheça melhor a ONG LAMBEIJO</a>
         </li>
 
         <li class="border col-md-6">
             <h2>Pata Cá Pata Lá</h2>
-            <p>Proposito: Lorem Ipsum is simply 
-                dummy text of the printing and 
-                typesetting industry. Lorem Ipsum is simply 
-                dummy text of the printing and 
-                typesetting industry.</p>
+            <p>Somos uma ONG que temos o propósito de dar carinho e amor aos bichinhos que necessitam de cuidados. Resgatamos animais abandonados e cuidamos para que futuramente consiga um lar.</p>
             <a href="#" class="link_ong">Conheça melhor a Pata Cá Pata Lá</a>
         </li>
 
         <li class="border col-md-6">
             <h2>THE BICHO GANGSTER </h2>
-            <p>Proposito: Lorem Ipsum is simply 
-                dummy text of the printing and 
-                typesetting industry. Lorem Ipsum is simply 
-                dummy text of the printing and 
-                typesetting industry.</p>
+            <p>Somos uma ONG que temos o propósito de dar carinho e amor aos bichinhos que necessitam de cuidados. Resgatamos animais abandonados e cuidamos para que futuramente consiga um lar.</p>
             <a href="#" class="link_ong">Conheça melhor a THE BICHO GANGSTER</a>
         </li>
 
         <li class="border col-md-6">
             <h2>BICHINHOS ZEN</h2>
-            <p>Proposito: Lorem Ipsum is simply 
-                dummy text of the printing and 
-                typesetting industry. Lorem Ipsum is simply 
-                dummy text of the printing and 
-                typesetting industry.</p>
+            <p>Somos uma ONG que temos o propósito de dar carinho e amor aos bichinhos que necessitam de cuidados. Resgatamos animais abandonados e cuidamos para que futuramente consiga um lar.</p>
             <a href="#" class="link_ong">Conheça melhor a BICHINHOS ZEN</a>
         </li>
     </ul>
@@ -121,6 +89,10 @@
         padding: 0 0 0 100px;   
         margin:0;   
 
+    }
+    
+    .link_breadcrumb:hover{
+         color: #333333;
     }
 
     /* Display list items side by side */

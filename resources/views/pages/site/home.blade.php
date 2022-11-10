@@ -91,3 +91,9 @@
     </body>
     @include('pages.layout.footer')
 </html>
+
+<style type="text/css">
+p{
+    font-family: 'Segoe UI';
+	}
+</style>

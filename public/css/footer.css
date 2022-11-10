@@ -6,7 +6,6 @@
 
 .baixo_rodape{
     display: flex;
-    justify-content: space-around;
     align-items: flex-end;
 }
 
@@ -45,7 +44,7 @@
 }
 
 @media screen and (max-width: 510px) {
-    .logo_rodape{
+    .rodape__logo{
         display: none;
     }
 }

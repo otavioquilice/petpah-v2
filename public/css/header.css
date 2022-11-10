@@ -1,7 +1,8 @@
 header{
     background-color: #FFDB99;
-    width: auto;
+    width: 100%;
     padding: 0 1% 1% 1%; /*20px pra cima e baixo. 0px pra direita e esquerda.*/
+   
 }
 
 .header_geral{
@@ -40,6 +41,13 @@ header{
     }
 }
 
+.fonte_label_pesquisa{
+    font-family:'Segoe UI' !important;
+    border: none;
+    padding: 5px 0 5px 5px;
+    border-radius: 5px;
+}
+
 .header_bt_pesquisa{
     padding: 0;
 }
@@ -50,6 +58,8 @@ header{
     border: none;
     padding: 5px;
     border-radius: 5px;
+    font-family:'Segoe UI' !important;
+    
 }
 
 .header_pesquisa_geral{
@@ -68,6 +78,7 @@ header{
     margin: 0;
     display: flex;
     justify-content: flex-start;
+    font-family:'Segoe UI' !important;
 }
 
 .header_entre_cadastre{
@@ -77,10 +88,12 @@ header{
 
 .link_header_entre_cadastre:hover{
     color: #333333;
+
 }
 
 .header_entre_cadastre a{
     color: #333333;
+    font-family:'Segoe UI' !important;
 }
 
 .header_img_login{
@@ -95,15 +108,18 @@ header{
 .btn_sair{
     text-decoration: underline !important;
     padding: 0 !important;
+    font-family:'Segoe UI' !important;
 }
 
 .header_carrinho_grupo{
     padding: 0 0 0 10px;
+    font-family:'Segoe UI' !important;
 }
 
 @media screen and (max-width: 768px) {   
     .header_geral{
         align-items: center;
+        justify-content: center;
     }
 
     .cabecalho__menu{

@@ -18,6 +18,7 @@
 .titulo-hero{
     display: flex;
     align-items: flex-end;
+    font-family:'Segoe UI'!important;
 }
 
 .btn_hero_incentivo_ONG{
@@ -34,11 +35,11 @@
     border-radius: 5px;
     padding: 5px 20px;
     margin: 0 5px;
+    font-family: 'Segoe UI';
 }
 
 .link_ONGs:hover{
     color: #333333;
-    font-weight: bold;
 }
 
 
