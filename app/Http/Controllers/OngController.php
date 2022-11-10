@@ -52,5 +52,26 @@ class OngController extends Controller
 
         return redirect()->route("create.ongs")->withSuccess("Ong cadastrada com sucesso");
 
-    } 
+    }
+    
+    public function aprovarOngs(Request $r)
+    {
+        if(Auth::user()->perfil != 'admin')
+        {
+            return redirect()->route('home');
+        }
+
+        $ongs = Ong::where('ativo', 0)->get();
+
+        return view('pages.site.ong.aprovacao_ongs', ['ongs' => $ongs]);
+    }
+
+    public function aprovarOng(Request $r)
+    {
+        $ong = Ong::find($r->id);
+        $ong->ativo = 1;
+        $ong->save();
+
+        return;
+    }
 }
