@@ -20,6 +20,11 @@ return new class extends Migration
             $table->unsignedBigInteger('ong_id')->nullable()->nullable();
             $table->string('valor')->nullable();
             $table->string('status')->nullable();
+            $table->string('tipo_entrega')->nullable();
+            $table->string('cep')->nullable();
+            $table->string('rua')->nullable();
+            $table->string('numero')->nullable();
+            $table->string('complemento')->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('deleted_at')->nullable();

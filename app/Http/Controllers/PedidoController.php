@@ -15,8 +15,14 @@ class PedidoController extends Controller
     {
         $pedido = new Pedido();
 
-        $pedido->cliente_id = Auth::user()->id;
-        $pedido->status     = 'nao_pago';
+        $pedido->cliente_id     = Auth::user()->id;
+        $pedido->status         = 'nao_pago';
+        $pedido->tipo_entrega   = $r->opca_entrega;
+
+        if($r->opca_entrega == 'solicitar_entregador'){
+            $pedido->cep = $r->cep;
+        }
+
         $pedido->save();
 
         if(!empty(Auth::user())){

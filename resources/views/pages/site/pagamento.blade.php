@@ -22,17 +22,22 @@
                     com os detalhes da compra e orientações por e-mail.</p>
                     
                     <h2>Informações</h2>
-                    <form class="dadospagamento form col-md-12" action="" method="">
+                    <form class="dadospagamento form col-md-12" action="/finalizar/pagamento" method="POST">
                         <div class="form">
-                            <input type="text" id="nome" placeholder="Nome"></input>
+                            <input type="text" value="{{Auth::user()->name}}" disabled id="nome" placeholder="Nome">
                         </div> 
 
                         <div class="form">
-                            <input type="text" id="email"placeholder="E-mail"></input>
+                            <input type="text" value="{{Auth::user()->email}}" disabled id="email"placeholder="E-mail">
                         </div> 
 
-                        <h2>Endereço de retirada</h2>
-                        <p>Rua. Podpah 123, São Paulo - SP, CEP 789-0000</p> <!--banco de dados-->
+                        @if($pedido->tipo_entrega == 'solicitar_entregador')
+                            <h2>Endereço de Entrega</h2>
+                            <p>CEP: {{$pedido->cep}}</p>
+                        @else()
+                            <h2>Endereço de Retirada</h2>
+                            <p>Rua. Podpah 123, São Paulo - SP, CEP 789-0000</p> 
+                        @endif()
                         
                         <h2>Pagamento</h2>
             
@@ -61,7 +66,7 @@
                         </div>
 
                         <div class="form">
-                            <a href="#popup"><button id="finalizar-pagamento">Finalizar o pagamento</button></a>
+                            <a type="submite" href="#popup"><button id="finalizar-pagamento">Finalizar o pagamento</button></a>
                         </div>
                         <div class="btwn"></div>
                     </form>

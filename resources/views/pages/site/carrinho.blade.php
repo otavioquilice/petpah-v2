@@ -47,7 +47,7 @@
                   </a>
                 </div>
 
-                <select class="tipo_produto" onClick="mudarSelect(this, {{$item_prod->produto_id}})" required>
+                <select class="tipo_produto" onClick="selecionarQuantidadeDoacao(this, {{$item_prod->produto_id}})" required>
                   <option value="" selected disabled hidden>Será uma doação?</option>
                   <option value="consumo_proprio">Consumo proprio</option>
                   <option value="consumo_doacao">Doação para ONGs</option>
@@ -94,11 +94,18 @@
 
                 <p class="descricao_entrega">Em caso de consumo própio, selecione como irá receber o produto.<p>
               
-                <select name="select" class="dropdown2">
+                <select name="opca_entrega" class="dropdown2" onClick="selecionarOpcaoEntrega(this)" required>
                   <option value="" selected disabled hidden>Escolha uma opção de Retirada/Entrega.</option>
-                  <option value="valor1">Reirar na loja</option>
-                  <option value="valor2">Solicitar um entregador</option>
+                  <option value="retirar_loja">Reirar na loja</option>
+                  <option value="solicitar_entregador">Solicitar um entregador</option>
                 </select>
+
+                <div hidden class="solicitar_entrega">
+                  <div class="form">
+                    <input type="text" name="cep" id="cep" placeholder="Digite o cep">
+                    <button type="button" id="consultar_cep">Consultar CEP</button>
+                  </div>
+                </div>
               </div>
             </div>
 

@@ -46,7 +46,7 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
 
-  function mudarSelect(option, id){
+  function selecionarQuantidadeDoacao(option, id){
     
     if(option.value === 'consumo_doacao'){
          
@@ -56,6 +56,18 @@
     }else{
       $('.produto_doacao_'+id).attr('hidden','true');
       $('.qtd_doacao_'+id).removeAttr('required');
+      
+    }
+  }
+
+  function selecionarOpcaoEntrega(option){
+    
+    if(option.value === 'solicitar_entregador'){
+         
+      $('.solicitar_entrega').removeAttr('hidden');
+
+    }else{
+      $('.solicitar_entrega').attr('hidden','true');
       
     }
   }
