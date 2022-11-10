@@ -13,11 +13,11 @@
                 </div>		
 
                 <!-- Search -->
-                <div class=header_pesquisa_geral>
+                <div class="header_pesquisa_geral">
                     <div class="col-md-9 header_caixa_pesquisa">
                         <form class="form w-100" method="POST" action="/buscar-produto">
                             @csrf
-                            <input class="form-control mb-2" type="search" name="buscar_produto" placeholder="Pesquise produto(s)" aria-label="Search">
+                            <input class="mb-2 fonte_label_pesquisa" type="search" name="buscar_produto" placeholder="Pesquise produto(s)" aria-label="Search">
                         
                     </div>
 
@@ -81,4 +81,5 @@
     
 
 </header>
+
 

@@ -77,6 +77,10 @@
         margin: 0;
     }
 
+    .link_breadcrumb:hover{
+         color: #333333;
+    }
+
     /* Display list items side by side */
     .link_breadcrumb{
         text-decoration: none;
@@ -121,6 +125,7 @@
 
     .produto-quantidade{
         text-align: right;
+        font-family:'Segoe UI' !important;
     }
 
     .todos-produtos{

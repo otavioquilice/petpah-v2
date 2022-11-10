@@ -59,6 +59,10 @@
         margin:0;   
 
     }
+    
+    .link_breadcrumb:hover{
+         color: #333333;
+    }
 
     /* Display list items side by side */
     .link_breadcrumb{
