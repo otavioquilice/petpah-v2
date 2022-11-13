@@ -44,6 +44,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
 <script type="text/javascript">
 
   function selecionarQuantidadeDoacao(option, id){
@@ -53,10 +54,15 @@
       $('.produto_doacao_'+id).removeAttr('hidden');
       $('.qtd_doacao_'+id).attr('required','true');
 
+      $('.form_doacoes').removeAttr('hidden');
+      $('.ong_id').attr('required','true');
+
     }else{
       $('.produto_doacao_'+id).attr('hidden','true');
       $('.qtd_doacao_'+id).removeAttr('required');
       
+      $('.form_doacoes').attr('hidden','true');
+      $('.ong_id').removeAttr('required');
     }
   }
 
@@ -103,7 +109,8 @@
                   success: function (result)
                   {
                       $('#qtd_produto_carrinho').text(result.qtd_itens_cesta+' Produto(s)');
-                      $('#count_produto_id_'+produto_id).text(result.count_produto.quantidade+' Iten(s) adicionado(s)')
+                      $('#count_produto_id_'+produto_id).text(result.count_produto.quantidade+' Iten(s) adicionado(s)');
+                      $('.count_produto_id_'+produto_id).attr('max',result.count_produto.quantidade);
                       
                   },
                   error: function (xhr, ajaxOptions, thrownError) {
@@ -146,7 +153,8 @@
                   success: function (result)
                   {
                       $('#qtd_produto_carrinho').text(result.qtd_itens_cesta+' Produto(s)');
-                      $('#count_produto_id_'+produto_id).text(result.count_produto.quantidade+' Iten(s) adicionado(s)')
+                      $('#count_produto_id_'+produto_id).text(result.count_produto.quantidade+' Iten(s) adicionado(s)');
+                      $('.count_produto_id_'+produto_id).attr('max',result.count_produto.quantidade);
                       
                   },
                   error: function (xhr, ajaxOptions, thrownError) {
@@ -206,6 +214,11 @@
               }
           });     
       });
+
+      $('.cpf-mask').mask('000.000.000-00', {reverse: true});
+      $('.numero_cartao-mask').mask('0000.0000.0000.0000', {reverse: true});
+      $('.validade-mask').mask('00/00', {reverse: true});
+      $('.cvv-mask').mask('000', {reverse: true});
 
   });
 

@@ -24,9 +24,10 @@ class SiteController extends Controller
 
             $id_user  = Auth::user()->id;
             $produtos = CestaCliente::where('cliente_id', $id_user)->get();
+            $ongs     = Ong::where('ativo', 1)->pluck('nome_fantasia','id');
         }
 
-        return view('pages.site.carrinho', ['produtos' => !empty($produtos) ? $produtos : [] ]);
+        return view('pages.site.carrinho', ['produtos' => $produtos , 'ongs' => $ongs]);
     }
 
     public function view_home()
@@ -41,8 +42,4 @@ class SiteController extends Controller
         return view('pages.site.ong.index', ['ongs' => $ongs ]);
     }
 
-    public function view_pagamento()
-    {
-        return view('pages.site.pagamento');
-    }
 }

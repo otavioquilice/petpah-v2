@@ -47,7 +47,7 @@
                   </a>
                 </div>
 
-                <select class="tipo_produto" onClick="selecionarQuantidadeDoacao(this, {{$item_prod->produto_id}})" required>
+                <select class="tipo_produto form-control" onClick="selecionarQuantidadeDoacao(this, {{$item_prod->produto_id}})" required>
                   <option value="" selected disabled hidden>Será uma doação?</option>
                   <option value="consumo_proprio">Consumo proprio</option>
                   <option value="consumo_doacao">Doação para ONGs</option>
@@ -55,7 +55,7 @@
 
                 <div hidden class="produto_doacao_{{$item_prod->produto_id}} produto_doacao_alt">
                   <p class="quantidade_doação">Digite a quantidade para doação</p>
-                  <input type="number" class="qtd_doacao_{{$item_prod->produto_id}} qtd_doacao_largura"  name="produto_doacao[{{$item_prod->produto_id}}]"  min="1" max="{{$item_prod->quantidade}}" step="1">
+                  <input type="number" class="qtd_doacao_{{$item_prod->produto_id}} count_produto_id_{{$item_prod->produto_id}} qtd_doacao_largura"  name="produto_doacao[{{$item_prod->produto_id}}]"  min="1" max="{{$item_prod->quantidade}}" step="1">
                 </div>
                 
               </div>
@@ -94,7 +94,7 @@
 
                 <p class="descricao_entrega">Em caso de consumo própio, selecione como irá receber o produto.<p>
               
-                <select name="opca_entrega" class="dropdown2" onClick="selecionarOpcaoEntrega(this)" required>
+                <select name="opca_entrega" class="form-control" onClick="selecionarOpcaoEntrega(this)" required>
                   <option value="" selected disabled hidden>Escolha uma opção de Retirada/Entrega.</option>
                   <option value="retirar_loja">Reirar na loja</option>
                   <option value="solicitar_entregador">Solicitar um entregador</option>
@@ -111,7 +111,7 @@
 
             
             <br>
-            <div class="doacoes">
+            <div hidden class="form_doacoes">
 
               <div class="titulo_geral_opcao">
                 <img src="{{ asset('media/imagens/img3/cuidado.png') }}" alt="cuidado doação" class="img_titulo_geral_opcao">
@@ -123,16 +123,14 @@
                   <p class="selecione_titulo">Selecione a ONG</p>
                 </div>
 
-                <select name="select" class="dropdown3">
+                <select name="ong_id" class="form-control ong_id">
                   <option value="" selected disabled hidden>Escolha uma ONG</option>
-                  <option value="valor1">ONG LOVE ANIMAL</option>
-                  <option value="valor2">LITTLE DOG</option>
-                  <option value="valor3">PATAS EM AÇÃO</option>
-                  <option value="valor4">ONG LAMBEIJO</option>
-                  <option value="valor5">ONG XX</option>
+                  @foreach($ongs as $key => $ong_nome_fantasia)
+                  <option value="{{$key}}" >{{$ong_nome_fantasia}}</option>
+                  @endforeach()
                 </select>
+                {{-- {{Form::select('ong_id', ['' => 'Selecione uma ONG']+$ongs->toArray() , '' , ['id'=>'ong_id','class' =>'form-control'])}} --}}
                 <br>
-                {{-- <input type="submit" value="Selecionar ONG" class="bt_pagamento col-md-8"> --}}
               </div>
             </div>
 

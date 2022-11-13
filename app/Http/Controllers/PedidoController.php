@@ -18,6 +18,7 @@ class PedidoController extends Controller
         $pedido->cliente_id     = Auth::user()->id;
         $pedido->status         = 'nao_pago';
         $pedido->tipo_entrega   = $r->opca_entrega;
+        $pedido->ong_id         = $r->ong_id;
 
         if($r->opca_entrega == 'solicitar_entregador'){
             $pedido->cep = $r->cep;
@@ -91,7 +92,66 @@ class PedidoController extends Controller
             }
         }
 
+        return redirect()->route('pagamento.show', [$pedido->uuid]);
+
+    }
+
+    public function show(Request $r){
+
+        $pedido = Pedido::findByUuid($r->uuid);
+
         return view('pages.site.pagamento', ['pedido' => $pedido]);
 
-    } 
+    }
+
+    public function pagamento(Request $r){
+
+        $r->validate(
+            [
+                "num_cartao"        => 'required',
+                "titular_cartao"    => 'required',
+                "validade"          => 'required',
+                "cvv"               => 'required',
+                'titular_cpf'       => 'required',
+            ],
+            [
+                'num_cartao.required'          => "O campo Número Cartão é obrigatório",
+                'titular_cartao.required'      => "O campo Titular do cartão é obrigatório",
+                'validade.required'            => "O campo Validade é obrigatório",
+                'cvv.required'                 => "O campo Cvv Representante é obrigatório",
+                'titular_cpf.required'         => "O campo CPF Titular é obrigatório",
+            ]
+        );
+
+        $pedido = Pedido::findByUuid($r->uuid);
+
+        $cartao_valido_numero           = '5470.1126.8705.2236';
+        $cartao_valido_validade         = '03/24';
+        $cartao_valido_cvv              = '695';
+        $cartao_valido_cpf              = '110.024.760-20';
+        $cartao_valido_nome_titular     = 'Carlos Silva';
+
+
+        if($cartao_valido_numero == $r->num_cartao && $cartao_valido_validade == $r->validade && $cartao_valido_cvv == $r->cvv){
+            $pedido->status = 'pago';
+            $pedido->save();
+
+            // return redirect()>back()->withSuccess('Deu certo'); 
+            return redirect()->route('pagamento.finalizado', [$pedido->uuid]);
+            
+        }else{
+
+            return redirect()->back()->withErrors('Cartão não aprovado'); 
+        }
+
+
+    }
+
+    public function pagamento_finalizado(request $r){
+
+        $pedido = Pedido::findByUuid($r->uuid);
+
+        return view('pages.site.pagamento_finalizado', ['pedido' => $pedido ]);
+
+    }
 }

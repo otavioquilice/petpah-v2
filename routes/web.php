@@ -72,7 +72,9 @@ Route::get('/carrinho',[SiteController::class, 'view_carrinho'])->name('carrinho
 
 
 // PAGAMENTO
-Route::post('/pagamento/show',[SiteController::class, 'view_pagamento'])->name('pagamento.show');
+Route::get('/pagamento/show/{uuid}',[PedidoController::class, 'show'])->name('pagamento.show');
+Route::post('/finalizar/pagamento/{uuid}',[PedidoController::class, 'pagamento'])->name('pagamento.finalizar');
+Route::get('/pagamento/finalizado/{uuid}',[PedidoController::class, 'pagamento_finalizado'])->name('pagamento.finalizado');
 
 // PEDIDO
 Route::post('/store/pedido',[PedidoController::class, 'store'])->name('store.pedido');

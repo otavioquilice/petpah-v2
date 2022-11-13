@@ -22,7 +22,8 @@
                     com os detalhes da compra e orientações por e-mail.</p>
                     
                     <h2>Informações</h2>
-                    <form class="dadospagamento form col-md-12" action="/finalizar/pagamento" method="POST">
+                    <form class="dadospagamento form col-md-12" action="/finalizar/pagamento/{{$pedido->uuid}}" method="POST">
+                        @csrf
                         <div class="form">
                             <input type="text" value="{{Auth::user()->name}}" disabled id="nome" placeholder="Nome">
                         </div> 
@@ -38,56 +39,105 @@
                             <h2>Endereço de Retirada</h2>
                             <p>Rua. Podpah 123, São Paulo - SP, CEP 789-0000</p> 
                         @endif()
+
+                        <div class="resumo-pedido">
+                            <h2> Resumo do pedido </h2>
+        
+                            <div class="doacao">
+                                <h3 class="pg_titulo_doacao"> Doação </h3>
+                                @foreach($pedido->itens_pedido as $item)
+                                    @if($item->tipo_pedido == 'consumo_doacao')
+                                        <ol>{{$item->produto->nome}} | Quantidade: {{$item->quantidade}} | Valor Total: R$: {{ $item->valor_total}} </ol> 
+                                    @endif()
+                                @endforeach()
+                            </div>
+        
+                            <div class="consumo">
+                                <h3 class="pg_titulo_doacao"> Consumo Próprio </h3>
+                                @foreach($pedido->itens_pedido as $item)
+                                    @if($item->tipo_pedido == 'consumo_proprio')
+                                    <ol>{{$item->produto->nome}} | Quantidade: {{$item->quantidade}} | Valor Total: R$: {{ $item->valor_total}} </ol> 
+                                    @endif()
+                                @endforeach()
+                            </div>
+                        </div>
+        
+                        <div class="total_preco">
+                            <h3 class="total"> Total </h3>
+                            <p class="preço-total">R$ {{$pedido->valor}}</p> <!--substituir com o total-->
+                        </div>
                         
                         <h2>Pagamento</h2>
+                        @if($errors->any())
+                            <div class="row col-md-6 offset-md-3 mt-4">
+                                <div class="small-12 medium-12 columns">
+                                    <div class="error-message">
+                                        <p class="notificar_correcao">Por favor, verifique os erros abaixo:</p>
+                                        <ul>
+                                            @foreach($errors->all() as $error)
+                                                <li><span class="label label-danger">{{ $error }}</span></li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                        {{-- @if (session('success'))
+                        <li><span class="label label-danger">{{ session('success') }}</span></li>
+                            <script type="text/javascript">
+                                $(document).ready(function()
+                                {
+                                    $.notify("{{session('success')}}",
+                                    {
+                                        offset: {
+                                            x: 30,
+                                            y: 30
+                                        },
+                                        type: 'success',
+                                        animate: {
+                                            enter: 'animated bounce',
+                                            exit: 'animated bounce'
+                                        },
+                                        placement: {
+                                            from: 'bottom',
+                                            align: 'right'
+                                        },
+                                        delay: 1000
+                                    });
+                                });
+                            </script>
+                        @endif --}}
             
-
                         <div class="form col-md-12">
-                            <input type="text" id="numCartao"  placeholder="Número do cartão">
+                            <input type="text" name="num_cartao" id="num_cartao" class="numero_cartao-mask"  placeholder="Número do cartão">
                         </div> 
 
                         <div class="form col-md-12">
-                            <input type="text" id="titularCartao"  placeholder="Nome do Titular do Cartão">
+                            <input type="text" name="titular_cartao" id="titular_cartao"  placeholder="Nome do Titular do Cartão">
                         </div>
                         
                         <div class="form col-md-12">
-                            <input type="text" id="validade"  placeholder="Validade">
+                            <input type="text" name="validade" id="validade"  class="validade-mask" placeholder="Validade">
                         </div>
 
                         <div class="form col-md-12">
-                            <input type="text" id="CVV"  placeholder="CVV">
+                            <input type="text" name="cvv" id="cvv"  class="cvv-mask" placeholder="CVV">
                         </div>
                         
                         <div class="form col-md-12">
-                            <input type="text" id="titularCPF"  placeholder="CPF do titular">
+                            <input type="text" name="titular_cpf" id="titular_cpf" class="cpf-mask"  placeholder="CPF do titular">
                         </div>
-                        <div class="form col-md-12">
-                            <input type="text" id="numParcelas"  placeholder="Número de parcelas">
-                        </div>
+                        {{-- <div class="form col-md-12">
+                            <input type="text" name="num_parcelas" id="num_parcelas"  placeholder="Número de parcelas">
+                        </div> --}}
+  
+                        <a type="submite"><button id="finalizar-pagamento">Finalizar o pagamento</button></a>
 
-                        <div class="form">
-                            <a type="submite" href="#popup"><button id="finalizar-pagamento">Finalizar o pagamento</button></a>
-                        </div>
                         <div class="btwn"></div>
                     </form>
                 </div>
 
-                <div class="resumo-pedido">
-                    <h2> Resumo do pedido </h2>
 
-                    <div class="doacao">
-                        <h3 class="pg_titulo_doacao"> Doação </h3>
-                    </div>
-
-                    <div class="consumo">
-                        <h3 class="pg_titulo_doacao"> Consumo </h3>
-                    </div>
-                </div>
-
-                <div class="total_preco">
-                    <h3 class="total"> Total </h3>
-                    <p class="preço-total">R$ 00,00</p> <!--substituir com o total-->
-                </div>
             </div>
 
         </div>
