@@ -15,6 +15,12 @@
       <a class="nav-link" href="/ongs/cadastro">Quero ser uma ONG parceira</a>
     </li>
     @if(!empty(Auth::user()))
+      <li class="nav-item">
+        <a class="nav-link" href="/pedidos/meus-pedidos/{{Auth::user()->id}}">Meus Pedidos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/doacoes/minhas-doacoes/{{Auth::user()->id}}">Minhas Doações</a>
+      </li>
       @if(Auth::user()->perfil == 'admin')
         <div class="divisor_nav"></div>
         <li class="nav-item">
@@ -30,6 +36,8 @@
   <a href="/ongs" class="menu-lateral_link menu-lateral_link--ativo">ONGs</a>
   <a href="/ongs/cadastro" class="menu-lateral_link menu-lateral_link--ativo_2">Quero ser uma ONG parceira</a>
   @if(!empty(Auth::user()))
+    <a href="/pedidos/meus-pedidos/{{Auth::user()->id}}" class="menu-lateral_link menu-lateral_link--ativo">Meus Pedidos</a>
+    <a href="/doacoes/minhas-doacoes/{{Auth::user()->id}}" class="menu-lateral_link menu-lateral_link--ativo_2">Minhas Doações</a>
     @if(Auth::user()->perfil == 'admin')
     <a href="/ongs/cadastro" class="menu-lateral_link menu-lateral_link--ativo_2">Aprovar Ong</a>
     @endif()

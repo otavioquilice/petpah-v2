@@ -78,9 +78,11 @@ Route::get('/pagamento/finalizado/{uuid}',[PedidoController::class, 'pagamento_f
 
 // PEDIDO
 Route::post('/store/pedido',[PedidoController::class, 'store'])->name('store.pedido');
+Route::get('/pedidos/meus-pedidos/{id}',[PedidoController::class, 'meus_pedidos'])->name('meus.pedidos');
 
 
-
+// DOAÇOES
+Route::get('/doacoes/minhas-doacoes/{id}',[PedidoController::class, 'minhas_doacoes'])->name('minhas.doacoes');
 
 // Ajax
 Route::post('/ajax/add-produto-carrinho',[CarrinhoController::class, 'ajaxAddCarrinho'])->name('adicionar-produto-caarrinho');

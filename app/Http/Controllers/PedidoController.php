@@ -147,11 +147,28 @@ class PedidoController extends Controller
 
     }
 
-    public function pagamento_finalizado(request $r){
+    public function pagamento_finalizado(Request $r){
 
         $pedido = Pedido::findByUuid($r->uuid);
 
         return view('pages.site.pagamento_finalizado', ['pedido' => $pedido ]);
+
+    }
+
+    public function meus_pedidos(Request $r){
+
+        $pedidos = Pedido::where('cliente_id', $r->id)->get();
+
+        return view('pages.site.cliente.pedidos', ['pedidos' => $pedidos]);
+    }
+
+    public function minhas_doacoes(Request $r){
+
+        $itens_doados = ItemPedido::whereHas('pedido', function ($query) use ($r){
+            $query->where('status', 'pago')->where('cliente_id', $r->id);
+        })->get();
+
+        return view('pages.site.cliente.doacoes', ['itens_doados' => $itens_doados]);
 
     }
 }

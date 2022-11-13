@@ -39,4 +39,9 @@ class Pedido extends Model
 	{
 		return $this->belongsTo(User::class, "cliente_id", "id");
 	}
+
+	public function ong()
+	{
+		return $this->belongsTo(Ong::class, "ong_id", "id");
+	}
 }
