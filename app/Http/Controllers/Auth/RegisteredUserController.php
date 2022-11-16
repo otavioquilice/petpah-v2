@@ -43,7 +43,7 @@ class RegisteredUserController extends Controller
             'password'   => Hash::make($request->password),
         ]);
 
-        return redirect()->route('login');
+        return redirect()->route('login')->withSuccess("Usuário cadastrado com sucesso");
     }
 
 }

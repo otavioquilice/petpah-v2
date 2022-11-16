@@ -9,6 +9,14 @@ use PhpParser\Node\Stmt\TryCatch;
 
 class OngController extends Controller
 {
+
+    public function index()
+    {
+        $ongs = Ong::where('ativo', 1)->get();
+
+        return view('pages.site.ong.index', ['ongs' => $ongs ]);
+    }
+
     public function create(Request $r)
     {
         return view('pages.site.ong.cadastro');

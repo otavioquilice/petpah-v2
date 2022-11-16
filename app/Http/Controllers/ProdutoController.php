@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
 {
+    public function index()
+    {
+        $produtos = Produto::all();
+
+        return view('pages.site.produtos', ['produtos' => $produtos ]);
+    }
+
     public function buscarProduto(Request $r)
     {
         $texto_digitado = $r->buscar_produto;

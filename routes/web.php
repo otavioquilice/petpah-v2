@@ -55,26 +55,26 @@ Route::get('/',[SiteController::class, 'view_home'])->name('home');
 
 
 // ONG
-Route::get('/ongs',[SiteController::class, 'view_ongs'])->name('ongs');
+Route::get('/ongs',[OngController::class, 'index'])->name('ongs');
 Route::get('/ongs/cadastro',[OngController::class, 'create'])->name('create.ongs');
 Route::post('/ongs/store',[OngController::class, 'store'])->name('store.ongs');
 Route::get('/ongs/aprovacao',[OngController::class, 'aprovarOngs'])->middleware('auth')->name('aprovar.ongs');
 Route::post('/ongs/aprovar',[OngController::class, 'aprovarOng'])->middleware('auth')->name('aprovar.ong');
 
 // PRODUTOS
-Route::get('/produtos',[SiteController::class, 'view_produtos'])->name('produtos.show');
+Route::get('/produtos',[ProdutoController::class, 'index'])->name('produtos.show');
 Route::post('/buscar-produto',[ProdutoController::class, 'buscarProduto'])->name('buscarProduto');
 
 
 // CARRINHO
-Route::get('/carrinho',[SiteController::class, 'view_carrinho'])->name('carrinho');
+Route::get('/carrinho',[CarrinhoController::class, 'index'])->middleware('auth')->name('carrinho');
 // Route::get('/carrinho',[SiteController::class, 'tela_carrinho'])->middleware('auth')->name('carrinho');
 
 
 // PAGAMENTO
-Route::get('/pagamento/show/{uuid}',[PedidoController::class, 'show'])->name('pagamento.show');
-Route::post('/finalizar/pagamento/{uuid}',[PedidoController::class, 'pagamento'])->name('pagamento.finalizar');
-Route::get('/pagamento/finalizado/{uuid}',[PedidoController::class, 'pagamento_finalizado'])->name('pagamento.finalizado');
+Route::get('/pagamento/show/{uuid}',[PedidoController::class, 'show'])->middleware('auth')->name('pagamento.show');
+Route::post('/finalizar/pagamento/{uuid}',[PedidoController::class, 'pagamento'])->middleware('auth')->name('pagamento.finalizar');
+Route::get('/pagamento/finalizado/{uuid}',[PedidoController::class, 'pagamento_finalizado'])->middleware('auth')->name('pagamento.finalizado');
 
 // PEDIDO
 Route::post('/store/pedido',[PedidoController::class, 'store'])->name('store.pedido');

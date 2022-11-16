@@ -20,8 +20,9 @@
 		<!--end::Fonts-->
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
 		<link href="{{ asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 
-        <link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+		
 		<!--end::Global Stylesheets Bundle-->
 	</head>
 	<!--end::Head-->
@@ -92,6 +93,12 @@
 								</div>
 								<!--end::Separator-->
 								<!--begin::Input group=-->
+								@if (session('success'))
+									{{-- <li><span class="label label-danger">{{ session('success') }}</span></li> --}}
+									<div class="alert alert-success" role="alert">
+										{{ session('success') }}
+									</div>
+								@endif
 								<div class="fv-row mb-8">
 									<!--begin::Email-->
 									<input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent" />

@@ -42,9 +42,6 @@
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
 <script type="text/javascript">
 
   function selecionarQuantidadeDoacao(option, id){
@@ -92,7 +89,7 @@
                   icon: 'error',
                   title: 'Oops...',
                   text: 'Antes de adicionar o produto no carrinho é necessário fazer o login!',
-                  footer: '<a href="/login">Clique aqui para fazer o login.</a>'
+                  footer: '<a href="/login">Clique aqui para fazer o login.</a><p>- OU -</p><a href="/register">Clique aqui para se cadastrar.</a>'
               })
 
           }else{
@@ -136,7 +133,7 @@
                   icon: 'error',
                   title: 'Oops...',
                   text: 'Antes de adicionar ou remover o produto no carrinho é necessário fazer o login!',
-                  footer: '<a href="/login">Clique aqui para fazer o login.</a>'
+                  footer: '<a href="/login">Clique aqui para fazer o login.</a><p>- OU -</p><a href="/register">Clique aqui para se cadastrar.</a>'
               })
 
           }else{
@@ -213,6 +210,26 @@
                   });
               }
           });     
+      });
+
+      $(document).on("click", ".carrinho_click", function(){
+
+        var logado  = {{ !empty(Auth::user()) ? 1 : 0 }};
+
+        var produto_id = $(this).attr('data-produto-id');
+
+        if(logado == 0){
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Antes de acessar o carrinho é necessário fazer o login!',
+                footer: '<a href="/login">Clique aqui para fazer o login.</a><p>- OU -</p><a href="/register">Clique aqui para se cadastrar.</a>'
+            })
+
+        }else{
+            window.location.replace("/carrinho");
+        }
       });
 
       $('.cpf-mask').mask('000.000.000-00', {reverse: true});

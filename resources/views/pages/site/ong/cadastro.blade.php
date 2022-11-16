@@ -45,6 +45,7 @@
                         @if(session('success'))
                             <img src="{{ asset('media/imagens/img/correct.png')}}" alt="check mark" class="icone_cadastro_sucesso">
                             <h4 class="ong_cadastra_sucesso">{{session('success')}}! <br> Fique de olho no e-mail, entraremos em contato em breve.</h4>
+                            <br>
                         @endif
 
                     <h3>Cadastro de ONGs parceiras</h3>

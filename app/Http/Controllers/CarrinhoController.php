@@ -3,11 +3,24 @@
 namespace App\Http\Controllers;
 use App\Models\CestaCliente;
 use App\Models\Produto;
+use App\Models\Ong;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class CarrinhoController extends Controller
 {
+    public function index()
+    {
+        if(!empty(Auth::user())){
+
+            $id_user  = Auth::user()->id;
+            $produtos = CestaCliente::where('cliente_id', $id_user)->get();
+            $ongs     = Ong::where('ativo', 1)->pluck('nome_fantasia','id');
+        }
+
+        return view('pages.site.carrinho', ['produtos' => $produtos , 'ongs' => $ongs]);
+    }
+
     public function ajaxAddCarrinho(Request $r)
     {
         $produto_id = $r->produto_id;
