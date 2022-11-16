@@ -10,7 +10,6 @@
         <main>
             @include('pages.layout.nav-bar')
 
-            <br><br>
             <div class="container">
                 <div class="row align-items-center"> 
 

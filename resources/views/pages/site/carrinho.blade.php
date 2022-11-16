@@ -137,7 +137,7 @@
             <br>
 
             <input type="submit" value="Ir para pagamento" class="bt_pagamento col-md-8">
-            <input type="submit" value="Continuar comprando" class="bt_contimuar col-md-8">
+            <a href="/produtos"><input type="submit" value="Continuar comprando" class="bt_contimuar col-md-8"></a>
 
           
 

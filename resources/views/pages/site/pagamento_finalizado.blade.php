@@ -11,11 +11,11 @@
             @include('pages.layout.nav-bar')
 
             <div class="container_popup">
-		        <h1 class="titulo_pagamento_sucesso">Pagamento efetuado com sucesso!</h1>
+		        <h1 class="titulo_pagamento_sucesso">Obrigada, pagamento efetuado com sucesso!</h1>
                 <a href="/"><img class="img_pg_sucesso" src="{{ asset('media/imagens/img/compra2.png') }}" alt="Imagem confirmação pagamento"></a> 
 		        <ol class="dados_pagamento_confirmado">Número do seu Pedido: {{$pedido->id}}</ol>
                 <ol class="dados_pagamento_confirmado">Status: {{ $pedido->status == 'pago' ? 'Pago' : 'Nâo Pago'}}</ol>
-                <a href="home.html"><button class="menu-principal">Voltar para página principal </button></a> 
+                <a href="/"><button class="menu-principal">Voltar para página principal </button></a> 
             </div>
 
         </main>
@@ -54,11 +54,11 @@
 .menu-principal{
 border-radius: 10px;
 border: none;
-padding: 10px 50px;
+padding: 10px 100px;
 background-color: #857AF5;
 color: #ffffff;
 font-weight: bold;
-font-size: 15px;
+font-size: 20px;
 transition: 1s background;
 cursor: pointer;
 }

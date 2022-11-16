@@ -11,7 +11,6 @@
         @include('pages.layout.nav-bar')
 
         <div class="pagamento container centered">
-            <!-- <div class="col-md-12"> -->
             <div class="finalizar-pedido">
                 <h2>Finalizar pedido</h2>
                 <div class="circle">
@@ -37,7 +36,7 @@
                         <p>CEP: {{$pedido->cep}}</p>
                     @else()
                         <h2>Endereço de Retirada</h2>
-                        <p>Rua. Podpah 123, São Paulo - SP, CEP 789-0000</p> 
+                        <p>R. Frei João, 59 - Ipiranga, São Paulo - SP, 04280-130</p> 
                     @endif()
 
                     <h2>Pagamento</h2>
@@ -143,20 +142,8 @@
                 
             </form>
                 
-
-<!-- 
-            </div> -->
-
         </div>
         
-        <!--*********************PopUp****************************-->
-        <!-- <div id="container">
-            <div id="pag">
-                <img src="{{ asset('media/imagens/img/compra2.png') }}" width="800px 400px">
-                <a href="#pag"><p>X</p></a>
-                <a href="home.html"><button class="menu-principal">Voltar para Página Principal </button></a> 
-            </div>  
-        </div> -->
     </main>
 </body>
 @include('pages.layout.footer')
