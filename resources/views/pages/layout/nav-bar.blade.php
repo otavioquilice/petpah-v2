@@ -14,10 +14,12 @@
     <li class="nav-item">
       <a class="nav-link" href="/ongs/cadastro">Quero ser uma ONG parceira</a>
     </li>
+    <div class="divisor_nav"></div>
     @if(!empty(Auth::user()))
       <li class="nav-item">
         <a class="nav-link" href="/pedidos/meus-pedidos/{{Auth::user()->id}}">Meus Pedidos</a>
       </li>
+      <div class="divisor_nav"></div>
       <li class="nav-item">
         <a class="nav-link" href="/doacoes/minhas-doacoes/{{Auth::user()->id}}">Minhas Doações</a>
       </li>

@@ -1,0 +1,67 @@
+    /*---------Navegador Secundário--------*/
+    /* Style the list */
+    .breadcrumb{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 18px;
+        padding: 0 0 0 100px;   
+        margin: 0;
+    }
+
+    .link_breadcrumb:hover{
+         color: #333333;
+    }
+
+    /* Display list items side by side */
+    .link_breadcrumb{
+        text-decoration: none;
+        color: rgb(102, 102, 105);
+        padding: 10px;
+    }
+
+
+    /* link visitado */
+    .link_breadcrumb a:visited {
+        color: rgb(39, 0, 146);
+    }
+
+    /*---------Produtos--------*/
+    .link_descricao_produtos{
+        text-decoration: none;
+        color: #333333;
+    }
+
+    .link_descricao_produtos:hover{
+        text-decoration: none;
+        color: #333333;
+    }
+    
+    .produto-geral{
+        padding: 0 30px;
+    }
+
+    .produto-imagem{
+        text-align: center;
+    }
+
+    .produto-nome{
+        text-align: left;
+        font-size: 24px;
+    }
+
+    .produtos-preco{
+        text-align: left;
+        font-size: 20px;
+    }
+
+    .produto-quantidade{
+        text-align: right;
+        font-family:'Segoe UI' !important;
+    }
+
+    .todos-produtos{
+         margin-left: 0 !important;
+        margin-right: 0 !important;
+
+    }

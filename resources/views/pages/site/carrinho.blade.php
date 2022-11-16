@@ -102,8 +102,8 @@
 
                 <div hidden class="solicitar_entrega">
                   <div class="form">
-                    <input type="text" name="cep" id="cep" placeholder="Digite o cep">
-                    <button type="button" id="consultar_cep">Consultar CEP</button>
+                    <input type="text" name="cep" class="cx_consultar_cep" placeholder="Digite o CEP">
+                    <button type="button" class="consultar_cep">Consultar</button>
                   </div>
                 </div>
               </div>

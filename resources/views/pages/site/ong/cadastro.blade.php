@@ -25,10 +25,13 @@
                     
                     @csrf
                         @if($errors->any())
-                            <div class="row col-md-6 offset-md-3 mt-4">
+                            <div>
                                 <div class="small-12 medium-12 columns">
                                     <div class="error-message">
-                                        <p class="notificar_correcao">Por favor, verifique os erros abaixo:</p>
+                                        <div class="mensagem_erro_icone">
+                                            <img src="{{ asset('media/imagens/img/remove.png')}}" alt="deu erro" class="icone_cadastro_erro">
+                                            <p class="notificar_correcao">Por favor, verifique os erros abaixo</p>
+                                        </div>
                                         <ul>
                                             @foreach($errors->all() as $error)
                                                 <li><span class="label label-danger">{{ $error }}</span></li>
@@ -40,7 +43,8 @@
                         @endif
 
                         @if(session('success'))
-                            <h4>{{session('success')}}</h4>
+                            <img src="{{ asset('media/imagens/img/correct.png')}}" alt="check mark" class="icone_cadastro_sucesso">
+                            <h4 class="ong_cadastra_sucesso">{{session('success')}}! <br> Fique de olho no e-mail, entraremos em contato em breve.</h4>
                         @endif
 
                     <h3>Cadastro de ONGs parceiras</h3>
@@ -111,33 +115,50 @@
     /*---------Navegador Secundário--------*/
     /* Style the list */
     .breadcrumb{
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        font-size: 18px;
-        padding: 0 0 0 100px;   
-        margin: 0;
-    }
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+    padding: 0 0 0 50px;   
+    margin:0;      
+}
 
-    /* Display list items side by side */
-    .link_breadcrumb{
-        text-decoration: none;
-        color: rgb(102, 102, 105);
-        padding: 10px;
-    }
-
-    .link_breadcrumb:hover{
-         color: #333333;
-    }
+.link_breadcrumb{
+    text-decoration: none;
+    color: rgb(102, 102, 105);
+    padding: 10px;
+}
 
 
-    /* link visitado */
-    .link_breadcrumb a:visited {
-        color: rgb(39, 0, 146);
-    }
+.link_breadcrumb:hover{
+    color: rgb(102, 102, 105);
+}
 
     /*---------ONG cadastro--------*/
+    .icone_cadastro_erro{
+        width: 10%;
+        text-align: center;
+    }
+
+    .mensagem_erro_icone{
+        text-align: center; 
+    }
+
+    .notificar_correcao{
+        font-size: 35px;
+    }
     
+    .icone_cadastro_sucesso{
+        width: 4%;
+        text-align: center;
+    }
+
+    .ong_cadastra_sucesso{
+        color: green;
+        font-size: 35px;
+        text-align: center;
+    }
+
     .form-control{
         width: 100%;
         padding: 5px 0 5px 2px;

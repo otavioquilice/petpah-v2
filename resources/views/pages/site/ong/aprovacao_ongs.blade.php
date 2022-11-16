@@ -82,3 +82,47 @@
     
 </body>
 </html>
+
+<style>
+.breadcrumb{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+    padding: 0 0 0 50px;   
+    margin:0;      
+}
+
+.link_breadcrumb{
+    text-decoration: none;
+    color: rgb(102, 102, 105);
+    padding: 10px;
+}
+
+
+.link_breadcrumb:hover{
+    color: rgb(102, 102, 105);
+}
+
+.aprovar-ong{
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 5px 6px;
+    background-color: #857AF5;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 1s background;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+
+
+}
+  
+.aprovar-ong:hover{
+    background: #a49ff0;
+}
+</style>

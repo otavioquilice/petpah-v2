@@ -69,3 +69,25 @@
     
 </body>
 </html>
+
+<style>
+.breadcrumb{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+    padding: 0 0 0 50px;   
+    margin:0;      
+}
+
+.link_breadcrumb{
+    text-decoration: none;
+    color: rgb(102, 102, 105);
+    padding: 10px;
+}
+
+
+.link_breadcrumb:hover{
+    color: rgb(102, 102, 105);
+}
+</style>

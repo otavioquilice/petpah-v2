@@ -51,45 +51,51 @@
     /*---------Navegador Secundário--------*/
     /* Style the list */
     .breadcrumb{
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        font-size: 18px;
-        padding: 0 0 0 100px;   
-        margin:0;   
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+    padding: 0 0 0 50px;   
+    margin:0;      
+}
 
-    }
-    
-    .link_breadcrumb:hover{
-         color: #333333;
-    }
+.link_breadcrumb{
+    text-decoration: none;
+    color: rgb(102, 102, 105);
+    padding: 10px;
+}
 
-    /* Display list items side by side */
-    .link_breadcrumb{
-        text-decoration: none;
-        color: rgb(102, 102, 105);
-        padding: 20px;
-    }
 
-    /*---------Sobre ONG's--------*/
-    /* link visitado */
-    .link_breadcrumb a:visited {
-        color: rgb(39, 0, 146);
-    }
+.link_breadcrumb:hover{
+    color: rgb(102, 102, 105);
+}
 
-    .ongs{
-        width: 90%;
-        display: flex;
-        justify-content: space-around; 
-        margin: 0 5%;
-    }
+/* Display list items side by side */
+.link_breadcrumb{
+    text-decoration: none;
+    color: rgb(102, 102, 105);
+    padding: 20px;
+}
 
-    li {
-    list-style-type: none;
-    }
+/*---------Sobre ONG's--------*/
+/* link visitado */
+.link_breadcrumb a:visited {
+    color: rgb(39, 0, 146);
+}
 
-    .border{
-        padding:30px;
-    }
+.ongs{
+    width: 90%;
+    display: flex;
+    justify-content: space-around; 
+    margin: 0 5%;
+}
+
+li {
+list-style-type: none;
+}
+
+.border{
+    padding:30px;
+}
 
 </style>
