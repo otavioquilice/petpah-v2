@@ -1,66 +1,199 @@
+/*----------CSS-----main------Pagamento----*/
+.pagamento{
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin-left: 10px;
+}
+  
+.circle{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 0 15px 0;
+
+}
+  
+.icone_carrinho{
+    height: 2rem;
+    padding: 0 8px;
+}
+  
+.info_pagamento{
+    margin: 0;
+}
+  
+/*-------------------------------------------------------------*/
+  
+.pagamento{
+    display: flex;
+    width: 100%;
+}
+  
+.finalizar-pedido {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    margin: 2% 0;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .finalizar-pedido{
+        width: 100%;
+    }
+}
+  
+.notificar_correcao{
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pagamento input{
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 1px 4px;
+    padding: 10px;
+    margin-bottom: 30px;
+    width: 350px;
+    
+ }
+  
+.resumo-pedido button{
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 50px;
+    background-color: #857AF5;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 1s background;
+    cursor: pointer;
+    width: 100%;
+    margin: 20px 0;
+}
+  
+.resumo-pedido button:hover{
+    background: #a49ff0;
+}
+  
+/*-------------------------------------------------------------*/
+.btwn{
+    margin: 3% 5%;
+    background-color: black;
+    width: 1px;
+    opacity: 0.1;
+}
+  /*-------------------------------------------------------------*/
+.resumo-pedido{
+    padding: 2% 0;
+    display: flex;
+    width: 40%;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    .resumo-pedido{
+        width: 100%;
+    }
+}
+
+.resumo_pedido_titulo{
+    margin: 0 0 10px 0;
+}
+  
+.resumo1{
+    display: grid;
+}
+  
+.pg_titulo_doacao{
+    display: grid;
+    justify-content: center;
+    margin: 0;
+    font-size: 24px;
+}
+  
+.pg_nome_doacao{
+    margin: 0;
+}
+  
+.resumo_pedido_doacao{
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid rgb(194, 194, 194);
+    height: 1px;
+}
+  
+.resumo1_preco{
+    display: flex;
+    justify-content: space-between;
+}
+  
+  .resumo2{
+      display: grid;
+      justify-content: center ;
+  }
+  
+  .pg_titulo_consumo{
+      display: grid;
+      justify-content: center;
+      margin: 0;
+  }
+  
+  .pg_titulo_entrega{
+      margin: 0;
+  }
+  
+  .resumo_pedido_consumo{
+      margin: 0;
+      width: 100%;
+      border-bottom: 1px solid rgb(194, 194, 194);
+      height: 1px;
+  }
+  
+  .resumo2_preco{
+      display: flex;
+      justify-content: space-between;
+  }
+  
+  .total_pedido_preco{
+    margin: 2rem auto;
+    width: 100%;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    height: 1px;
+  }
+
+  .btwn_total{
+    margin: 2% 0;
+    background-color: black;
+    height: 1px;
+    opacity: 0.8;
+  }
+  
+  .total_preco{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .preço{
+    color: grey;
+  }
+  
+  .preço-total{
+    color: grey;
+  }
+  
 .pagamento input{
 	border-radius: 10px;
 	border: none;
-	box-shadow: 1px 1px 8px;
+	box-shadow: 1px 1px 2px;
 	padding: 10px;
-	width: 85%;
+	width: 100%;
 	margin-bottom: 30px;
 }
 
-.dadospagamento button{
-
-    border-radius: 10px;
-    border: none;
-    padding: 10px 50px;
-    background-color: #857AF5;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 15px;
-    transition: 1s background;
-    cursor: pointer;
- }
-
- .dadospagamento button:hover{
-    background: #a49ff0;
-}
-
-
-
-
-/*------CSS----------POPUP-------Finalizar Pedido-------*/
-/* 
-#container, #popup{
-    margin: 2%;
-	display: flex;
-	justify-content: center;
-    overflow: hidden;
-}
-#pag{
-	box-shadow: 3px 10px 20px;
-    width: 800px;
-    height: 400px;
-	border: 1px solid grey;
-}
-#popup{
-    background-color: green;
-}
-#pag button{
-	position: relative;
-	left: 260px;
-    border-radius: 10px;
-    border: none;
-    padding: 10px 50px;
-    background-color: #857AF5;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 15px;
-    transition: 1s background;
-    cursor: pointer;
-}
-
-#pag p{
-	position: relative;
-	bottom: 300px;
-	color: black;
-	left: 780px;
-} */

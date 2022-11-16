@@ -2,8 +2,6 @@
 
 .main_produtos{
     padding: 2% 5%;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .carrinho_container{
@@ -279,6 +277,23 @@ h5{
     margin: 0 0 20px 0;
 }
 
+
+.consultar_cep{
+    border-radius: 10px;
+    border: none;
+    padding: 5px 10px;
+    color: #857AF5;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 1s background;
+    cursor: pointer;
+}
+
+.cx_consultar_cep{
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
 .bt_pagamento{
     width: 50%;
     border-radius: 5px;
@@ -293,10 +308,10 @@ h5{
     margin: 0 5rem;
 }
 
- .bts_resumo{
+.bts_resumo{
     display: grid;
     justify-content: center;
- }
+}
 
 .bt_contimuar{
     border-radius: 5px;
