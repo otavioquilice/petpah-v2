@@ -11,8 +11,8 @@
             Home
             </a>
             > 
-            <a href="/doacoes/minhas-doacoes/{{Auth::user()->id}}" class="link_breadcrumb">
-            <b>Minhas Doações</b>
+            <a href="/todas-doacoes" class="link_breadcrumb">
+            <b>Todas Doações</b>
             </a>
         </div>
         <div class="container">
@@ -37,6 +37,7 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">N° Pedido</th>
+                                        <th scope="col">Doador</th>
                                         <th scope="col">Quantidade</th>
                                         <th scope="col">Item</th>
                                         <th scope="col">Valor Doação</th>
@@ -48,6 +49,7 @@
                                         <tr>
                                             <th scope="row">{{ $key }}</th>
                                             <td>{{ $item->pedido->id }}</td>
+                                            <td>{{ $item->cliente->name }}</td>
                                             <td>{{ $item->quantidade }}</td>
                                             <td>{{ $item->produto->nome }}</td>
                                             <td>R$: {{ $item->preco_unitario }}</td>

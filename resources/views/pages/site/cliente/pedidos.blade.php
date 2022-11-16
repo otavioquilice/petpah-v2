@@ -53,7 +53,7 @@
                                             <td>R$: {{ $pedido->valor }}</td>
                                             <td>{{ !empty($pedido->ong) ? $pedido->ong->nome_fantasia : 'Pedido sem doação' }}</td>
                                             <td>{{ $pedido->status == 'pago' ? 'Pago' : 'Não Pago' }}</td>
-                                            <td><button class="ver-pedido" data-pedido-uuid="{{$pedido->uuid}}">Visualizar</button></td>
+                                            <td><a href="/pagamento/show/{{$pedido->uuid}}"><button class="ver-pedido" data-pedido-uuid="{{$pedido->uuid}}">Visualizar</button></a></td>
                                         </tr>
                                     @endforeach
                                 </tbody>

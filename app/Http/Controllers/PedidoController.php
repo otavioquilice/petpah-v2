@@ -165,10 +165,20 @@ class PedidoController extends Controller
     public function minhas_doacoes(Request $r){
 
         $itens_doados = ItemPedido::whereHas('pedido', function ($query) use ($r){
-            $query->where('status', 'pago')->where('cliente_id', $r->id);
+            $query->where('status', 'pago')->where('tipo_pedido', 'consumo_doacao')->where('cliente_id', $r->id);
         })->get();
 
         return view('pages.site.cliente.doacoes', ['itens_doados' => $itens_doados]);
+
+    }
+
+    public function todas_doacoes(Request $r){
+
+        $itens_doados = ItemPedido::whereHas('pedido', function ($query) use ($r){
+            $query->where('status', 'pago')->where('tipo_pedido', 'consumo_doacao');
+        })->get();
+
+        return view('pages.site.doacoes', ['itens_doados' => $itens_doados]);
 
     }
 }

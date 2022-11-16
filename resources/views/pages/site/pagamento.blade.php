@@ -12,7 +12,11 @@
 
         <div class="pagamento container centered">
             <div class="finalizar-pedido">
+                @if($pedido->status != 'pago')
                 <h2>Finalizar pedido</h2>
+                @else()
+                <h2>Pedido Finalizado</h2>
+                @endif()
                 <div class="circle">
                     <img src="{{ asset('media/imagens/img/cart.png')}}" alt="carrinho" class="icone_carrinho">
                     <p class="info_pagamento" >Insira as informações abaixo e você recebera um e-mail 
@@ -79,30 +83,35 @@
                             });
                         </script>
                     @endif --}}
-        
+                    @if($pedido->status != 'pago')       
+                        <div class="form col-md-12">
+                            <input type="text" name="num_cartao" id="num_cartao" class="numero_cartao-mask"  placeholder="Número do cartão" {{ $pedido->status == 'pago' ? 'disabled' : '' }}>
+                        </div> 
+
+                        <div class="form col-md-12">
+                            <input type="text" name="titular_cartao" id="titular_cartao"  placeholder="Nome do Titular do Cartão" {{ $pedido->status == 'pago' ? 'disabled' : '' }}>
+                        </div>
+                        
+                        <div class="form col-md-12">
+                            <input type="text" name="validade" id="validade"  class="validade-mask" placeholder="Validade" {{ $pedido->status == 'pago' ? 'disabled' : '' }}>
+                        </div>
+
+                        <div class="form col-md-12">
+                            <input type="text" name="cvv" id="cvv"  class="cvv-mask" placeholder="CVV" {{ $pedido->status == 'pago' ? 'disabled' : '' }}>
+                        </div>
+                        
+                        <div class="form col-md-12">
+                            <input type="text" name="titular_cpf" id="titular_cpf" class="cpf-mask"  placeholder="CPF do titular" {{ $pedido->status == 'pago' ? 'disabled' : '' }}>
+                        </div>
+                        {{-- <div class="form col-md-12">
+                            <input type="text" name="num_parcelas" id="num_parcelas"  placeholder="Número de parcelas">
+                        </div> --}}
+                    @else()
                     <div class="form col-md-12">
-                        <input type="text" name="num_cartao" id="num_cartao" class="numero_cartao-mask"  placeholder="Número do cartão">
+                        <p>STATUS DO PAGAMENTO: EFETUADO</p>
+                        <p>STATUS DO PEDIDO: FINALIZADO</p>
                     </div> 
-
-                    <div class="form col-md-12">
-                        <input type="text" name="titular_cartao" id="titular_cartao"  placeholder="Nome do Titular do Cartão">
-                    </div>
-                    
-                    <div class="form col-md-12">
-                        <input type="text" name="validade" id="validade"  class="validade-mask" placeholder="Validade">
-                    </div>
-
-                    <div class="form col-md-12">
-                        <input type="text" name="cvv" id="cvv"  class="cvv-mask" placeholder="CVV">
-                    </div>
-                    
-                    <div class="form col-md-12">
-                        <input type="text" name="titular_cpf" id="titular_cpf" class="cpf-mask"  placeholder="CPF do titular">
-                    </div>
-                    {{-- <div class="form col-md-12">
-                        <input type="text" name="num_parcelas" id="num_parcelas"  placeholder="Número de parcelas">
-                    </div> --}}
-            
+                    @endif()
                 </div>
                 
                 <div class="btwn"></div>
@@ -135,7 +144,11 @@
                         <p class="preço-total">R$ {{$pedido->valor}}</p> <!--substituir com o total-->
                     </div>
 
-                    <a type="submite"><button id="finalizar-pagamento">Finalizar o pagamento</button></a>
+                    @if($pedido->status != 'pago') 
+                        <a type="submite"><button id="finalizar-pagamento">Finalizar o pagamento</button></a>
+                    @else()
+                    <button><a type="button" href="/pedidos/meus-pedidos/{{Auth::user()->id}}">Voltar para meus pedidos</a></button>
+                    @endif()
 
                     
                 </div>

@@ -83,6 +83,7 @@ Route::get('/pedidos/meus-pedidos/{id}',[PedidoController::class, 'meus_pedidos'
 
 // DOAÇOES
 Route::get('/doacoes/minhas-doacoes/{id}',[PedidoController::class, 'minhas_doacoes'])->name('minhas.doacoes');
+Route::get('/todas-doacoes',[PedidoController::class, 'todas_doacoes'])->name('todas.doacoes');
 
 // Ajax
 Route::post('/ajax/add-produto-carrinho',[CarrinhoController::class, 'ajaxAddCarrinho'])->name('adicionar-produto-caarrinho');
