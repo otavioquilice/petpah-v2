@@ -37,16 +37,21 @@ class PedidoController extends Controller
             if(!empty($r->produto_doacao)){
                 foreach($r->produto_doacao as $key => $doacao){
                     
-                    $item_doacao_pedido = new ItemPedido();
+                    if($doacao > 0){
 
-                    $item_doacao_pedido->cliente_id        = $id_user;
-                    $item_doacao_pedido->pedido_id         = $pedido->id;
-                    $item_doacao_pedido->produto_id        = $key;
-                    $item_doacao_pedido->quantidade        = $doacao;
-                    $item_doacao_pedido->preco_unitario    = Produto::find($key)->preco->where('ativo', 1)->first()->preco;
-                    $item_doacao_pedido->valor_total       = (Produto::find($key)->preco->where('ativo', 1)->first()->preco * $doacao);
-                    $item_doacao_pedido->tipo_pedido       = 'consumo_doacao';
-                    $item_doacao_pedido->save();
+                        $item_doacao_pedido = new ItemPedido();
+
+                        $item_doacao_pedido->cliente_id        = $id_user;
+                        $item_doacao_pedido->pedido_id         = $pedido->id;
+                        $item_doacao_pedido->produto_id        = $key;
+                        $item_doacao_pedido->quantidade        = $doacao;
+                        $item_doacao_pedido->preco_unitario    = Produto::find($key)->preco->where('ativo', 1)->first()->preco;
+                        $item_doacao_pedido->valor_total       = (Produto::find($key)->preco->where('ativo', 1)->first()->preco * $doacao);
+                        $item_doacao_pedido->tipo_pedido       = 'consumo_doacao';
+                        $item_doacao_pedido->save();
+                        
+                    }
+
                         
                 }
             }
@@ -164,8 +169,8 @@ class PedidoController extends Controller
 
     public function minhas_doacoes(Request $r){
 
-        $itens_doados = ItemPedido::whereHas('pedido', function ($query) use ($r){
-            $query->where('status', 'pago')->where('tipo_pedido', 'consumo_doacao')->where('cliente_id', $r->id);
+        $itens_doados = ItemPedido::where('tipo_pedido', 'consumo_doacao')->whereHas('pedido', function ($query) use ($r){
+            $query->where('status', 'pago')->where('cliente_id', $r->id);
         })->get();
 
         return view('pages.site.cliente.doacoes', ['itens_doados' => $itens_doados]);
@@ -174,8 +179,8 @@ class PedidoController extends Controller
 
     public function todas_doacoes(Request $r){
 
-        $itens_doados = ItemPedido::whereHas('pedido', function ($query) use ($r){
-            $query->where('status', 'pago')->where('tipo_pedido', 'consumo_doacao');
+        $itens_doados = ItemPedido::where('tipo_pedido', 'consumo_doacao')->whereHas('pedido', function ($query) use ($r){
+            $query->where('status', 'pago');
         })->get();
 
         return view('pages.site.doacoes', ['itens_doados' => $itens_doados]);
