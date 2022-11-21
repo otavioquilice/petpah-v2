@@ -134,7 +134,7 @@
 								<!--end::Submit button-->
 								<!--begin::Sign up-->
 								<div class="text-gray-500 text-center fw-semibold fs-6">Ainda não é mebro?
-								<a href="/register" class="link-primary">Inscreva-se</a></div>
+								<a href="/register" class="btn_inscreva">Inscreva-se</a></div>
 								<!--end::Sign up-->
 								@if($errors->any())
 									<div class="row">
@@ -179,11 +179,20 @@
 <style>
 	.btn_login{
 		background-color: rgb(133,122,245)  !important;
-		color: #ffffff;
-    	border-radius: 40px;
-		padding: 7px;
-		border: none;
-		font-weight: bold;
+		color: #ffffff !important;
+    	border-radius: 40px !important;
+		padding: 7px !important;
+		border: none !important;
+		font-weight: bold !important;
+	}
+
+	.btn_inscreva{
+		background-color: rgb(133,122,245)  !important;
+		color: #ffffff !important;
+    	border-radius: 40px !important;
+		padding: 7px !important;
+		border: none !important;
+		font-weight: bold !important;
 	}
 
 	.login_slogan{

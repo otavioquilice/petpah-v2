@@ -53,7 +53,7 @@
                                             <td>R$: {{ $pedido->valor }}</td>
                                             <td>{{ !empty($pedido->ong) ? $pedido->ong->nome_fantasia : 'Pedido sem doação' }}</td>
                                             <td>{{ $pedido->status == 'pago' ? 'Pago' : 'Não Pago' }}</td>
-                                            <td><a href="/pagamento/show/{{$pedido->uuid}}"><button class="ver-pedido" data-pedido-uuid="{{$pedido->uuid}}">Visualizar</button></a></td>
+                                            <td><a href="/pagamento/show/{{$pedido->uuid}}" class="link_meus_pedidos"><button class="ver-pedido" data-pedido-uuid="{{$pedido->uuid}}">Visualizar</button></a></td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -107,8 +107,11 @@
     width: 100%;
     border-radius: 10px;
     border: none;
+    
+}
 
-
+.link_meus_pedidos{
+    text-decoration: none;
 }
   
 .ver-pedido:hover{

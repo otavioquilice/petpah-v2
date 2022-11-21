@@ -147,7 +147,7 @@
                     @if($pedido->status != 'pago') 
                         <a type="submite"><button id="finalizar-pagamento">Finalizar o pagamento</button></a>
                     @else()
-                    <button><a type="button" href="/pedidos/meus-pedidos/{{Auth::user()->id}}">Voltar para meus pedidos</a></button>
+                    <button><a type="button" href="/pedidos/meus-pedidos/{{Auth::user()->id}}" class="link_voltar_pedidos">Voltar para meus pedidos</a></button>
                     @endif()
 
                     
