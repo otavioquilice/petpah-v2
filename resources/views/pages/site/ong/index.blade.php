@@ -24,11 +24,7 @@
 
                 <li class="border col-md-6">
                     <h2>{{ $ong->nome_fantasia}}</h2>
-                    <p>Proposito: Lorem Ipsum is simply 
-                        dummy text of the printing and 
-                        typesetting industry. Lorem Ipsum is simply 
-                        dummy text of the printing and 
-                        typesetting industry.</p>
+                    <p>Somos uma entidade sem fins lucrativos com um unico objetivo, promover ações caridosas com animais se necessitam de cuidados, resgatamos animais abandonados e ciodamos com muito amor e carinho.</p>
                     <a href="#" class="link_ong">Conheça melhor a ONE LOVE ANIMAL</a>
                 </li>
             @endforeach()
