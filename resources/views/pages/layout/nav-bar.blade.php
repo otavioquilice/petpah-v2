@@ -61,7 +61,7 @@
 <nav class="menu-lateral">
     {{-- SE NÃO TIVER LOGADO --}}
   @if(empty(Auth::user()))
-    <a href="/" class="menu-lateral_link menu-lateral_link--ativo">Home</a>
+    <a href="/" class="menu-lateral_link menu-lateral_link--ativo_2">Home</a>
     <a href="/todas-doacoes" class="menu-lateral_link menu-lateral_link--ativo">Doações</a>
     <a href="/produtos" class="menu-lateral_link menu-lateral_link--ativo_2">Produtos</a>
     <a href="/ongs" class="menu-lateral_link menu-lateral_link--ativo">ONGs</a>
@@ -69,9 +69,9 @@
   @endif()
   @if(!empty(Auth::user()))
     <a href="/" class="menu-lateral_link menu-lateral_link--ativo">Home</a>
-    <a href="/todas-doacoes" class="menu-lateral_link menu-lateral_link--ativo">Doações</a>
-    <a href="/produtos" class="menu-lateral_link menu-lateral_link--ativo_2">Produtos</a>
-    <a href="/ongs" class="menu-lateral_link menu-lateral_link--ativo">ONGs</a>
+    <a href="/todas-doacoes" class="menu-lateral_link menu-lateral_link--ativo_2">Doações</a>
+    <a href="/produtos" class="menu-lateral_link menu-lateral_link--ativo">Produtos</a>
+    <a href="/ongs" class="menu-lateral_link menu-lateral_link--ativo_2">ONGs</a>
     <a href="/pedidos/meus-pedidos/{{Auth::user()->id}}" class="menu-lateral_link menu-lateral_link--ativo">Meus Pedidos</a>
     <a href="/doacoes/minhas-doacoes/{{Auth::user()->id}}" class="menu-lateral_link menu-lateral_link--ativo_2">Minhas Doações</a>
     @if(Auth::user()->perfil == 'admin')
@@ -127,9 +127,8 @@
         flex-direction:column;
         background-color: rgba(255,219,153, 0.95);
         width: 52vw;
-        height: 20vh;
+        height: 25vh;
         border-radius: 0 0 10px;
-
         position: absolute;
         left: -100vw;
         transition: .25s;

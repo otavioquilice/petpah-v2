@@ -79,7 +79,16 @@
 .resumo-pedido button:hover{
     background: #a49ff0;
 }
+
+.link_voltar_pedidos{
+    color: #ffffff;
+    text-decoration: none;
+}
   
+.link_voltar_pedidos:hover{
+    color: #ffffff;
+}
+
 /*-------------------------------------------------------------*/
 .btwn{
     margin: 3% 5%;
