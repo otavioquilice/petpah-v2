@@ -47,7 +47,7 @@
                   </a>
                 </div>
 
-                <select class="tipo_produto form-control" onClick="selecionarQuantidadeDoacao(this, {{$item_prod->produto_id}})" required>
+                <select class="tipo_produto form-control select_opcao_consumo" onClick="selecionarQuantidadeDoacao(this, {{$item_prod->produto_id}})" required>
                   <option value="" selected disabled hidden>Será uma doação?</option>
                   <option value="consumo_proprio">Consumo proprio</option>
                   <option value="consumo_doacao">Doação para ONGs</option>

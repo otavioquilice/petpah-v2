@@ -57,9 +57,26 @@
     }else{
       $('.produto_doacao_'+id).attr('hidden','true');
       $('.qtd_doacao_'+id).removeAttr('required');
+
+      var select_opcao_consumo = document.getElementsByClassName('select_opcao_consumo');
+
+      var form_doacao_visible = false;
+      for(var i = 0; i < select_opcao_consumo.length ; i++){
+
+        if(select_opcao_consumo[i].value === 'consumo_doacao'){
+          
+          form_doacao_visible = true;
+
+        }
+      }
+      if(form_doacao_visible == false){
+
+        $('.form_doacoes').attr('hidden','true');
+        $('.ong_id').removeAttr('required');
+        
+      }
       
-      $('.form_doacoes').attr('hidden','true');
-      $('.ong_id').removeAttr('required');
+
     }
   }
 
