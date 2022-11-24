@@ -185,16 +185,12 @@
 </html>
 
 <style>
-	.btn_login{
-		background-color: rgb(133,122,245)  !important;
-		color: #ffffff !important;
-    	border-radius: 40px !important;
-		padding: 7px !important;
-		border: none !important;
-		font-weight: bold !important;
+
+	body{
+		font-family:'Segoe UI' !important;
 	}
 
-	.btn_inscreva{
+	.btn_login{
 		background-color: rgb(133,122,245)  !important;
 		color: #ffffff !important;
     	border-radius: 40px !important;

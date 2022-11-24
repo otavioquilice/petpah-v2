@@ -14,7 +14,7 @@
     <form action="/store/pedido" method="POST">
 
       <div class="row col-md-12">
-        <div class="col-md-7">
+        <div class="col-md-7 carrinho_prod_add">
         <h2>Carrinho</h2>
           @foreach($produtos as $item_prod)
           
@@ -37,7 +37,7 @@
                       </svg>
                   </a>
                   {{-- <span class="count_produto_id_{{$item_prod->produto_id}}"> {{ $item_prod->quantidade }} </span>  --}}
-                  <h5 id="count_produto_id_{{$item_prod->produto_id}}"> {{ $item_prod->quantidade }} Iten(s) adicionado(s)</h5>
+                  <h5 id="count_produto_id_{{$item_prod->produto_id}}" class="count_produto_add"> {{ $item_prod->quantidade }} Iten(s) adicionado(s)</h5>
 
                   <a type="button" class="plus-circle- add-produto-carrinho" data-produto-id="{{ $item_prod->produto_id }}">
                       <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="bi bi-plus-circle" viewBox="0 0 16 16">
