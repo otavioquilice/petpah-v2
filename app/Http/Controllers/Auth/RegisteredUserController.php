@@ -30,7 +30,7 @@ class RegisteredUserController extends Controller
                 'password'   => ['required'],
             ],
             [
-                'nome.required'     => "O campo nome é obrigatório",
+                'name.required'     => "O campo nome é obrigatório",
                 'email.required'    => "O campo email é obrigatório",
                 'password.required' => "O campo senha é obrigatório",
 

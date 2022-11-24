@@ -3,7 +3,7 @@
 <html lang="en">
 	<!--begin::Head-->
 	<head>
-		<title>PetPah</title>
+		<title>PetPah | Login</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Blazor, Django, Flask &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="Metronic, Bootstrap, Bootstrap 5, Angular, VueJs, React, Asp.Net Core, Blazor, Django, Flask &amp; Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
@@ -12,7 +12,7 @@
 		<meta property="og:type" content="article" />
 		<meta property="og:title" content="Metronic - Bootstrap 5 HTML, VueJS, React, Angular, Asp.Net Core, Blazor, Django, Flask &amp; Laravel Admin Dashboard Theme" />
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
-		<meta property="og:site_name" content="Keenthemes | Metronic" />
+		<meta property="og:site_name" content="Petpah! | Doações" />
 		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
 		<link rel="shortcut icon" href="{{ asset('media/logos/favicon.ico') }}" />
 		<!--begin::Fonts-->
@@ -99,6 +99,12 @@
 										{{ session('success') }}
 									</div>
 								@endif
+								@if (session('status'))
+									{{-- <li><span class="label label-danger">{{ session('success') }}</span></li> --}}
+									<div class="alert alert-success" role="alert">
+										{{ session('status') }}
+									</div>
+								@endif
 								<div class="fv-row mb-8">
 									<!--begin::Email-->
 									<input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent" />
@@ -141,11 +147,13 @@
 										<div class="small-12 medium-12 columns">
 											<div class="error-message">
 												<p>Por favor, verifique os erros abaixo:</p>
-												<ul>
-													@foreach($errors->all() as $error)
-														<li>{{ $error }}</li>
-													@endforeach
-												</ul>
+												
+												@foreach($errors->all() as $error)
+													<div class="alert alert-danger" role="alert">
+														{{ $error }}
+													</div>
+												@endforeach
+												
 											</div>
 										</div>
 									</div>

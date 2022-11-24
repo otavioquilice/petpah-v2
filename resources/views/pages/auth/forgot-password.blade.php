@@ -13,7 +13,7 @@ License: For each use you must have a valid license purchased only from above li
 <html lang="en">
 	<!--begin::Head-->
 	<head><base href="../../../">
-		<title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular &amp; Laravel by Keenthemes</title>
+		<title>PetPah | Recuperar Senha</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Blazor, Django, Flask &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="Metronic, Bootstrap, Bootstrap 5, Angular, VueJs, React, Asp.Net Core, Blazor, Django, Flask &amp; Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
@@ -22,7 +22,7 @@ License: For each use you must have a valid license purchased only from above li
 		<meta property="og:type" content="article" />
 		<meta property="og:title" content="Metronic - Bootstrap 5 HTML, VueJS, React, Angular, Asp.Net Core, Blazor, Django, Flask &amp; Laravel Admin Dashboard Theme" />
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
-		<meta property="og:site_name" content="Keenthemes | Metronic" />
+		<meta property="og:site_name" content="Petpah! | Doações" />
 		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
 		<link rel="shortcut icon" href="{{ asset('media/logos/favicon.ico') }}" />
 		<!--begin::Fonts-->
@@ -51,12 +51,11 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Aside-->
 					<div class="d-flex flex-column">
 						<!--begin::Logo-->
-						<a href="../../demo1/dist/index.html" class="mb-7">
+						<a href="/login" class="mb-7">
 							<img alt="Logo" src="{{ asset('media/logos/logo-medio-petpah.png') }}" />
 						</a>
 						<!--end::Logo-->
 						<!--begin::Title-->
-						<h2 class="text-white fw-normal m-0">Soluções de doações para PET</h2>
 						<!--end::Title-->
 					</div>
 					<!--begin::Aside-->
@@ -68,8 +67,38 @@ License: For each use you must have a valid license purchased only from above li
 					<div class="card rounded-3 w-md-550px">
 						<!--begin::Card body-->
 						<div class="card-body p-10 p-lg-20">
+							@if (session('success'))
+								{{-- <li><span class="label label-danger">{{ session('success') }}</span></li> --}}
+								<div class="alert alert-success" role="alert">
+									{{ session('success') }}
+								</div>
+							@endif
+							@if (session('status'))
+								{{-- <li><span class="label label-danger">{{ session('success') }}</span></li> --}}
+								<div class="alert alert-success" role="alert">
+									{{ session('status') }}
+								</div>
+							@endif
+							@if($errors->any())
+								<div class="row">
+									<div class="small-12 medium-12 columns">
+										<div class="error-message">
+											<p>Por favor, verifique os erros abaixo:</p>
+											
+											@foreach($errors->all() as $error)
+												<div class="alert alert-danger" role="alert">
+													{{ $error }}
+												</div>
+											@endforeach
+											
+										</div>
+									</div>
+								</div>
+							@endif
 							<!--begin::Form-->
-							<form class="form w-100" novalidate="novalidate" id="kt_password_reset_form" data-kt-redirect-url="../../demo1/dist/authentication/layouts/creative/new-password.html" action="#">
+							<!-- <form class="form w-100" novalidate="novalidate" id="kt_password_reset_form" data-kt-redirect-url="../../demo1/dist/authentication/layouts/creative/new-password.html" action="#"> -->
+							<form class="form w-100" novalidate="novalidate" method="POST" action="/forgot-password">
+								@csrf
 								<!--begin::Heading-->
 								<div class="text-center mb-10">
 									<!--begin::Title-->
@@ -88,7 +117,7 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--begin::Actions-->
 								<div class="d-flex flex-wrap justify-content-center pb-lg-0">
-									<button type="button" id="kt_password_reset_submit" class="btn btn-primary me-4">
+									<button type="submit" id="kt_password_reset_submit" class="btn btn-primary me-4">
 										<!--begin::Indicator label-->
 										<span class="indicator-label">Enviar</span>
 										<!--end::Indicator label-->

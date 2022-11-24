@@ -64,3 +64,16 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## Adicionando pacote de idiomas
+Instale o pacote
+composer require lucascudo/laravel-pt-br-localization --dev
+Publique as traduções
+php artisan vendor:publish --tag=laravel-pt-br-localization
+Configure o Framework para utilizar 'pt-BR' como linguagem padrão
+// Altere Linha 85 do arquivo config/app.php para:
+'locale' => 'pt-BR',
+Caso deseje, configure o Framework para utilizar 'America/Sao_Paulo' como data hora padrão
+// Altere Linha 72 do arquivo config/app.php para:
+'timezone' => 'America/Sao_Paulo',
