@@ -117,7 +117,7 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--begin::Actions-->
 								<div class="d-flex flex-wrap justify-content-center pb-lg-0">
-									<button type="submit" id="kt_password_reset_submit" class="btn btn-primary me-4 bt_esqueceu_senha">
+									<button type="submit" id="kt_password_reset_submit" class="me-4 bt_esqueceu_senha">
 										<!--begin::Indicator label-->
 										<span class="indicator-label">Enviar</span>
 										<!--end::Indicator label-->
@@ -162,6 +162,15 @@ body{
 
 	.bt_esqueceu_senha{
 		background-color: #857AF5 !important;
+		padding: 11px 23px;
+		border: none !important;
+		color: #FFFFFF;
+		font-weight: bold;
+		border-radius: 5px;
+	}
+
+	.bt_esqueceu_senha:hover{
+		background-color: #8B80FF !important;
 	}
 
 	
