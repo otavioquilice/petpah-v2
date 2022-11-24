@@ -120,7 +120,7 @@
 								</div>
 
 								<div class="d-grid mb-10">
-									<button type="submit" class="btn btn-primary">Inscreva-se</button>
+									<button type="submit" class="btn btn-primary btn_inscrever_login">Inscreva-se</button>
 								</div>
 
 								<div class="text-gray-500 text-center fw-semibold fs-6">Já tem uma conta?
@@ -168,3 +168,25 @@
 	</body>
 	<!--end::Body-->
 </html>
+
+<style>
+	body{
+		font-family:'Segoe UI' !important;
+	}
+	
+	.btn_inscrever_login{
+		background-color: #857AF5 !important;
+		border-radius: 40px !important;
+	}
+
+	.btn_inscreva{
+		background-color: rgb(133,122,245) !important;
+		color: #ffffff !important;
+    	border-radius: 40px !important;
+		padding: 4px !important;
+		border: none !important;
+		font-weight: bold !important;
+	}
+
+
+</style>

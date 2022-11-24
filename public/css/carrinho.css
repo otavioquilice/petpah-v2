@@ -31,11 +31,36 @@
     margin-bottom: 1rem;
 }
 
+@media screen and (max-width: 768px) {
+    .dados_produtos{
+        display: grid; 
+    }
+}
+
+.carrinho_prod_add{
+    display: grid;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .dados_produtos{
+        margin: 0 0 10px 35px; 
+    }
+}
+
+
 .info1{
    display: flex;
    flex-wrap: wrap;
    width: 50%;
    align-items: flex-end;
+   justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .info1{
+        width: 100%;  
+    }
 }
 
 .titulo_produto{
@@ -64,6 +89,16 @@
     display: flex;
     padding: 50px 0;
     align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .adicionar_diminuir_item{
+        padding: 0 0 10px 0;
+    }
+}
+
+#count_produto_id_1{
+    margin: 0;
 }
 
 h5{
@@ -295,7 +330,7 @@ h5{
 }
 
 .bt_pagamento{
-    width: 50%;
+    width: 100% !important;
     border-radius: 5px;
     border: none;
     padding: 7px 10px;
@@ -305,7 +340,6 @@ h5{
     font-size: 15px;
     transition: 1s background;
     cursor: pointer;
-    margin: 0 5rem;
 }
 
 .bts_resumo{
@@ -314,6 +348,7 @@ h5{
 }
 
 .bt_contimuar{
+    width: 100% !important;
     border-radius: 5px;
     border: #857AF5;
     padding: 7px 10px;
@@ -323,5 +358,5 @@ h5{
     font-size: 15px;
     transition: 1s background;
     cursor: pointer;
-    margin: 1rem 5rem;
 }
+

@@ -117,7 +117,7 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--begin::Actions-->
 								<div class="d-flex flex-wrap justify-content-center pb-lg-0">
-									<button type="submit" id="kt_password_reset_submit" class="btn btn-primary me-4">
+									<button type="submit" id="kt_password_reset_submit" class="btn btn-primary me-4 bt_esqueceu_senha">
 										<!--begin::Indicator label-->
 										<span class="indicator-label">Enviar</span>
 										<!--end::Indicator label-->
@@ -154,3 +154,15 @@ License: For each use you must have a valid license purchased only from above li
 	</body>
 	<!--end::Body-->
 </html>
+
+<style>
+body{
+		font-family:'Segoe UI' !important;
+	}
+
+	.bt_esqueceu_senha{
+		background-color: #857AF5 !important;
+	}
+
+	
+</style>
