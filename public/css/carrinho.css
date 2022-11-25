@@ -34,20 +34,9 @@
 @media screen and (max-width: 768px) {
     .dados_produtos{
         display: grid; 
-    }
-}
-
-.carrinho_prod_add{
-    display: grid;
-    
-}
-
-@media screen and (max-width: 768px) {
-    .dados_produtos{
         margin: 0 0 10px 35px; 
     }
 }
-
 
 .info1{
    display: flex;
@@ -314,6 +303,7 @@ h5{
 
 
 .consultar_cep{
+    width: 100%;
     border-radius: 10px;
     border: none;
     padding: 5px 10px;
@@ -325,8 +315,11 @@ h5{
 }
 
 .cx_consultar_cep{
+    width: 100%;
     border-radius: 5px;
     border: 1px solid #ced4da;
+    margin: 10px 0;
+    padding: 6px 0 6px 3px;
 }
 
 .bt_pagamento{
