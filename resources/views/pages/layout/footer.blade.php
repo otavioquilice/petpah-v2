@@ -88,6 +88,14 @@
 
     }else{
       $('.solicitar_entrega').attr('hidden','true');
+
+      $("input[name=rua]").attr('hidden','true');
+      $("input[name=bairro]").attr('hidden','true');
+      $("input[name=estado]").attr('hidden','true');
+      $("input[name=cidade]").attr('hidden','true');
+      $("input[name=complemento]").attr('hidden','true');
+      $("input[name=numero]").attr('hidden','true');
+      $("input[name=numero]").removeAttr('required');
       
     }
   }
@@ -249,6 +257,42 @@
         }
       });
 
+      $(document).on("click", ".consultar_cep", function(e) {
+ 
+        var cep = $("input[name=cep]").val();
+
+        $.ajax({
+            url: "http://viacep.com.br/ws/"+cep+"/json/",
+            type: "get",
+            dataType: "json",
+            success: function (result) {
+
+              $("input[name=rua]").val(result.logradouro);
+              $("input[name=bairro]").val(result.bairro);
+              $("input[name=estado]").val(result.uf);
+              $("input[name=cidade]").val(result.localidade);
+
+              $("input[name=rua]").removeAttr('hidden');
+              $("input[name=bairro]").removeAttr('hidden');
+              $("input[name=estado]").removeAttr('hidden');
+              $("input[name=cidade]").removeAttr('hidden');
+              $("input[name=complemento]").removeAttr('hidden');
+              $("input[name=numero]").removeAttr('hidden');
+              $("input[name=numero]").attr('required','true');
+
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                swal.fire(
+                  'Erro!',
+                  'Não foi localizar o cep.',
+                  'error'
+                );
+            }
+        });
+      });
+
+      
       $('.cpf-mask').mask('000.000.000-00', {reverse: true});
       $('.numero_cartao-mask').mask('0000.0000.0000.0000', {reverse: true});
       $('.validade-mask').mask('00/00', {reverse: true});
