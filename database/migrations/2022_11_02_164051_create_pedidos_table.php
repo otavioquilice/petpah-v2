@@ -25,6 +25,11 @@ return new class extends Migration
             $table->string('rua')->nullable();
             $table->string('numero')->nullable();
             $table->string('complemento')->nullable();
+            $table->string('bairro')->nullable();
+            $table->string('cidade')->nullable();
+            $table->string('estado')->nullable();
+            $table->string('sandbox_init_point')->nullable();
+            $table->string('payment_id')->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('deleted_at')->nullable();

@@ -37,13 +37,19 @@
 
                     @if($pedido->tipo_entrega == 'solicitar_entregador')
                         <h2>Endereço de Entrega</h2>
-                        <p>CEP: {{$pedido->cep}}</p>
+                        <p>CEP: {{$pedido->cep ? $pedido->cep : ''}}</p>
+                        <p>Rua: {{$pedido->rua ? $pedido->rua : ''}}</p>
+                        <p>Número: {{$pedido->numero ? $pedido->numero : ''}}</p>
+                        <p>Complemento: {{$pedido->complemento ? $pedido->complemento : ''}}</p>
+                        <p>Bairro: {{$pedido->bairro ? $pedido->bairro : ''}}</p>
+                        <p>Cidade: {{$pedido->cidade ? $pedido->cidade : ''}}</p>
+                        <p>Estado: {{$pedido->estado ? $pedido->estado : ''}}</p>
                     @else()
                         <h2>Endereço de Retirada</h2>
                         <p>R. Frei João, 59 - Ipiranga, São Paulo - SP, 04280-130</p> 
                     @endif()
 
-                    <h2>Pagamento</h2>
+                    
                     @if($errors->any())
                         <div class="row col-md-6 offset-md-3 mt-4">
                             <div class="small-12 medium-12 columns">
@@ -84,7 +90,7 @@
                         </script>
                     @endif --}}
                     @if($pedido->status != 'pago')       
-                        <div class="form col-md-12">
+                        {{-- <div class="form col-md-12">
                             <input type="text" name="num_cartao" id="num_cartao" class="numero_cartao-mask"  placeholder="Número do cartão" {{ $pedido->status == 'pago' ? 'disabled' : '' }}>
                         </div> 
 
@@ -102,11 +108,12 @@
                         
                         <div class="form col-md-12">
                             <input type="text" name="titular_cpf" id="titular_cpf" class="cpf-mask"  placeholder="CPF do titular" {{ $pedido->status == 'pago' ? 'disabled' : '' }}>
-                        </div>
+                        </div> --}}
                         {{-- <div class="form col-md-12">
                             <input type="text" name="num_parcelas" id="num_parcelas"  placeholder="Número de parcelas">
                         </div> --}}
                     @else()
+                    <h2>Pagamento</h2>
                     <div class="form col-md-12">
                         <p>STATUS DO PAGAMENTO: EFETUADO</p>
                         <p>STATUS DO PEDIDO: FINALIZADO</p>
@@ -145,7 +152,7 @@
                     </div>
 
                     @if($pedido->status != 'pago') 
-                        <a type="submite"><button id="finalizar-pagamento">Finalizar o pagamento</button></a>
+                        <a type="submite"><button id="finalizar-pagamento">Fazer Pagamento</button></a>
                     @else()
                     <button><a type="button" href="/pedidos/meus-pedidos/{{Auth::user()->id}}" class="link_voltar_pedidos">Voltar para meus pedidos</a></button>
                     @endif()

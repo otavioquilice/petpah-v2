@@ -94,15 +94,46 @@
 
                 <p class="descricao_entrega">Em caso de consumo própio, selecione como irá receber o produto.<p>
               
-                <select name="opca_entrega" class="form-control" onClick="selecionarOpcaoEntrega(this)" required>
+                <select name="opca_entrega" class="form-control opca_entrega" onClick="selecionarOpcaoEntrega(this)">
                   <option value="" selected disabled hidden>Escolha uma opção de Retirada/Entrega.</option>
-                  <option value="retirar_loja">Reirar na loja</option>
+                  <option value="retirar_loja">Retirar na loja</option>
                   <option value="solicitar_entregador">Solicitar um entregador</option>
                 </select>
 
                 <div hidden class="solicitar_entrega">
                   <div class="form">
-                    <input type="text" name="cep" class="cx_consultar_cep" placeholder="Digite o CEP">
+                    <div>
+                      <input type="text" name="cep" class="cx_consultar_cep" placeholder="Digite o CEP">
+                    </div>
+
+                    <div>
+                      <input type="text" hidden name="rua" id="rua" class="cx_consultar_cep" disabled >
+                      <input type="hidden" name="rua" id="rua" class="cx_consultar_cep" >
+                    </div>
+
+                    <div>
+                      <input type="text" hidden name="numero"  class="cx_consultar_cep" id="numero" placeholder="Informe o Número" >
+                    </div>
+
+                    <div>
+                      <input type="text" hidden name="bairro" class="cx_consultar_cep" id="bairro" disabled>
+                      <input type="hidden" name="bairro" class="cx_consultar_cep" id="bairro">
+                    </div>
+
+                    <div>
+                      <input type="text" hidden name="estado" class="cx_consultar_cep" id="estado" disabled>
+                      <input type="hidden" name="estado" class="cx_consultar_cep" id="estado">
+                    </div>
+
+                    <div>
+                      <input type="text" hidden name="cidade" class="cx_consultar_cep" id="cidade" disabled>
+                      <input type="hidden" name="cidade" class="cx_consultar_cep" id="cidade">
+                    </div>
+
+                    <div>
+                      <input type="text" hidden name="complemento" class="cx_consultar_cep" id="complemento" placeholder="Informe o Complemento">
+                    </div>
+
                     <button type="button" class="consultar_cep">Consultar</button>
                   </div>
                 </div>
