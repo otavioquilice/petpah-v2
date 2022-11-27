@@ -30,7 +30,7 @@
                             </div>                      
                         </div> --}}
                         <br>
-                        <div class="kt-portlet__body">
+                        <div class="table-responsive">
                             <!--begin: Datatable -->
                             <table class="table table-striped">
                                 <thead>

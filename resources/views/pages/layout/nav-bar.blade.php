@@ -127,11 +127,12 @@
         flex-direction:column;
         background-color: rgba(255,219,153, 0.95);
         width: 52vw;
-        height: 25vh;
+        height: 32vh;
         border-radius: 0 0 10px;
         position: absolute;
         left: -100vw;
         transition: .25s;
+        z-index: 1;
     }
 
 
@@ -164,7 +165,7 @@
 
       .menu-lateral_link::before{
         width: 24px;
-        height: 24px;
+        height: 30;
         font-size: 24px;
         position: absolute;
         left: 24px;
