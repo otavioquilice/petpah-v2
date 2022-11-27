@@ -47,7 +47,7 @@
                   </a>
                 </div>
 
-                <select class="tipo_produto form-control select_opcao_consumo" onClick="selecionarQuantidadeDoacao(this, {{$item_prod->produto_id}})" required>
+                <select class="tipo_produto form-control select_opcao_consumo" onchange="selecionarQuantidadeDoacao(this, {{$item_prod->produto_id}})" required>
                   <option value="" selected disabled hidden>Será uma doação?</option>
                   <option value="consumo_proprio">Consumo proprio</option>
                   <option value="consumo_doacao">Doação para ONGs</option>
@@ -94,7 +94,7 @@
 
                 <p class="descricao_entrega">Em caso de consumo própio, selecione como irá receber o produto.<p>
               
-                <select name="opca_entrega" class="form-control opca_entrega" onClick="selecionarOpcaoEntrega(this)">
+                <select name="opca_entrega" class="form-control opca_entrega" onchange="selecionarOpcaoEntrega(this)">
                   <option value="" selected disabled hidden>Escolha uma opção de Retirada/Entrega.</option>
                   <option value="retirar_loja">Retirar na loja</option>
                   <option value="solicitar_entregador">Solicitar um entregador</option>
