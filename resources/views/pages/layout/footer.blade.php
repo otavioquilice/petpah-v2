@@ -262,7 +262,7 @@
         var cep = $("input[name=cep]").val();
 
         $.ajax({
-            url: "http://viacep.com.br/ws/"+cep+"/json/",
+            url: "https://viacep.com.br/ws/"+cep+"/json/",
             type: "get",
             dataType: "json",
             success: function (result) {
